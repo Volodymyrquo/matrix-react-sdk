@@ -45,6 +45,7 @@ import { mediaFromMxc } from "../../customisations/Media";
 import SpaceStore, { UPDATE_SELECTED_SPACE } from "../../stores/SpaceStore";
 import { getKeyBindingsManager, RoomListAction } from "../../KeyBindingsManager";
 import UIStore from "../../stores/UIStore";
+import { Link } from "react-router-dom";
 
 interface IProps {
     isMinimized: boolean;
@@ -480,6 +481,8 @@ export default class LeftPanel extends React.Component<IProps, IState> {
                 <aside className="mx_LeftPanel_roomListContainer">
                     {this.renderHeader()}
                     {this.renderSearchDialExplore()}
+                    <div className="sumra-contact-book-link"><Link to="/contact_book">Contact book</Link></div>
+
                     {this.renderBreadcrumbs()}
                     <RoomListNumResults onVisibilityChange={this.refreshStickyHeaders} />
                     <div className="mx_LeftPanel_roomListWrapper">

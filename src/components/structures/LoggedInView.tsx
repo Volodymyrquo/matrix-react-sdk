@@ -64,6 +64,9 @@ import MyGroups from "./MyGroups";
 import UserView from "./UserView";
 import GroupView from "./GroupView";
 import SpaceStore from "../../stores/SpaceStore";
+import { HashRouter as Router, Route } from "react-router-dom";
+import ContactBook from "./contactBook/ContactBook";
+import { Provider } from "../../context/context";
 
 // We need to fetch each pinned message individually (if we don't already have it)
 // so each pinned message may trigger a request. Limit the number per room for sanity.
@@ -623,29 +626,37 @@ class LoggedInView extends React.Component<IProps, IState> {
         });
 
         return (
-            <MatrixClientContext.Provider value={this._matrixClient}>
-                <div
-                    onPaste={this._onPaste}
-                    onKeyDown={this._onReactKeyDown}
-                    className='mx_MatrixChat_wrapper'
-                    aria-hidden={this.props.hideToSRUsers}
-                >
-                    <ToastContainer />
-                    <div ref={this._resizeContainer} className={bodyClasses}>
-                        { SpaceStore.spacesEnabled ? <SpacePanel /> : null }
-                        <LeftPanel
-                            isMinimized={this.props.collapseLhs || false}
-                            resizeNotifier={this.props.resizeNotifier}
-                        />
-                        <ResizeHandle />
-                        { pageElement }
-                    </div>
-                </div>
-                <CallContainer />
-                <NonUrgentToastContainer />
-                <HostSignupContainer />
-                {audioFeedArraysForCalls}
-            </MatrixClientContext.Provider>
+            <>
+                <Router>
+                    <MatrixClientContext.Provider value={this._matrixClient}>
+                        <div
+                            onPaste={this._onPaste}
+                            onKeyDown={this._onReactKeyDown}
+                            className='mx_MatrixChat_wrapper'
+                            aria-hidden={this.props.hideToSRUsers}
+                        >
+                            <ToastContainer />
+                            <div ref={this._resizeContainer} className={bodyClasses}>
+                                { SpaceStore.spacesEnabled ? <SpacePanel /> : null }
+                                <LeftPanel
+                                    isMinimized={this.props.collapseLhs || false}
+                                    resizeNotifier={this.props.resizeNotifier}
+                                />
+                                <ResizeHandle />
+                                { pageElement }
+                            </div>
+                        </div>
+                        <CallContainer />
+                        <NonUrgentToastContainer />
+                        <HostSignupContainer />
+                        {audioFeedArraysForCalls}
+                    </MatrixClientContext.Provider>
+                    <Provider>
+                        <Route path="/contact_book" component={ContactBook} />
+                    </Provider>
+
+                </Router>
+            </>
         );
     }
 }
