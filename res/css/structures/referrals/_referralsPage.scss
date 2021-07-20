@@ -1,4 +1,19 @@
 .sumra-referrals-page {
+    position: absolute;
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #2e3140;
+    min-height: 100%;
+    width: calc(100% - 240px);
+    right: 0px;
+    top: 0px;
+    z-index: 2;
+    background-color: #fafafc;
+    padding: 30px;
+
     &__header {
         display: grid;
         grid-template-columns: 2fr 1fr;
