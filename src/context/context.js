@@ -12,6 +12,7 @@ import SendingMessage from "../components/views/contactBook/SendReferralModal/Pe
 import ContactCash from "../components/views/contactBook/ContactCash";
 import { initialState } from "./contextReducer";
 import Referrals from "../components/structures/referrals/Referrals";
+import GlobalEarnings from "../components/structures/globalEarnings/GlobalEarnings";
 
 export const Context = createContext(initialState);
 
@@ -49,6 +50,7 @@ export const Provider = ({ children }) => {
         sendModal: <SendModal />,
         sendingMessage: <SendingMessage />,
         referrals: <Referrals />,
+        globalEarnings: <GlobalEarnings />,
     };
     const tables = {
         myFavourites: <TableContacts />,

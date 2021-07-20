@@ -1,4 +1,5 @@
 import React, { FC, useState, useContext } from 'react';
+import {Link} from "react-router-dom"
 import classNames from 'classnames';
 import { Context } from "../../../context/context";
 import { ContactBookContext } from "../../../context/ContactBook/contextContactBook";
@@ -16,7 +17,7 @@ const NavigationSidebar: FC = () => {
         <ul className="metismenu list-unstyled" id="side-menu">
             <li
 
-            ><a href="/#/contact_book"
+            ><Link to="/referrals"
                     className={classNames("sumra-referrals__item", {
                 "sumra-referrals__item-active": allContactsBtn,
                     })}
@@ -25,21 +26,16 @@ const NavigationSidebar: FC = () => {
                         setMyFavouritesBtn(false);
                         setRecentlyAddedBtn(false);
                         setReferredContactBook(false);
-                        setPage("contactBook");
-                        setTable("allContacts");
-                        setParams({ name: "All contacts" });
-                        getGroup("All");
                     }}
                 >
-                    <i className="icon-User" />
                     <span>referrals</span>
-                </a>
+                </Link>
 
             </li>
 
             <li>
-                <a
-                    href="/#/contact_book"
+                <Link
+                    to="/globalEarnings"
                     className={classNames("sumra-referrals__item", {
             "sumra-referrals__item-active": myFavouritesBtn,
                     })}
@@ -48,15 +44,10 @@ const NavigationSidebar: FC = () => {
                         setMyFavouritesBtn(true);
                         setRecentlyAddedBtn(false);
                         setReferredContactBook(false);
-                        setTable("myFavourites");
-                        setPage("contactBook");
-                        setParams({ name: "My favourites" });
-                        getGroup("All");
                     }}
                 >
-                    <i className="icon-Star" />
                     <span>global earnings</span>
-                </a>
+                </Link>
             </li>
 
             <li>
