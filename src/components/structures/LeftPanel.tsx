@@ -482,6 +482,7 @@ export default class LeftPanel extends React.Component<IProps, IState> {
                     {this.renderHeader()}
                     {this.renderSearchDialExplore()}
                     <div className="sumra-contact-book-link"><Link to="/contact_book">Contact book</Link></div>
+                    <div className="sumra-contact-book-link"><Link to="/referrals">Referrals</Link></div>
 
                     {this.renderBreadcrumbs()}
                     <RoomListNumResults onVisibilityChange={this.refreshStickyHeaders} />

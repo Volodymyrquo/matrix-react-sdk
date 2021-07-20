@@ -24,4 +24,5 @@ export default {
     GroupView: "group_view",
     MyGroups: "my_groups",
     ContactBook: "contact_book",
+    Referrals: "referrals",
 };

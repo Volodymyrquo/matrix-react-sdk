@@ -727,6 +727,9 @@ export default class MatrixChat extends React.PureComponent<IProps, IState> {
             case 'view_contact_book_page':
                 this.viewContactBook(payload.justRegistered);
                 break;
+            case 'view_referrals_page':
+                this.viewReferrals(payload.justRegistered);
+                break;
 
             case 'view_start_chat_or_reuse':
                 this.chatCreateOrReuse(payload.user_id);
@@ -1025,6 +1028,17 @@ export default class MatrixChat extends React.PureComponent<IProps, IState> {
         });
         this.setPage(PageTypes.ContactBook);
         this.notifyNewScreen('contact_book');
+        ThemeController.isLogin = false;
+        this.themeWatcher.recheck();
+    }
+    private viewReferrals(justRegistered = false) {
+        // The contact book page requires the "logged in" view, so we'll set that.
+        this.setStateForNewView({
+            view: Views.LOGGED_IN,
+            justRegistered,
+        });
+        this.setPage(PageTypes.Referrals);
+        this.notifyNewScreen('referrals');
         ThemeController.isLogin = false;
         this.themeWatcher.recheck();
     }
@@ -1697,6 +1711,10 @@ export default class MatrixChat extends React.PureComponent<IProps, IState> {
         } else if (screen === 'contact_book') {
             dis.dispatch({
                 action: 'view_contact_book_page',
+            });
+        } else if (screen === 'referrals') {
+            dis.dispatch({
+                action: 'view_referrals_page',
             });
         } else if (screen === 'start') {
             this.showScreen('home');

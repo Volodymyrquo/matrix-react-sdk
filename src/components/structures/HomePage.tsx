@@ -106,7 +106,7 @@ const HomePage: React.FC<IProps> = ({ justRegistered = false }) => {
         introSection = <UserWelcomeTop />;
     } else {
         const brandingConfig = config.branding;
-        let logoUrl = "themes/element/img/logos/element-logo.svg";
+        let logoUrl = "themes/element/img/logos/sumra-logo.png";
         if (brandingConfig && brandingConfig.authHeaderLogoUrl) {
             logoUrl = brandingConfig.authHeaderLogoUrl;
         }
@@ -117,18 +117,17 @@ const HomePage: React.FC<IProps> = ({ justRegistered = false }) => {
             <h4>{ _t("Liberate your communication") }</h4>
         </React.Fragment>;
     }
-    const buttonStyle = { background: "linear-gradient(270deg, #EDA416 0%, #E97819 100%)" };
     return <AutoHideScrollbar className="mx_HomePage mx_HomePage_default">
         <div className="mx_HomePage_default_wrapper">
             { introSection }
             <div className="mx_HomePage_default_buttons">
-                <AccessibleButton onClick={onClickSendDm} className="mx_HomePage_button_sendDm" style={buttonStyle}>
+                <AccessibleButton onClick={onClickSendDm} className="mx_HomePage_button_sendDm" >
                     { _t("Send a Direct Message") }
                 </AccessibleButton>
-                <AccessibleButton onClick={onClickExplore} className="mx_HomePage_button_explore" style={buttonStyle}>
+                <AccessibleButton onClick={onClickExplore} className="mx_HomePage_button_explore" >
                     { _t("Explore Public Rooms") }
                 </AccessibleButton>
-                <AccessibleButton onClick={onClickNewRoom} className="mx_HomePage_button_createGroup" style={buttonStyle}>
+                <AccessibleButton onClick={onClickNewRoom} className="mx_HomePage_button_createGroup" >
                     { _t("Create a Group Chat") }
                 </AccessibleButton>
             </div>

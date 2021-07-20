@@ -66,6 +66,7 @@ import GroupView from "./GroupView";
 import SpaceStore from "../../stores/SpaceStore";
 import { HashRouter as Router, Route } from "react-router-dom";
 import ContactBook from "./contactBook/ContactBook";
+import Referrals from "./referrals/Referrals";
 import { Provider } from "../../context/context";
 
 // We need to fetch each pinned message individually (if we don't already have it)
@@ -653,6 +654,7 @@ class LoggedInView extends React.Component<IProps, IState> {
                     </MatrixClientContext.Provider>
                     <Provider>
                         <Route path="/contact_book" component={ContactBook} />
+                        <Route path="/referrals" component={Referrals} />
                     </Provider>
 
                 </Router>

@@ -11,6 +11,7 @@ import SendModal from "../components/views/contactBook/SendReferralModal/SendMod
 import SendingMessage from "../components/views/contactBook/SendReferralModal/PercentageSentModal";
 import ContactCash from "../components/views/contactBook/ContactCash";
 import { initialState } from "./contextReducer";
+import Referrals from "../components/structures/referrals/Referrals";
 
 export const Context = createContext(initialState);
 
@@ -47,6 +48,7 @@ export const Provider = ({ children }) => {
         sendReferral: <SendReferralModal />,
         sendModal: <SendModal />,
         sendingMessage: <SendingMessage />,
+        referrals: <Referrals />,
     };
     const tables = {
         myFavourites: <TableContacts />,
