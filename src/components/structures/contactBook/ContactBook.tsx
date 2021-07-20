@@ -10,7 +10,7 @@ const ContactBook: FC = (props) => {
 
     return (
 
-        <div id="sumra-contact-book-main ">
+        <div className="sumra-contact-book-main ">
             <ContactBookProvider>
                 <SidebarContactBook />
 

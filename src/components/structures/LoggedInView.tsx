@@ -629,6 +629,7 @@ class LoggedInView extends React.Component<IProps, IState> {
         return (
             <>
                 <Router>
+
                     <MatrixClientContext.Provider value={this._matrixClient}>
                         <div
                             onPaste={this._onPaste}
@@ -652,6 +653,7 @@ class LoggedInView extends React.Component<IProps, IState> {
                         <HostSignupContainer />
                         {audioFeedArraysForCalls}
                     </MatrixClientContext.Provider>
+
                     <Provider>
                         <Route path="/contact_book" component={ContactBook} />
                         <Route path="/referrals" component={Referrals} />
