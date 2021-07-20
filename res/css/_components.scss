@@ -35,7 +35,10 @@
 @import "./structures/_UploadBar.scss";
 @import "./structures/_UserMenu.scss";
 @import "./structures/_ViewSource.scss";
-@import "./structures/_Referrals.scss";
+@import "./structures/referrals/_Referrals.scss";
+@import "./structures/referrals/_burger.scss";
+@import "./structures/referrals/_sidebarReferrals.scss";
+@import "./structures/referrals/_navigationSidebar.scss";
 @import "./structures/auth/_CompleteSecurity.scss";
 @import "./structures/auth/_Login.scss";
 @import "./views/audio_messages/_AudioPlayer.scss";

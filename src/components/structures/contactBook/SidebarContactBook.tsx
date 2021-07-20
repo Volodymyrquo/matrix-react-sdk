@@ -7,9 +7,8 @@ import { Context } from "../../../context/context";
 import NavigationGroups from './NavigationGroups';
 
 const SidebarContactBook: FC = () => {
-    const { setPage} = useContext(Context);
-    const [burger, setBurger] = useState(true)
-   
+    const { setPage } = useContext(Context);
+    const [burger, setBurger] = useState(true);
 
     return (
         <section
@@ -21,7 +20,7 @@ const SidebarContactBook: FC = () => {
                     src={logo}
                     alt="logo on the page Contact Book"
                 />
-                            <div
+                <div
                     id="menuNone"
                     onClick={()=>{
                         setBurger(!burger);
@@ -33,7 +32,7 @@ const SidebarContactBook: FC = () => {
                         <span id="span2"></span>
                         <span id="span3"></span>
                     </div>
-                </div> 
+                </div>
 
             </div>
             <h3 className="contact-book__title-sidebar">Contacts</h3>
@@ -72,7 +71,7 @@ const SidebarContactBook: FC = () => {
           Earn Unlimited.
                 </p>
                 <a
-                    href="/referrals"
+                    href="/#/referrals"
                     className="contact-book__more-btn"
                 >
           Learn more
