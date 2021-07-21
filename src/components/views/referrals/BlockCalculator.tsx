@@ -1,4 +1,5 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState, useContext } from 'react';
+import { ReferralsContext } from "../../../contexts/Referrals/contextReferrals";
 import people from '../../../../res/images/users/people.svg';
 import pers from '../../../../res/images/users/pers.svg';
 import coins from '../../../../res/images/users/coins.svg';
@@ -10,14 +11,13 @@ import { Link } from 'react-router-dom';
 import { IoCalculatorOutline } from 'react-icons/io5';
 
 const BlockCalculator: FC = () => {
+    const { state } = useContext(ReferralsContext);
     const [result, setResult] = useState(100000);
     const [invitedUsers, setInvitedUsers] = useState(10000);
     const [bonus, setBonus] = useState('$ 5');
 
-/*     const nameBronzeBtn = useSelector(
-        (state: RootStateOrAny) => state.pioneerReducer.nameBronzeBtn,
-    );
- */
+    const { nameBronzeBtn } = state;
+
     const calculate = ({ target: { value, name } }) => {
         if (name === 'users') {
             setInvitedUsers(value);
@@ -30,7 +30,7 @@ const BlockCalculator: FC = () => {
         setResult(invitedUsers * +bonus.slice(1).trim());
     }, [invitedUsers, bonus]);
 
-    /* const getMedal = () => {
+    const getMedal = () => {
         if (nameBronzeBtn === 'Bronze') {
             return bronze;
         }
@@ -40,11 +40,11 @@ const BlockCalculator: FC = () => {
         if (nameBronzeBtn === 'Gold') {
             return gold;
         }
-    }; */
+    };
 
     return (
         <div className="referrals-page__sumra-referrals-block-calculator sumra-referrals-block-calculator">
-           {/*  <div className="sumra-referrals-block-calculator__box-4-inner">
+            <div className="sumra-referrals-block-calculator__box-4-inner">
                 <div className="sumra-referrals-block-calculator__img-inner">
                     {nameBronzeBtn === 'Basic' ? (
                         <img
@@ -72,7 +72,7 @@ const BlockCalculator: FC = () => {
                         </span>
                     </Link>
                 </div>
-            </div> */}
+            </div>
 
             <div className="sumra-referrals-block-calculator__box-5">
                 <h3 className="sumra-referrals-block-calculator__title-1">Your Earnings</h3>
