@@ -9,8 +9,8 @@ const NavigationSidebar: FC = () => {
     const [recentlyAddedBtn, setRecentlyAddedBtn] = useState(false);
     const [referredContactBook, setReferredContactBook] = useState(false);
     const { setPage, setTable, setParams } = useContext(Context);
-    const {actions} = useContext(ContactBookContext)
-     const {getGroup} =  actions
+    const { actions } = useContext(ContactBookContext);
+    const { getGroup } = actions;
 
     return (
         <ul className="metismenu list-unstyled" id="side-menu">
@@ -28,7 +28,7 @@ const NavigationSidebar: FC = () => {
                         setPage("contactBook");
                         setTable("allContacts");
                         setParams({ name: "All contacts" });
-                        getGroup("All")
+                        getGroup("All");
                     }}
                 >
                     <i className="icon-User" />
@@ -51,8 +51,7 @@ const NavigationSidebar: FC = () => {
                         setTable("myFavourites");
                         setPage("contactBook");
                         setParams({ name: "My favourites" });
-                        getGroup("All")
-
+                        getGroup("All");
                     }}
                 >
                     <i className="icon-Star" />
@@ -74,8 +73,7 @@ const NavigationSidebar: FC = () => {
                         setTable("recentlyAdded");
                         setPage("contactBook");
                         setParams({ name: "Recently added" });
-                        getGroup("All")
-
+                        getGroup("All");
                     }}
                 >
                     <i className="icon-Alarm" />
@@ -97,8 +95,7 @@ const NavigationSidebar: FC = () => {
                         setTable("referred");
                         setPage("contactBook");
                         setParams({ name: "Referred" });
-                        getGroup("All")
-
+                        getGroup("All");
                     }}
                 >
                     <i className="icon-Cube" />

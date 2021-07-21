@@ -12,7 +12,7 @@ import youtube from '../../../../res/images/contactBook/youtube.svg';
 import zoom from '../../../../res/images/contactBook/zoom.svg';
 import tiktok from '../../../../res/images/contactBook/tiktok.svg';
 import twinch from '../../../../res/images/contactBook/twinch.svg';
-import { ContactBookContext } from "../../../context/ContactBook/contextContactBook";
+import { ContactBookContext } from "../../../contexts/ContactBook/contextContactBook";
 const icons = [facebook, instagram, linkedin, twitter, pinterest, discord, youtube, zoom, tiktok, twinch];
 
 //@ts-ignore

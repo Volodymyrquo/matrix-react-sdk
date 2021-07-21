@@ -2,16 +2,13 @@ import React, { FC, useState, useContext } from 'react';
 import {Link} from "react-router-dom"
 import classNames from 'classnames';
 import { Context } from "../../../contexts/Routes/context";
-import { ContactBookContext } from "../../../contexts/ContactBook/contextContactBook";
 
 const NavigationSidebar: FC = () => {
     const [allContactsBtn, setAllContactsBtn] = useState(true);
     const [myFavouritesBtn, setMyFavouritesBtn] = useState(false);
     const [recentlyAddedBtn, setRecentlyAddedBtn] = useState(false);
     const [referredContactBook, setReferredContactBook] = useState(false);
-    const { setPage, setTable, setParams } = useContext(Context);
-    const { actions } = useContext(ContactBookContext);
-    const { getGroup } = actions;
+    const { setPage, setTable } = useContext(Context);
 
     return (
         <ul className="metismenu list-unstyled" id="side-menu">
@@ -63,8 +60,6 @@ const NavigationSidebar: FC = () => {
                         setReferredContactBook(false);
                         setTable("recentlyAdded");
                         setPage("contactBook");
-                        setParams({ name: "Recently added" });
-                        getGroup("All");
                     }}
                 >
                     <i className="icon-Alarm" />
@@ -84,8 +79,6 @@ const NavigationSidebar: FC = () => {
                         setReferredContactBook(true);
                         setTable("referred");
                         setPage("contactBook");
-                        setParams({ name: "Referred" });
-                        getGroup("All");
                     }}
                 >
                     <i className="icon-Cube" />
@@ -105,8 +98,6 @@ const NavigationSidebar: FC = () => {
                         setReferredContactBook(true);
                         setTable("referred");
                         setPage("contactBook");
-                        setParams({ name: "Referred" });
-                        getGroup("All");
                     }}
                 >
                     <i className="icon-Cube" />
@@ -126,8 +117,6 @@ const NavigationSidebar: FC = () => {
                         setReferredContactBook(true);
                         setTable("referred");
                         setPage("contactBook");
-                        setParams({ name: "Referred" });
-                        getGroup("All");
                     }}
                 >
                     <i className="icon-Cube" />
@@ -147,8 +136,6 @@ const NavigationSidebar: FC = () => {
                         setReferredContactBook(true);
                         setTable("referred");
                         setPage("contactBook");
-                        setParams({ name: "Referred" });
-                        getGroup("All");
                     }}
                 >
                     <i className="icon-Cube" />

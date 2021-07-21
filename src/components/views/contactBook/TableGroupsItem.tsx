@@ -12,7 +12,7 @@ import youtube from '../../../../res/images/contactBook/youtube.svg';
 import zoom from '../../../../res/images/contactBook/zoom.svg';
 import tiktok from '../../../../res/images/contactBook/tiktok.svg';
 import twinch from '../../../../res/images/contactBook/twinch.svg';
-import { ContactBookContext } from "../../../context/ContactBook/contextContactBook";
+import { ContactBookContext } from "../../../contexts/ContactBook/contextContactBook";
 const icons = [facebook, instagram, linkedin, twitter, pinterest, discord, youtube, zoom, tiktok, twinch];
 
 //@ts-ignore
@@ -29,11 +29,10 @@ const TableGroupsItem: FC = () => {
         if (groupName == "All") {return user;} else {return user.group.includes(groupName);}
     });
 
-   useEffect(() => {
+    useEffect(() => {
         const letter = [];
         const result = [];
         for (let i = 0; friends.length > i; i++) {
-
             if (!letter.includes(friends[i].name[0])) {
                 letter.push(friends[i].name[0].toUpperCase());
                 result.push({ 'letter': friends[i].name[0].toUpperCase() });
@@ -42,12 +41,12 @@ const TableGroupsItem: FC = () => {
         }
         setSortUsers(result);
     }, [searchText, reverse, groupName]);
- 
- useEffect(() => {
+
+    useEffect(() => {
         if (friends.length > 0) {
             const letter = [];
             const result = [];
-            for (let i = 0; i < friends.length ; i++) {
+            for (let i = 0; i < friends.length; i++) {
                 if (!letter.includes(friends[i].name[0])) {
                     letter.push(friends[i].name[0].toUpperCase());
                     result.push({ 'letter': friends[i].name[0].toUpperCase() });
@@ -59,7 +58,7 @@ const TableGroupsItem: FC = () => {
             actions.getAllUsers(people);
             const letter = [];
             const result = [];
-            for (let i = 0; i < sortUsers.length ; i++) {
+            for (let i = 0; i < sortUsers.length; i++) {
                 if (!letter.includes(sortUsers[i].name[0])) {
                     letter.push(sortUsers[i].name[0].toUpperCase());
                     result.push({ 'letter': sortUsers[i].name[0].toUpperCase() });
@@ -161,7 +160,7 @@ const TableGroupsItem: FC = () => {
                                                 type="checkbox"
                                                 onChange={selectAllFriends}
                                             />
-                                            <label className="contact-book__td-checkbox"  htmlFor={person.letter}></label>
+                                            <label className="contact-book__td-checkbox" htmlFor={person.letter}></label>
                                             <span className="contact-book__td-text">{person.letter}</span>
                                         </td>
                                         <td></td>

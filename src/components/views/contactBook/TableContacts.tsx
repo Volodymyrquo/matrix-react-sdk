@@ -2,7 +2,7 @@ import React, { FC, useState, useContext, useEffect } from 'react';
 import { Table } from 'reactstrap';
 import { people } from '../../../../res/helpers/people';
 import arrowDown from '../../../../res/images/contactBook/arrowDown.svg';
-import { ContactBookContext } from "../../../context/ContactBook/contextContactBook";
+import { ContactBookContext } from "../../../contexts/ContactBook/contextContactBook";
 
 const alph = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
  'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -144,7 +144,7 @@ const TableContacts: FC = () => {
                             <tr className="contact-book__list-alph">
                                 {alph.map((letter) => (
                                     <td
-                                       
+
                                         className={
                                             friends.some((man) => man.name[0] === letter)
                                                 ? 'contact-book__item-alph-true'
