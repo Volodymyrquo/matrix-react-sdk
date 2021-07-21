@@ -3,8 +3,8 @@ import notification from '../../../../res/images/contactBook/notification.svg';
 import ann from '../../../../res/images/contactBook/ann.svg';
 import search from '../../../../res/images/contactBook/search.svg';
 import { people } from '../../../../res/helpers/people';
-import { ContactBookContext } from "../../../context/ContactBook/contextContactBook";
-import { Context } from "../../../context/context";
+import { ContactBookContext } from "../../../contexts/ContactBook/contextContactBook";
+import { Context } from "../../../contexts/Routes/context";
 import { groupsItems } from "../../../../res/helpers/groups";
 import { v4 as uuidv4 } from 'uuid';
 

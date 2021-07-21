@@ -1,9 +1,9 @@
 import React, { FC, useState, useContext } from 'react';
 import classNames from 'classnames';
-import { Context } from "../../../context/context";
+import { Context } from "../../../contexts/Routes/context";
 import {groupsItems} from "../../../../res/helpers/groups"
 import {v4 as uuidv4} from 'uuid'
-import { ContactBookContext } from "../../../context/ContactBook/contextContactBook";
+import { ContactBookContext } from "../../../contexts/ContactBook/contextContactBook";
 
 
 

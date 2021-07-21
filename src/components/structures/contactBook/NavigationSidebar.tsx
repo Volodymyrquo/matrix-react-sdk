@@ -1,7 +1,7 @@
 import React, { FC, useState, useContext } from 'react';
 import classNames from 'classnames';
-import { Context } from "../../../context/context";
-import { ContactBookContext } from "../../../context/ContactBook/contextContactBook";
+import { Context } from "../../../contexts/Routes/context";
+import { ContactBookContext } from "../../../contexts/ContactBook/contextContactBook";
 
 const NavigationSidebar: FC = () => {
     const [allContactsBtn, setAllContactsBtn] = useState(true);

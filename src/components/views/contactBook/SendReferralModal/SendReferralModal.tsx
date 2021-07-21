@@ -1,7 +1,7 @@
 import React, { FC, useState, useContext } from 'react';
 import Modal, { IProps } from '../modal';
-import { Context } from '../../../../context/context';
-import { ContactBookContext } from '../../../../context/ContactBook/contextContactBook';
+import { Context } from '../../../../contexts/Routes/context';
+import { ContactBookContext } from '../../../../contexts/ContactBook/contextContactBook';
 import Close from '../../../../../res/images/contactBook/close.png';
 import checkMark from '../../../../../res/images/contactBook/checkMark.svg';
 import sumra from '../../../../../res/images/contactBook/sumrachat.svg';

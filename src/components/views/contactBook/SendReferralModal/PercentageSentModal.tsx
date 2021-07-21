@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react';
-import { Context } from '../../../../context/context';
-import { ContactBookContext } from '../../../../context/ContactBook/contextContactBook';
+import { Context } from '../../../../contexts/Routes/context';
+import { ContactBookContext } from '../../../../contexts/ContactBook/contextContactBook';
 
 import Modal, { IProps } from '../modal';
 import Confetti from 'react-confetti';

@@ -2,8 +2,8 @@ import React, { FC, useState, useContext } from 'react';
 import Modal, { IProps } from '../modal';
 import Close from '../../../../../res/images/contactBook/close.png';
 import classNames from 'classnames';
-import { Context } from '../../../../context/context';
-import { ContactBookContext } from '../../../../context/ContactBook/contextContactBook';
+import { Context } from '../../../../contexts/Routes/context';
+import { ContactBookContext } from '../../../../contexts/ContactBook/contextContactBook';
 
 import facebook from '../../../../../res/images/contactBook/facebook.svg';
 import instagram from '../../../../../res/images/contactBook/instagram.svg';

@@ -2,8 +2,8 @@ import React, { FC, useContext } from "react";
 
 import "./ContactBook.css";
 import SidebarContactBook from "./SidebarContactBook";
-import { Context } from "../../../context/context";
-import { ContactBookProvider } from "../../../context/ContactBook/contextContactBook";
+import { Context } from "../../../contexts/Routes/context";
+import { ContactBookProvider } from "../../../contexts/ContactBook/contextContactBook";
 
 const ContactBook: FC = (props) => {
     const { page } = useContext(Context);

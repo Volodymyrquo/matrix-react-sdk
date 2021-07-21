@@ -67,7 +67,7 @@ import SpaceStore from "../../stores/SpaceStore";
 import { HashRouter as Router, Route } from "react-router-dom";
 import ContactBook from "./contactBook/ContactBook";
 import Referrals from "./referrals/Referrals";
-import { Provider } from "../../context/context";
+import { Provider } from "../../contexts/Routes/context";
 import GlobalEarnings from './globalEarnings/GlobalEarnings';
 
 // We need to fetch each pinned message individually (if we don't already have it)

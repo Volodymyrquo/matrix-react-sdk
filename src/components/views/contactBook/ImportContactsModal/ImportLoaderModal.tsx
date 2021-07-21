@@ -4,8 +4,8 @@ import Modal, { IProps } from '../modal';
 import Close from '../../../../../res/images/contactBook/close.png';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import box from '../../../../../res/images/contactBook/box.svg';
-import { ContactBookContext } from "../../../../context/ContactBook/contextContactBook";
-import { Context } from "../../../../context/context";
+import { ContactBookContext } from "../../../../contexts/ContactBook/contextContactBook";
+import { Context } from "../../../../contexts/Routes/context";
 
 const ImportLoaderModal: FC<IProps> = ({ onClick }) => {
     const { state } = useContext(ContactBookContext);

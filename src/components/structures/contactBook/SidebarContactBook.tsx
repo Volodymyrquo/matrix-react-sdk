@@ -3,7 +3,7 @@ import logo from "../../../../res/images/contactBook/logo.svg";
 import NavigationSidebar from './NavigationSidebar';
 import plus from "../../../../res/images/contactBook/plus.svg";
 import "./SidebarContactBook.css";
-import { Context } from "../../../context/context";
+import { Context } from "../../../contexts/Routes/context";
 import NavigationGroups from './NavigationGroups';
 
 const SidebarContactBook: FC = () => {

@@ -2,8 +2,8 @@ import React, { FC, useContext } from 'react';
 import Modal, { IProps } from '../modal';
 import Close from '../../../../../res/images/contactBook/close.png';
 import file from '../../../../../res/images/contactBook/file-text.svg';
-import { ContactBookContext } from "../../../../context/ContactBook/contextContactBook";
-import { Context } from "../../../../context/context";
+import { ContactBookContext } from "../../../../contexts/ContactBook/contextContactBook";
+import { Context } from "../../../../contexts/Routes/context";
 
 const ImportContactsModal: FC<IProps> = ({ onClick }) => {
     const { actions } = useContext(ContactBookContext);

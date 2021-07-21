@@ -1,18 +1,18 @@
 import React, { useReducer, createContext } from "react";
 import contextReducer from "./contextReducer";
-import TableContacts from "../components/views/contactBook/TableContacts";
-import TableReferred from "../components/views/contactBook/TableReferred";
-import TableGroupsItem from "../components/views/contactBook/TableGroupsItem";
-import ContactBookPage from "../components/views/contactBook/ContactBookPage";
-import ImportContactsModal from "../components/views/contactBook/ImportContactsModal/ImportContactsModal";
-import ImportLoaderModal from "../components/views/contactBook/ImportContactsModal/ImportLoaderModal";
-import SendReferralModal from "../components/views/contactBook/SendReferralModal/SendReferralModal";
-import SendModal from "../components/views/contactBook/SendReferralModal/SendModal";
-import SendingMessage from "../components/views/contactBook/SendReferralModal/PercentageSentModal";
-import ContactCash from "../components/views/contactBook/ContactCash";
+import TableContacts from "../../components/views/contactBook/TableContacts";
+import TableReferred from "../../components/views/contactBook/TableReferred";
+import TableGroupsItem from "../../components/views/contactBook/TableGroupsItem";
+import ContactBookPage from "../../components/views/contactBook/ContactBookPage";
+import ImportContactsModal from "../../components/views/contactBook/ImportContactsModal/ImportContactsModal";
+import ImportLoaderModal from "../../components/views/contactBook/ImportContactsModal/ImportLoaderModal";
+import SendReferralModal from "../../components/views/contactBook/SendReferralModal/SendReferralModal";
+import SendModal from "../../components/views/contactBook/SendReferralModal/SendModal";
+import SendingMessage from "../../components/views/contactBook/SendReferralModal/PercentageSentModal";
+import ContactCash from "../../components/views/contactBook/ContactCash";
 import { initialState } from "./contextReducer";
-import Referrals from "../components/structures/referrals/Referrals";
-import GlobalEarnings from "../components/structures/globalEarnings/GlobalEarnings";
+import Referrals from "../../components/structures/referrals/Referrals";
+import GlobalEarnings from "../../components/structures/globalEarnings/GlobalEarnings";
 
 export const Context = createContext(initialState);
 
