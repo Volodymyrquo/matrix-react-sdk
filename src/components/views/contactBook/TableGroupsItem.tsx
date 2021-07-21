@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useState, useContext } from 'react';
-import { Table } from 'reactstrap';
 import { people } from '../../../../res/helpers/people';
 import arrowDown from '../../../../res/images/contactBook/arrowDown.svg';
 import facebook from '../../../../res/images/contactBook/facebook.svg';
@@ -132,7 +131,7 @@ const TableGroupsItem: FC = () => {
             <section className="contact-book__table-block">
                 <div className="contact-book__scroll">
 
-                    <Table className="contact-book__table-wrapper">
+                    <table className="contact-book__table-wrapper">
                         <thead>
                             <tr className="contact-book__head-table">
                                 <th
@@ -206,7 +205,7 @@ const TableGroupsItem: FC = () => {
                                     </tr>
                                 )))}
                         </tbody>
-                    </Table>
+                    </table>
                 </div>
 
             </section>

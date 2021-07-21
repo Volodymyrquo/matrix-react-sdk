@@ -288,8 +288,12 @@
     }
 
     &__bolt {
-        border-top: 2px solid hsl(240, 25%, 95%);
-        border-bottom: 2px solid hsl(240, 25%, 95%);
+        border-top: 2px solid hsl(240, 25%, 95%) !important;
+        border-bottom: 2px solid hsl(240, 25%, 95%) !important;
+        border-radius: 7px 7px 0px 0px !important;
+        width: 100%;
+        height: 100%;
+        background-color: cyan;
     }
 
     &__box-4 {

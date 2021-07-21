@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { FC, useState } from 'react';
-import { Table } from 'reactstrap';
 import classNames from 'classnames';
 import { people } from '../../../../res/helpers/people';
 import copyImg from '../../../../res/images/referrals/copy1.svg';
@@ -218,7 +217,7 @@ const BlockInviteUsers: FC = () => {
 
             <div className="invite-users__block-table">
                 <div className="invite-users__block-table-fixed">
-                    <Table className="invite-users__block-table-fixed">
+                    <table className="invite-users__block-table-fixed">
                         <thead>
                             <tr className="invite-users__table-tr">
                                 <th className="invite-users__th invite-users__th-num">#</th>
@@ -314,7 +313,7 @@ const BlockInviteUsers: FC = () => {
                                 <th className="invite-users__th"></th>
                             </tr>
                         </thead>
-                    </Table>
+                    </table>
                 </div>
             </div>
         </section>

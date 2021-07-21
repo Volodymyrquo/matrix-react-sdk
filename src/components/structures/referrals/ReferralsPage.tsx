@@ -1,10 +1,9 @@
 import React, { FC } from 'react';
-import  BlockCalculator  from '../../views/referrals/BlockCalculator';
+import BlockCalculator from '../../views/referrals/BlockCalculator';
 import BlockCode from '../../views/referrals/BlockCode';
 import BlockInviteUsers from '../../views/referrals/BlockInviteUsers';
-import BlockLeaderboard from '../../views/referrals/BlockLeaderboard';
+import BlockLeaderboard from "../../views/referrals/BlockLeaderboard";
 import BlockQRCode from '../../views/referrals/BlockQRCode';
-
 
 const ReferralsPage: FC = () => {
     return (

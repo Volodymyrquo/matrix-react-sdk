@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import {Table} from "reactstrap"
 import arrow from '../../../../res/images/users/arrow.svg';
 import monay from '../../../../res/images/users/monay.svg';
 import st from '../../../../res/images/users/1st.svg';
@@ -12,7 +11,7 @@ const BlockLeaderboard: FC = () => {
     return (
         <div className="global-earnings-main__box-3">
             <h3 className="global-earnings-main__box-3-title">Leaderboard</h3>
-            <Table striped>
+            <table>
                 <thead className="global-earnings-main__thead">
                     <tr className="global-earnings-main__thead">
                         <th scope="row">
@@ -169,7 +168,7 @@ const BlockLeaderboard: FC = () => {
                             {`$150,750`}
                         </td>
                     </tr>
-                    <tr className="global-earnings-main__bolt">
+                    <tr className="global-earnings-main__bolt global-earnings-main__table-tr">
                         <th scope="row">
               10 <sup className="global-earnings-main__sup">th</sup>
                         </th>
@@ -187,7 +186,7 @@ const BlockLeaderboard: FC = () => {
                         </td>
                     </tr>
                 </tbody>
-            </Table>
+            </table>
             <Link to="/leaderboard" className="global-earnings-main__box-3-link">
         Go to Leaderboard page
                 <img src={arrow} alt="arrow" />
@@ -195,5 +194,4 @@ const BlockLeaderboard: FC = () => {
         </div>
     );
 };
-
 export default BlockLeaderboard;
