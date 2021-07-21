@@ -43,28 +43,28 @@ const BlockCalculator: FC = () => {
     };
 
     return (
-        <div className="referrals-page__sumra-referrals-block-calculator sumra-referrals-block-calculator">
-            <div className="sumra-referrals-block-calculator__box-4-inner">
-                <div className="sumra-referrals-block-calculator__img-inner">
+        <div className="referrals-page__referrals-block-calculator referrals-block-calculator">
+            <div className="referrals-block-calculator__box-4-inner">
+                <div className="referrals-block-calculator__img-inner">
                     {nameBronzeBtn === 'Basic' ? (
                         <img
                             src={medal}
                             alt="Medal bronze"
-                            className="sumra-referrals-block-calculator__img-medal-star"
+                            className="referrals-block-calculator__img-medal-star"
                         />
                     ) : (
                         <img
                             src={getMedal()}
                             alt="Medal bronze"
-                            className="sumra-referrals-block-calculator__img-medal"
+                            className="referrals-block-calculator__img-medal"
                         />
                     )}
 
-                    <p className="sumra-referrals-block-calculator__text-level">Your Referral level</p>
-                    <h3 className="sumra-referrals-block-calculator__level-title">{nameBronzeBtn}</h3>
+                    <p className="referrals-block-calculator__text-level">Your Referral level</p>
+                    <h3 className="referrals-block-calculator__level-title">{nameBronzeBtn}</h3>
                     <Link
                         to="/pioneer_memberships"
-                        className="sumra-referrals-block-calculator__level-btn"
+                        className="referrals-block-calculator__level-btn"
                     >
                         <span>Upgrade</span>
                         <span className="arrow-hover">
@@ -74,13 +74,13 @@ const BlockCalculator: FC = () => {
                 </div>
             </div>
 
-            <div className="sumra-referrals-block-calculator__box-5">
-                <h3 className="sumra-referrals-block-calculator__title-1">Your Earnings</h3>
-                <div className="sumra-referrals-block-calculator__box-5-form">
-                    <label className="sumra-referrals-block-calculator__box-5-calculate-label" htmlFor="">
+            <div className="referrals-block-calculator__box-5">
+                <h3 className="referrals-block-calculator__title-1">Your Earnings</h3>
+                <div className="referrals-block-calculator__box-5-form">
+                    <label className="referrals-block-calculator__box-5-calculate-label" htmlFor="">
                         <span>Invited users</span>
                         <input
-                            className="sumra-referrals-block-calculator__box-5-calculate-users"
+                            className="referrals-block-calculator__box-5-calculate-users"
                             name="users"
                             onChange={calculate}
                             value={invitedUsers}
@@ -88,16 +88,16 @@ const BlockCalculator: FC = () => {
                         />
 
                         <img
-                            className="sumra-referrals-block-calculator__box-5-calculate-img-user"
+                            className="referrals-block-calculator__box-5-calculate-img-user"
                             src={people}
                             alt=""
                         />
                     </label>
                     <span>x</span>
-                    <label className="sumra-referrals-block-calculator__box-5-calculate-label" htmlFor="">
+                    <label className="referrals-block-calculator__box-5-calculate-label" htmlFor="">
                         <span>Bonus per user</span>
                         <select
-                            className="sumra-referrals-block-calculator__box-5-calculate-bonus"
+                            className="referrals-block-calculator__box-5-calculate-bonus"
                             name="bonus"
                             onChange={calculate}
                             value={bonus}
@@ -107,24 +107,24 @@ const BlockCalculator: FC = () => {
                             <option value="$15">$ 10</option>
                         </select>
                         <img
-                            className="sumra-referrals-block-calculator__box-5-calculate-img"
+                            className="referrals-block-calculator__box-5-calculate-img"
                             src={pers}
                             alt=""
                         />
                     </label>
                     <span>=</span>
-                    <label className="sumra-referrals-block-calculator__box-5-calculate-label" htmlFor="">
+                    <label className="referrals-block-calculator__box-5-calculate-label" htmlFor="">
                         <span>Total earnings</span>
-                        <div className="sumra-referrals-block-calculator__box-5-calculate-result">
+                        <div className="referrals-block-calculator__box-5-calculate-result">
                             {`$ ${result}`}
                         </div>
                     </label>
                 </div>
-                <button className="sumra-referrals-block-calculator__box-5-calculate-btn" type="button">
-                    <IoCalculatorOutline className="sumra-referrals-block-calculator__calculate-btn-icon" />
+                <button className="referrals-block-calculator__box-5-calculate-btn" type="button">
+                    <IoCalculatorOutline className="referrals-block-calculator__calculate-btn-icon" />
           Calculate projected earnings
                 </button>
-                <img className="sumra-referrals-block-calculator__img-box-5" src={coins} alt="coins" />
+                <img className="referrals-block-calculator__img-box-5" src={coins} alt="coins" />
             </div>
         </div>
     );

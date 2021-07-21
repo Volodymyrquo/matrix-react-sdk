@@ -85,15 +85,15 @@ const BlockCode: FC = () => {
     };
 
     return (
-        <div className="sumra-referrals-page__code-block sumra-code-block">
-            <h3 className="sumra-code-block__title">{`Your referral link & code`}</h3>
-            <div className="sumra-code-block__form-code">
-                <div className="sumra-code-block__label">
-                    <span className="sumra-code-block__span-title">Referral code</span>
+        <div className="sumra-referrals-page__code-block code-block">
+            <h3 className="code-block__title">{`Your referral link & code`}</h3>
+            <div className="code-block__form-code">
+                <div className="code-block__label">
+                    <span className="code-block__span-title">Referral code</span>
                     <CopyToClipboard text="LZCXYZ777" onCopy={() => setCopy(true)}>
-                        <div className="sumra-code-block__create-code">
+                        <div className="code-block__create-code">
                             {visibleSmsCode && (
-                                <div className="sumra-code-block__copy-text">
+                                <div className="code-block__copy-text">
                   Сopied to the clipboard
                                 </div>
                             )}
@@ -103,7 +103,7 @@ const BlockCode: FC = () => {
                                 name="code"
                                 //@ts-ignore
                                 onClick={isCopy}
-                                className="sumra-code-block__btn-code"
+                                className="code-block__btn-code"
                                 id="code"
                                 type="button"
                             >
@@ -111,22 +111,22 @@ const BlockCode: FC = () => {
                             </button>
                         </div>
                     </CopyToClipboard>
-                    <button className="sumra-code-block__btn-generate">
+                    <button className="code-block__btn-generate">
                         <img src={generate} alt="" />
             Generate new code
                     </button>
                 </div>
-                <div className="sumra-code-block__label">
-                    <span className="sumra-code-block__span-title">Referral link</span>
-                    <div className="sumra-code-block__create-link-text-inner">
-                        <div className="sumra-code-block__create-link">
+                <div className="code-block__label">
+                    <span className="code-block__span-title">Referral link</span>
+                    <div className="code-block__create-link-text-inner">
+                        <div className="code-block__create-link">
                             {visibleSmsLink && (
-                                <div className="sumra-code-block__copy-text">
+                                <div className="code-block__copy-text">
                   Сopied to the clipboard
                                 </div>
                             )}
                             <img src={link} alt="" />
-                            <div className="sumra-code-block__create-link-text">
+                            <div className="code-block__create-link-text">
                 www.sumrawallet.com/?referral-code=LZCXYZ777
                             </div>
                             <CopyToClipboard
@@ -137,7 +137,7 @@ const BlockCode: FC = () => {
                                     name="link"
                                     //@ts-ignore
                                     onClick={isCopy}
-                                    className="sumra-code-block__btn-code-link"
+                                    className="code-block__btn-code-link"
                                     type="button"
                                 >
                                     <img src={codeBtn} alt="" />
@@ -145,14 +145,14 @@ const BlockCode: FC = () => {
                             </CopyToClipboard>
                         </div>
                     </div>
-                    <div className="sumra-code-block__block-social">
-                        <div className="sumra-code-block__social-title">Share on/via</div>
-                        <div className="sumra-code-block__inner-social">
-                            <ul className="sumra-code-block__list-social">
+                    <div className="code-block__block-social">
+                        <div className="code-block__social-title">Share on/via</div>
+                        <div className="code-block__inner-social">
+                            <ul className="code-block__list-social">
                                 {icons.map((icon, index) => (
-                                    <li className="sumra-code-block__item-social" key={index}>
+                                    <li className="code-block__item-social" key={index}>
                                         <img
-                                            className="sumra-code-block__item-social"
+                                            className="code-block__item-social"
                                             src={icon}
                                             alt=""
                                         />{' '}

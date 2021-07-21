@@ -15,8 +15,8 @@ const NavigationSidebar: FC = () => {
             <li
 
             ><Link to="/referrals"
-                    className={classNames("sumra-referrals__item", {
-                "sumra-referrals__item-active": allContactsBtn,
+                    className={classNames("referrals__item", {
+                "referrals__item-active": allContactsBtn,
                     })}
                     onClick={() => {
                         setAllContactsBtn(true);
@@ -33,8 +33,8 @@ const NavigationSidebar: FC = () => {
             <li>
                 <Link
                     to="/globalEarnings"
-                    className={classNames("sumra-referrals__item", {
-            "sumra-referrals__item-active": myFavouritesBtn,
+                    className={classNames("referrals__item", {
+            "referrals__item-active": myFavouritesBtn,
                     })}
                     onClick={() => {
                         setAllContactsBtn(false);
@@ -50,8 +50,8 @@ const NavigationSidebar: FC = () => {
             <li>
                 <a
                     href="/#/contact_book"
-                    className={classNames("sumra-referrals__item", {
-            "sumra-referrals__item-active": recentlyAddedBtn,
+                    className={classNames("referrals__item", {
+            "referrals__item-active": recentlyAddedBtn,
                     })}
                     onClick={() => {
                         setAllContactsBtn(false);
@@ -69,8 +69,8 @@ const NavigationSidebar: FC = () => {
             <li>
                 <a
                     href="/#/contact_book"
-                    className={classNames("sumra-referrals__item", {
-            "sumra-referrals__item-active": referredContactBook,
+                    className={classNames("referrals__item", {
+            "referrals__item-active": referredContactBook,
                     })}
                     onClick={() => {
                         setAllContactsBtn(false);
@@ -88,8 +88,8 @@ const NavigationSidebar: FC = () => {
             <li>
                 <a
                     href="/#/contact_book"
-                    className={classNames("sumra-referrals__item", {
-            "sumra-referrals__item-active": referredContactBook,
+                    className={classNames("referrals__item", {
+            "referrals__item-active": referredContactBook,
                     })}
                     onClick={() => {
                         setAllContactsBtn(false);
@@ -107,8 +107,8 @@ const NavigationSidebar: FC = () => {
             <li>
                 <a
                     href="/#/contact_book"
-                    className={classNames("sumra-referrals__item", {
-            "sumra-referrals__item-active": referredContactBook,
+                    className={classNames("referrals__item", {
+            "referrals__item-active": referredContactBook,
                     })}
                     onClick={() => {
                         setAllContactsBtn(false);
@@ -126,8 +126,8 @@ const NavigationSidebar: FC = () => {
             <li>
                 <a
                     href="/#/contact_book"
-                    className={classNames("sumra-referrals__item", {
-            "sumra-referrals__item-active": referredContactBook,
+                    className={classNames("referrals__item", {
+            "referrals__item-active": referredContactBook,
                     })}
                     onClick={() => {
                         setAllContactsBtn(false);

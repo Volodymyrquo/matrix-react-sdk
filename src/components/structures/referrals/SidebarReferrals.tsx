@@ -9,8 +9,8 @@ const SidebarReferrals: FC = () => {
         <section
             className={
                 burger
-                    ? 'sumra-referrals__sidebar-block'
-                    : 'sumra-referrals__sidebar-block-visible'
+                    ? 'referrals__sidebar-block'
+                    : 'referrals__sidebar-block-visible'
             }
         >
             <div>
@@ -32,13 +32,13 @@ const SidebarReferrals: FC = () => {
 
             <NavigationSidebar />
 
-            <div className="sumra-referrals__more-wrapper">
-                <p className="sumra-referrals__desc">
+            <div className="referrals__more-wrapper">
+                <p className="referrals__desc">
           Get up to $250 for Referrals.
                     <br />
           Earn Unlimited.
                 </p>
-                <a href="/referrals" className="sumra-referrals__more-btn">
+                <a href="/referrals" className="referrals__more-btn">
           Learn more
                 </a>
             </div>
