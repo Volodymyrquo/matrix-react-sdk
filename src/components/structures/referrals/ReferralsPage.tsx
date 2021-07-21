@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import  BlockCalculator  from '../../views/referrals/BlockCalculator';
 import BlockCode from '../../views/referrals/BlockCode';
+import BlockLeaderboard from '../../views/referrals/BlockLeaderboard';
 
 
 const ReferralsPage: FC = () => {
@@ -11,6 +12,7 @@ const ReferralsPage: FC = () => {
                     <BlockCalculator />
                     <BlockCode />
                 </div>
+                <BlockLeaderboard />
             </section>
         </div>
     );
