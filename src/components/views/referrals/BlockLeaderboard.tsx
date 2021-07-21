@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { Table } from 'reactstrap';
+import {Table} from "reactstrap"
 import arrow from '../../../../res/images/users/arrow.svg';
 import monay from '../../../../res/images/users/monay.svg';
 import st from '../../../../res/images/users/1st.svg';
