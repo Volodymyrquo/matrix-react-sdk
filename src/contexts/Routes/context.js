@@ -12,7 +12,12 @@ import SendingMessage from "../../components/views/contactBook/SendReferralModal
 import ContactCash from "../../components/views/contactBook/ContactCash";
 import { initialState } from "./contextReducer";
 import Referrals from "../../components/structures/referrals/Referrals";
-import GlobalEarnings from "../../components/structures/globalEarnings/GlobalEarnings";
+import ReferralsPage from "../../components/structures/referrals/ReferralsPage";
+import GlobalEarnings from "../../components/structures/referrals/globalEarnings/GlobalEarnings";
+import Cashbacks from "../../components/structures/referrals/cashbacks/Cashbacks";
+import Leaderboard from "../../components/structures/referrals/leaderboard/Leaderboard";
+import Statistics from "../../components/structures/referrals/statistics/Statistics";
+import PioneerMembership from "../../components/structures/referrals/pioneerMembership/PioneerMembership";
 
 export const Context = createContext(initialState);
 
@@ -22,6 +27,11 @@ export const Provider = ({ children }) => {
     const setPage = (id) =>
         dispatch({
             type: "SET_PAGE",
+            payload: id,
+        });
+    const setSubPage = (id) =>
+        dispatch({
+            type: "SET_SUBPAGE",
             payload: id,
         });
     const setTable = (id) =>
@@ -50,7 +60,6 @@ export const Provider = ({ children }) => {
         sendModal: <SendModal />,
         sendingMessage: <SendingMessage />,
         referrals: <Referrals />,
-        globalEarnings: <GlobalEarnings />,
     };
     const tables = {
         myFavourites: <TableContacts />,
@@ -59,7 +68,17 @@ export const Provider = ({ children }) => {
         referred: <TableReferred />,
         groupsItem: <TableGroupsItem />,
     };
+    const subpages = {
+        referralsPage: <ReferralsPage />,
+        globalEarnings: <GlobalEarnings />,
+        cashbacks: <Cashbacks />,
+        leaderboard: <Leaderboard />,
+        statistics: <Statistics />,
+        pioneerMembership: <PioneerMembership />,
+    };
+
     const table = tables[state.tableId];
+    const subpage = subpages[state.subpageId];
     const page = pages[state.pageId];
     const { params } = state;
     return (
@@ -69,9 +88,11 @@ export const Provider = ({ children }) => {
                 setParams,
                 setTable,
                 setBurger,
+                setSubPage,
                 page,
                 params,
                 table,
+                subpage,
             }}
         >
             {children}

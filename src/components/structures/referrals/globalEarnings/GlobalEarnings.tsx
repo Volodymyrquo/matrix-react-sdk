@@ -1,6 +1,6 @@
 import React from "react";
-import SidebarReferrals from "../referrals/SidebarReferrals";
-import { ContactBookProvider } from "../../../contexts/ContactBook/contextContactBook";
+import SidebarReferrals from "../SidebarReferrals";
+import { ContactBookProvider } from "../../../../contexts/ContactBook/contextContactBook";
 
 const GlobalEarnings = () => {
     return (

@@ -68,7 +68,6 @@ import { HashRouter as Router, Route } from "react-router-dom";
 import ContactBook from "./contactBook/ContactBook";
 import Referrals from "./referrals/Referrals";
 import { Provider } from "../../contexts/Routes/context";
-import GlobalEarnings from './globalEarnings/GlobalEarnings';
 
 // We need to fetch each pinned message individually (if we don't already have it)
 // so each pinned message may trigger a request. Limit the number per room for sanity.
@@ -658,7 +657,6 @@ class LoggedInView extends React.Component<IProps, IState> {
                     <Provider>
                         <Route path="/contact_book" component={ContactBook} />
                         <Route path="/referrals" component={Referrals} />
-                        <Route path="/globalEarnings" component={GlobalEarnings} />
                     </Provider>
 
                 </Router>

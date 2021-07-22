@@ -1,5 +1,5 @@
 import React, { FC, useState, useContext } from 'react';
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import classNames from 'classnames';
 import { Context } from "../../../contexts/Routes/context";
 
@@ -8,7 +8,7 @@ const NavigationSidebar: FC = () => {
     const [myFavouritesBtn, setMyFavouritesBtn] = useState(false);
     const [recentlyAddedBtn, setRecentlyAddedBtn] = useState(false);
     const [referredContactBook, setReferredContactBook] = useState(false);
-    const { setPage, setTable } = useContext(Context);
+    const { setSubPage } = useContext(Context);
 
     return (
         <ul className="metismenu list-unstyled" id="side-menu">
@@ -23,6 +23,7 @@ const NavigationSidebar: FC = () => {
                         setMyFavouritesBtn(false);
                         setRecentlyAddedBtn(false);
                         setReferredContactBook(false);
+                        setSubPage("referralsPage");
                     }}
                 >
                     <span>referrals</span>
@@ -32,7 +33,7 @@ const NavigationSidebar: FC = () => {
 
             <li>
                 <Link
-                    to="/globalEarnings"
+                    to="/referrals"
                     className={classNames("referrals__item", {
             "referrals__item-active": myFavouritesBtn,
                     })}
@@ -41,6 +42,7 @@ const NavigationSidebar: FC = () => {
                         setMyFavouritesBtn(true);
                         setRecentlyAddedBtn(false);
                         setReferredContactBook(false);
+                        setSubPage("globalEarnings");
                     }}
                 >
                     <span>global earnings</span>
@@ -48,8 +50,8 @@ const NavigationSidebar: FC = () => {
             </li>
 
             <li>
-                <a
-                    href="/#/contact_book"
+                <Link
+                    to="/referrals"
                     className={classNames("referrals__item", {
             "referrals__item-active": recentlyAddedBtn,
                     })}
@@ -58,17 +60,16 @@ const NavigationSidebar: FC = () => {
                         setMyFavouritesBtn(false);
                         setRecentlyAddedBtn(true);
                         setReferredContactBook(false);
-                        setTable("recentlyAdded");
-                        setPage("contactBook");
+                        setSubPage("cashbacks");
                     }}
                 >
                     <i className="icon-Alarm" />
                     <span>cashbacks</span>
-                </a>
+                </Link>
             </li>
             <li>
-                <a
-                    href="/#/contact_book"
+                <Link
+                    to="/referrals"
                     className={classNames("referrals__item", {
             "referrals__item-active": referredContactBook,
                     })}
@@ -77,17 +78,16 @@ const NavigationSidebar: FC = () => {
                         setMyFavouritesBtn(false);
                         setRecentlyAddedBtn(false);
                         setReferredContactBook(true);
-                        setTable("referred");
-                        setPage("contactBook");
+                        setSubPage("leaderboard");
                     }}
                 >
                     <i className="icon-Cube" />
                     <span>leaderboard</span>
-                </a>
+                </Link>
             </li>
             <li>
-                <a
-                    href="/#/contact_book"
+                <Link
+                    to="/referrals"
                     className={classNames("referrals__item", {
             "referrals__item-active": referredContactBook,
                     })}
@@ -96,17 +96,16 @@ const NavigationSidebar: FC = () => {
                         setMyFavouritesBtn(false);
                         setRecentlyAddedBtn(false);
                         setReferredContactBook(true);
-                        setTable("referred");
-                        setPage("contactBook");
+                        setSubPage("statistics");
                     }}
                 >
                     <i className="icon-Cube" />
                     <span>statistics</span>
-                </a>
+                </Link>
             </li>
             <li>
-                <a
-                    href="/#/contact_book"
+                <Link
+                    to="/contact_book"
                     className={classNames("referrals__item", {
             "referrals__item-active": referredContactBook,
                     })}
@@ -115,17 +114,15 @@ const NavigationSidebar: FC = () => {
                         setMyFavouritesBtn(false);
                         setRecentlyAddedBtn(false);
                         setReferredContactBook(true);
-                        setTable("referred");
-                        setPage("contactBook");
                     }}
                 >
                     <i className="icon-Cube" />
                     <span>contact book</span>
-                </a>
+                </Link>
             </li>
             <li>
-                <a
-                    href="/#/contact_book"
+                <Link
+                    to="/referrals"
                     className={classNames("referrals__item", {
             "referrals__item-active": referredContactBook,
                     })}
@@ -134,13 +131,12 @@ const NavigationSidebar: FC = () => {
                         setMyFavouritesBtn(false);
                         setRecentlyAddedBtn(false);
                         setReferredContactBook(true);
-                        setTable("referred");
-                        setPage("contactBook");
+                        setSubPage("pioneerMembership");
                     }}
                 >
                     <i className="icon-Cube" />
                     <span>pioneer membership</span>
-                </a>
+                </Link>
             </li>
         </ul>
     );
