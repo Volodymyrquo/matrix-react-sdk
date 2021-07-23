@@ -24,7 +24,7 @@ const NavigationSidebar: FC = () => {
                         setSubPage("referralsPage");
                     }}
                 >
-                                        <img src={iconReferrals} alt="referrals" />
+                    <img src={iconReferrals} alt="referrals" />
 
                     <span>referrals</span>
                 </Link>
@@ -40,7 +40,7 @@ const NavigationSidebar: FC = () => {
                         setSubPage("globalEarnings");
                     }}
                 >
-                                        <img src={iconGlobal} alt="global earnings" />
+                    <img src={iconGlobal} alt="global earnings" />
 
                     <span>global earnings</span>
                 </Link>
@@ -82,21 +82,21 @@ const NavigationSidebar: FC = () => {
                         setSubPage("statistics");
                     }}
                 >
-                                        <img src={iconStatistics} alt="statistics" />
+                    <img src={iconStatistics} alt="statistics" />
 
                     <span>statistics</span>
                 </Link>
             </li>
             <li>
                 <Link
-                    to="/referrals"
+                    to="/contact_book"
                     className={cn("referrals__item",
                         { "referrals__item-active": "contactBook" === subpageId })}
                     onClick={() => {
                         setSubPage("contactBook");
                     }}
                 >
-                                        <img src={iconContact} alt="contact book" />
+                    <img src={iconContact} alt="contact book" />
 
                     <span>contact book</span>
                 </Link>
