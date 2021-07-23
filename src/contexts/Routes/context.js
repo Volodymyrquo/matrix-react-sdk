@@ -14,8 +14,8 @@ import { initialState } from "./contextReducer";
 import Referrals from "../../components/structures/referrals/Referrals";
 import ReferralsPage from "../../components/structures/referrals/ReferralsPage";
 import GlobalEarnings from "../../components/structures/referrals/globalEarnings/GlobalEarnings";
-import Cashbacks from "../../components/structures/referrals/cashbacks/Cashbacks";
-import Leaderboard from "../../components/structures/referrals/leaderboard/Leaderboard";
+import CashbacksInformation from "../../components/views/referrals/cashbacks/CashbacksInformation";
+import LeaderboardTable from "../../components/views/referrals/leaderboard/LeaderboardTable";
 import Statistics from "../../components/structures/referrals/statistics/Statistics";
 import PioneerMembership from "../../components/structures/referrals/pioneerMembership/PioneerMembership";
 import ModalLeaderboard from "../../components/views/referrals/leaderboard/ModalLeaderboard";
@@ -72,8 +72,8 @@ export const Provider = ({ children }) => {
     const subpages = {
         referralsPage: <ReferralsPage />,
         globalEarnings: <GlobalEarnings />,
-        cashbacks: <Cashbacks />,
-        leaderboard: <Leaderboard />,
+        cashbacks: <CashbacksInformation />,
+        leaderboard: <LeaderboardTable />,
         statistics: <Statistics />,
         pioneerMembership: <PioneerMembership />,
         shareCashbacks: <ModalLeaderboard />,
