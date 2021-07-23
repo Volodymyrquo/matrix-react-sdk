@@ -2,6 +2,14 @@ import React, { FC, useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import cn from 'classnames';
 import { Context } from "../../../contexts/Routes/context";
+import iconCashbacks from "../../../../res/images/sumra/icon-cashbacks.svg";
+import iconReferrals from "../../../../res/images/sumra/icon-referrals.svg";
+import iconContact from "../../../../res/images/sumra/icon-contact.svg";
+import iconGlobal from "../../../../res/images/sumra/icon-global.svg";
+import iconLeaderboard from "../../../../res/images/sumra/icon-leaderboard.svg";
+import iconPioneer1 from "../../../../res/images/sumra/icon-pioneer1.svg";
+import iconRewards from "../../../../res/images/sumra/icon-rewards.svg";
+import iconStatistics from "../../../../res/images/sumra/icon-statistics.svg";
 
 const NavigationSidebar: FC = () => {
     const { setSubPage, subpageId } = useContext(Context);
@@ -16,6 +24,8 @@ const NavigationSidebar: FC = () => {
                         setSubPage("referralsPage");
                     }}
                 >
+                                        <img src={iconReferrals} alt="referrals" />
+
                     <span>referrals</span>
                 </Link>
 
@@ -30,6 +40,8 @@ const NavigationSidebar: FC = () => {
                         setSubPage("globalEarnings");
                     }}
                 >
+                                        <img src={iconGlobal} alt="global earnings" />
+
                     <span>global earnings</span>
                 </Link>
             </li>
@@ -43,7 +55,7 @@ const NavigationSidebar: FC = () => {
                         setSubPage("cashbacks");
                     }}
                 >
-
+                    <img src={iconCashbacks} alt="cashbacks" />
                     <span>cashbacks</span>
                 </Link>
             </li>
@@ -56,6 +68,7 @@ const NavigationSidebar: FC = () => {
                         setSubPage("leaderboard");
                     }}
                 >
+                    <img src={iconLeaderboard} alt="leaderboard" />
 
                     <span>leaderboard</span>
                 </Link>
@@ -69,6 +82,8 @@ const NavigationSidebar: FC = () => {
                         setSubPage("statistics");
                     }}
                 >
+                                        <img src={iconStatistics} alt="statistics" />
+
                     <span>statistics</span>
                 </Link>
             </li>
@@ -81,6 +96,8 @@ const NavigationSidebar: FC = () => {
                         setSubPage("contactBook");
                     }}
                 >
+                                        <img src={iconContact} alt="contact book" />
+
                     <span>contact book</span>
                 </Link>
             </li>
@@ -93,6 +110,7 @@ const NavigationSidebar: FC = () => {
                         setSubPage("pioneerMembership");
                     }}
                 >
+                    <img src={iconPioneer1} alt="pioneer membership" />
 
                     <span>pioneer membership</span>
                 </Link>
