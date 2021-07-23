@@ -18,6 +18,7 @@ import Cashbacks from "../../components/structures/referrals/cashbacks/Cashbacks
 import Leaderboard from "../../components/structures/referrals/leaderboard/Leaderboard";
 import Statistics from "../../components/structures/referrals/statistics/Statistics";
 import PioneerMembership from "../../components/structures/referrals/pioneerMembership/PioneerMembership";
+import ModalLeaderboard from "../../components/views/referrals/leaderboard/ModalLeaderboard";
 
 export const Context = createContext(initialState);
 
@@ -75,6 +76,7 @@ export const Provider = ({ children }) => {
         leaderboard: <Leaderboard />,
         statistics: <Statistics />,
         pioneerMembership: <PioneerMembership />,
+        shareCashbacks: <ModalLeaderboard />,
     };
 
     const table = tables[state.tableId];

@@ -1,9 +1,8 @@
-import React, { FC, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { FC, useState, useContext } from 'react';
 import Modal, { IProps } from '../../contactBook/modal';
 import Close from '../../../../../res/images/wallets/close.png';
 import classNames from 'classnames';
-
+import {Context} from "../../../../contexts/Routes/context";
 import facebook from '../../../../../res/images/contactBook/facebook.svg';
 import instagram from '../../../../../res/images/contactBook/instagram.svg';
 import linkedin from '../../../../../res/images/contactBook/in.svg';
@@ -72,10 +71,8 @@ const icons = [
 const ModalLeaderboard: FC<IProps> = ({ onClick }) => {
     // eslint-disable-next-line no-unused-vars
     const [visible, setVisible] = useState(false);
-    const params = new URLSearchParams(location.search);
-    const history = useHistory();
-
-    return params.get('share-leaderboard') ? (
+    const { setSubPage } = useContext(Context);
+    return (
         <Modal onClick={onClick}>
             <section className="cashbacks-modal">
                 <div className="cashbacks-modal__inner">
@@ -86,7 +83,7 @@ const ModalLeaderboard: FC<IProps> = ({ onClick }) => {
                             src={Close}
                             alt="Close modal"
                             onClick={() => {
-                                history.push(location.pathname);
+                               setSubPage("leaderboard");
                             }}
                         />
                     </div>
@@ -176,7 +173,7 @@ const ModalLeaderboard: FC<IProps> = ({ onClick }) => {
                     <div className="cashbacks-modal__block-button">
                         <button
                             onClick={() => {
-                                history.push(location.pathname);
+                               setSubPage("leaderboard");
                             }}
                             className="cashbacks-modal__button"
                             type="button"
@@ -187,7 +184,7 @@ const ModalLeaderboard: FC<IProps> = ({ onClick }) => {
                 </div>
             </section>
         </Modal>
-    ) : null;
+    );
 };
 
 export default ModalLeaderboard;
