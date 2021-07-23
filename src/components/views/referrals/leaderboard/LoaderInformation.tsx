@@ -2,7 +2,7 @@
 import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-/* import LeaderboardChart from '../../../components/chartjs/leaderboard'; */
+ import LeaderboardChart from './LeaderboardChart'; 
 
 import cup from '../../../../../res/images/leaderboard/cup.svg';
 import round from '../../../../../res/images/leaderboard/round.svg';
@@ -160,7 +160,7 @@ const LoaderInformation: FC = () => {
                     </div>
                     <div className="leaderboard-page__scroll">
                         <div style={{ width: '800px', margin: '0 auto' }}>
-                            {/*   <LeaderboardChart /> */}
+                            <LeaderboardChart />
                         </div>
                     </div>
                 </div>
