@@ -52,7 +52,6 @@ export const ContactBookProvider = ({ children }) => {
                 download,
             }),
     };
-    debugger;
     return (
         <ContactBookContext.Provider value={{ state, actions }}>
             {children}

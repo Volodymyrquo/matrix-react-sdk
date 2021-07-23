@@ -77,12 +77,13 @@ export const Provider = ({ children }) => {
         statistics: <Statistics />,
         pioneerMembership: <PioneerMembership />,
         shareCashbacks: <ModalLeaderboard />,
+        contactBook: <ContactBookPage />,
     };
 
     const table = tables[state.tableId];
     const subpage = subpages[state.subpageId];
     const page = pages[state.pageId];
-    const { params } = state;
+    const { params, subpageId } = state;
     return (
         <Context.Provider
             value={{
@@ -95,6 +96,7 @@ export const Provider = ({ children }) => {
                 params,
                 table,
                 subpage,
+                subpageId,
             }}
         >
             {children}

@@ -107,4 +107,4 @@ class LeaderboardChart extends Component {
     }
 }
 
-export default LeaderboardChart;
+export default React.memo(LeaderboardChart);

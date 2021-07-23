@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import SidebarReferrals from "./SidebarReferrals";
 import { ReferralsProvider } from "../../../contexts/Referrals/contextReferrals";
+import { ContactBookProvider } from "../../../contexts/ContactBook/contextContactBook";
+
 import { Context } from "../../../contexts/Routes/context";
 
 const Referrals = () => {
@@ -11,8 +13,10 @@ const Referrals = () => {
 
             <ReferralsProvider>
                 <SidebarReferrals />
-
+                <ContactBookProvider>
                     {subpage}
+                </ContactBookProvider>
+
             </ReferralsProvider>
 
         </div>
