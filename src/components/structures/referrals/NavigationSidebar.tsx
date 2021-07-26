@@ -12,7 +12,7 @@ import iconRewards from "../../../../res/images/sumra/icon-rewards.svg";
 import iconStatistics from "../../../../res/images/sumra/icon-statistics.svg";
 
 const NavigationSidebar: FC = () => {
-    const { setSubPage, subpageId } = useContext(Context);
+    const { setSubPage, subpageId, setTable } = useContext(Context);
     return (
         <ul className="metismenu list-unstyled" id="side-menu">
             <li
@@ -38,6 +38,7 @@ const NavigationSidebar: FC = () => {
                         { "referrals__item-active": "globalEarnings" === subpageId })}
                     onClick={(e) => {
                         setSubPage("globalEarnings");
+                        setTable("referralsProgram");
                     }}
                 >
                     <img src={iconGlobal} alt="global earnings" />

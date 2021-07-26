@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from 'react';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const GlobalEarningsBtn: FC = () => {
     let pathname = window.location.pathname;
@@ -14,11 +14,8 @@ const GlobalEarningsBtn: FC = () => {
             <section className="page-content__global-earnings global-earnings">
                 <Link
                     to="#"
-                    className={`${
-                        pathname.match('/global_earnings/referrals_program')
-                            ? 'link-active'
-                            : 'global-earnings__btn'
-                    }`}
+                    className='global-earnings__btn'
+
                 >
                     <i className="icon-referrals global-earnings__icon"></i>
           Referrals program
