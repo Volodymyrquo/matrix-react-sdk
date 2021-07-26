@@ -187,9 +187,9 @@ const CashbackHistory: FC = () => {
 
             <div className="cashbacks-history__block-table">
                 <div className="cashbacks-history__block-table-fixed">
-                    <table className="cashbacks-history__block-table-fixed">
+                    <table className="cashbacks-history__table">
                         <thead>
-                            <tr className="cashbacks-history__table">
+                            <tr >
                                 <th className="cashbacks-history__th">Operation type</th>
                                 <th className="cashbacks-history__th">Payment ID</th>
                                 <th className="cashbacks-history__th">Date</th>

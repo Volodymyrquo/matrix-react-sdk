@@ -143,7 +143,7 @@ const LoaderInformation: FC = () => {
                         to="/referrals"
                         className="leaderboard-page__btn-socials"
                         onClick={()=>{
-                            setSubPage("shareCashbacks")
+                            setSubPage("shareCashbacksLeaderboard")
                         }}
                     >
             +24

@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { FC, useState, useContext } from 'react';
 import { ReferralsContext } from "../../../../contexts/Referrals/contextReferrals";
+import {Context} from "../../../../contexts/Routes/context"
 import total from '../../../../../res/images/cashbacks/total.svg';
 import sum from '../../../../../res/images/cashbacks/sum.svg';
 import bronze from '../../../../../res/images/users/bronze.svg';
@@ -85,6 +86,7 @@ import CashbackHistory from './CashbackHistory';
 
 const CashbacksInformation: FC = () => {
     const { state } = useContext(ReferralsContext);
+    const { setSubPage} = useContext(Context);
     const [currentPage, setCurrentPage] = useState(1);
     const [showUsers, setShowUsers] = useState(10);
     const [sortUsers, setSortUsers] = useState(icons);
@@ -220,8 +222,11 @@ const CashbacksInformation: FC = () => {
                         ))}
                     </div>
                     <Link
-                        to="#"
+                        to="/referrals"
                         className="cashbacks-page__btn-socials"
+                        onClick={()=>{
+                            setSubPage("shareCashbacks");
+                        }}
                     >
           +20 other
                     </Link>

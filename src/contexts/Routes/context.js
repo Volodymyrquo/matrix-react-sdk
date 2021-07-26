@@ -19,6 +19,7 @@ import LeaderboardTable from "../../components/views/referrals/leaderboard/Leade
 import Statistics from "../../components/structures/referrals/statistics/Statistics";
 import PioneerMembership from "../../components/structures/referrals/pioneerMembership/PioneerMembership";
 import ModalLeaderboard from "../../components/views/referrals/leaderboard/ModalLeaderboard";
+import ModalCashbacks from "../../components/views/referrals/cashbacks/ModalCashbacks";
 
 export const Context = createContext(initialState);
 
@@ -76,8 +77,9 @@ export const Provider = ({ children }) => {
         leaderboard: <LeaderboardTable />,
         statistics: <Statistics />,
         pioneerMembership: <PioneerMembership />,
-        shareCashbacks: <ModalLeaderboard />,
+        shareCashbacksLeaderboard: <ModalLeaderboard />,
         contactBook: <ContactBookPage />,
+        shareCashbacks: <ModalCashbacks />,
     };
 
     const table = tables[state.tableId];
