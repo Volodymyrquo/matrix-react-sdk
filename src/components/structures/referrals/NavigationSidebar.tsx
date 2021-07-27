@@ -2,7 +2,6 @@ import React, { FC, useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import cn from 'classnames';
 import { Context } from "../../../contexts/Routes/context";
-import iconCashbacks from "../../../../res/images/sumra/icon-cashbacks.svg";
 import iconReferrals from "../../../../res/images/sumra/icon-referrals.svg";
 import iconContact from "../../../../res/images/sumra/icon-contact.svg";
 import iconGlobal from "../../../../res/images/sumra/icon-global.svg";
@@ -56,8 +55,8 @@ const NavigationSidebar: FC = () => {
                         setSubPage("cashbacks");
                     }}
                 >
-                    <img src={iconCashbacks} alt="cashbacks" />
-                    <span>cashbacks</span>
+                    <img src={iconRewards} alt="rewards" />
+                    <span>rewards</span>
                 </Link>
             </li>
             <li>
@@ -90,7 +89,7 @@ const NavigationSidebar: FC = () => {
             </li>
             <li>
                 <Link
-                    to="/contact_book"
+                    to="/referrals"
                     className={cn("referrals__item",
                         { "referrals__item-active": "contactBook" === subpageId })}
                     onClick={() => {

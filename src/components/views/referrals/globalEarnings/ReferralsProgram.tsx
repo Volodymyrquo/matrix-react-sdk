@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState, useContext } from 'react';
 import { ReferralsContext } from "../../../../contexts/Referrals/contextReferrals";
+import { Context } from "../../../../contexts/Routes/context";
 import money from '../../../../../res/images/users/money.svg';
 import bronze from '../../../../../res/images/users/bronze.svg';
 import silver from '../../../../../res/images/users/silver.svg';
@@ -14,8 +15,8 @@ import coins from '../../../../../res/images/users/coins.svg';
 import upto from '../../../../../res/images/users/upto.svg';
 import people from '../../../../../res/images/users/people.svg';
 import pers from '../../../../../res/images/users/pers.svg';
-/* import EarningsChart from '../../../../components/chartjs/earningsChart';
- */
+import EarningsChart from './earningsChart';
+ 
 import { Link } from 'react-router-dom';
 
 const ReferralsProgram: FC = () => {
@@ -23,6 +24,7 @@ const ReferralsProgram: FC = () => {
     const [invitedUsers, setInvitedUsers] = useState(10000);
     const [bonus, setBonus] = useState('$ 5');
     const { state } = useContext(ReferralsContext);
+    const {setSubPage} = useContext(Context)
     const calculate = ({ target: { value, name } }) => {
         if (name === 'users') {
             setInvitedUsers(value);
@@ -111,23 +113,23 @@ const ReferralsProgram: FC = () => {
                                 <option value="">View by this year</option>
                             </select>
                         </div>
-                        {/*  <EarningsChart /> */}
+                        <EarningsChart /> 
                     </div>
                 </div>
 
-                <div className="global-earnings-main__box-3">
-                    <h3 className="global-earnings-main__box-3-title">Leaderboard</h3>
+                <div className="leaderboard-block">
+                    <h3 className="leaderboard-block__title">Leaderboard</h3>
                     <table>
                         <thead className="global-earnings-main__thead">
-                            <tr className="global-earnings-main__thead">
-                                <th scope="row">
-                  1 <sup className="global-earnings-main__sup">st</sup>
+                            <tr >
+                                <th>
+                  1 <sup className="leaderboard-block__sup">st</sup>
                                 </th>
-                                <td className="global-earnings-main__img-td">
+                                <td>
                                     <img src={st} className="global-earnings-main__box-3-img" />
                                 </td>
-                                <td className="global-earnings-main__img-td">Jacob Jones</td>
-                                <td className="global-earnings-main__img-td">
+                                <td >Jacob Jones</td>
+                                <td >
                                     <img
                                         className="global-earnings-main__img-coin"
                                         src={monay}
@@ -138,17 +140,17 @@ const ReferralsProgram: FC = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className="global-earnings-main__bolt">
-                                <th scope="row">
-                  2 <sup className="global-earnings-main__sup">nd</sup>
+                            <tr >
+                                <th >
+                  2 <sup className="leaderboard-block__sup">nd</sup>
                                 </th>
-                                <td className="global-earnings-main__img-td">
+                                <td >
                                     <img src={nd} className="global-earnings-main__box-3-img" />
                                 </td>
-                                <td className="global-earnings-main__img-td">Floyd Miles</td>
-                                <td className="global-earnings-main__img-td">
+                                <td >Floyd Miles</td>
+                                <td >
                                     <img
-                                        className="global-earnings-main__img-coin"
+                                         className="leaderboard-block__img-coin"
                                         src={monay}
                                         alt=""
                                     />
@@ -156,33 +158,33 @@ const ReferralsProgram: FC = () => {
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">
-                  3 <sup className="global-earnings-main__sup">rd</sup>
+                                <th>
+                  3 <sup className="leaderboard-block__sup">rd</sup>
                                 </th>
-                                <td className="global-earnings-main__img-td">
+                                <td >
                                     <img src={rd} className="global-earnings-main__box-3-img" />
                                 </td>
-                                <td className="global-earnings-main__img-td">Eleanor Pena</td>
-                                <td className="global-earnings-main__img-td">
+                                <td >Eleanor Pena</td>
+                                <td >
                                     <img
-                                        className="global-earnings-main__img-coin"
+                                        className="leaderboard-block__img-coin"
                                         src={monay}
                                         alt=""
                                     />
                                     {`$150,750`}
                                 </td>
                             </tr>
-                            <tr className="global-earnings-main__bolt">
-                                <th scope="row">
-                  4 <sup className="global-earnings-main__sup">th</sup>
+                            <tr >
+                                <th>
+                  4 <sup className="leaderboard-block__sup">th</sup>
                                 </th>
-                                <td className="global-earnings-main__img-td">
+                                <td >
                                     <img src={th} className="global-earnings-main__box-3-img" />
                                 </td>
-                                <td className="global-earnings-main__img-td">Arlene McCoy</td>
-                                <td className="global-earnings-main__img-td">
+                                <td >Arlene McCoy</td>
+                                <td >
                                     <img
-                                        className="global-earnings-main__img-coin"
+                                         className="leaderboard-block__img-coin"
                                         src={monay}
                                         alt=""
                                     />
@@ -191,7 +193,9 @@ const ReferralsProgram: FC = () => {
                             </tr>
                         </tbody>
                     </table>
-                    <Link to="/leaderboard" className="global-earnings-main__box-3-link">
+                    <Link to="/referrals" onClick={()=>{
+                        setSubPage("leaderboard")
+                    }} className="leaderboard-block__link">
             Go to Leaderboard page
                         <img src={arrow} alt="arrow" />
                     </Link>

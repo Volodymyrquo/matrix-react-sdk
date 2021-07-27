@@ -21,6 +21,9 @@ import PioneerMembership from "../../components/structures/referrals/pioneerMemb
 import ModalLeaderboard from "../../components/views/referrals/leaderboard/ModalLeaderboard";
 import ModalCashbacks from "../../components/views/referrals/cashbacks/ModalCashbacks";
 import ReferralsProgram from "../../components/views/referrals/globalEarnings/ReferralsProgram";
+import RewardsProgram from "../../components/views/referrals/globalEarnings/RewardsProgram";
+
+import TotalsBySections from "../../components/views/referrals/globalEarnings/statistics/TotalsBySections";
 
 export const Context = createContext(initialState);
 
@@ -71,6 +74,8 @@ export const Provider = ({ children }) => {
         referred: <TableReferred />,
         groupsItem: <TableGroupsItem />,
         referralsProgram: <ReferralsProgram />,
+        rewardsProgram: <RewardsProgram />,
+        statisticsTable: <TotalsBySections />,
     };
     const subpages = {
         referralsPage: <ReferralsPage />,

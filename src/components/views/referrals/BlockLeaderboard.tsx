@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-
+import { Context } from "../../../contexts/Routes/context";
 import arrow from '../../../../res/images/users/arrow.svg';
 import monay from '../../../../res/images/users/monay.svg';
 import st from '../../../../res/images/users/1st.svg';
@@ -23,6 +23,7 @@ const leadersSheet = [
 ];
 
 const BlockLeaderboard: FC = () => {
+    const { setSubPage } = useContext(Context);
     return (
         <div className="leaderboard-block">
             <h3 className="leaderboard-block__title">Leaderboard</h3>
@@ -50,7 +51,9 @@ const BlockLeaderboard: FC = () => {
                     ))}
                 </tbody>
             </table>
-            <Link to="/leaderboard" className="leaderboard-block__link">
+            <Link to="/referrals" onClick={()=>{
+                setSubPage("leaderboard");
+            }} className="leaderboard-block__link">
         Go to Leaderboard page
                 <img src={arrow} alt="arrow" />
             </Link>
