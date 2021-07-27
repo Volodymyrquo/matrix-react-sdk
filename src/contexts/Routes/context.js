@@ -92,7 +92,7 @@ export const Provider = ({ children }) => {
     const table = tables[state.tableId];
     const subpage = subpages[state.subpageId];
     const page = pages[state.pageId];
-    const { params, subpageId } = state;
+    const { params, subpageId, tableId } = state;
     return (
         <Context.Provider
             value={{
@@ -106,6 +106,7 @@ export const Provider = ({ children }) => {
                 table,
                 subpage,
                 subpageId,
+                tableId,
             }}
         >
             {children}

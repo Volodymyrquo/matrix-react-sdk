@@ -20,7 +20,6 @@ export const initialState: ContactBookState = {
 };
 
 const reducerContactBook = (state = initialState, action: ContactBookAction): ContactBookState => {
-
     switch (action.type) {
         case USERS_TYPE:
             return {

@@ -6,19 +6,14 @@ import iconStatisticsGrey from "../../../../../res/images/sumra/icon-statistics-
 import iconReferralsGrey from "../../../../../res/images/sumra/icon-referrals-grey.svg";
 
 const GlobalEarningsBtn: FC = () => {
-    let pathname = window.location.pathname;
-    const { setTable } = useContext(Context);
-    useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-        pathname = window.location.pathname;
-    }, [window.location.pathname]);
+    const { setTable, tableId } = useContext(Context);
 
     return (
         <div className="page-content__wrap">
             <section className="page-content__global-earnings global-earnings">
                 <Link
                     to="/referrals"
-                    className='global-earnings__btn'
+                    className={tableId ==="referralsProgram"?"link-active":'global-earnings__btn'}
                     onClick={()=>{
                         setTable("referralsProgram");
                     }}
@@ -28,15 +23,10 @@ const GlobalEarningsBtn: FC = () => {
                 </Link>
                 <Link
                     to="/referrals"
-                    className={`${
-                        pathname.match('/global_earnings/rewards_program')
-                            ? 'link-active'
-                            : 'global-earnings__btn'
-                    }`}
+                    className={tableId ==="rewardsProgram"?"link-active":'global-earnings__btn'}
                     onClick={()=>{
                         setTable("rewardsProgram");
                     }}
-
 
                 >
                     <img src={iconRewardsGrey} alt="referrals" className="icon-referrals global-earnings__icon" />
@@ -44,11 +34,7 @@ const GlobalEarningsBtn: FC = () => {
                 </Link>
                 <Link
                     to="/referrals"
-                    className={`${
-                        pathname.match('/global_earnings/statistic')
-                            ? 'link-active'
-                            : 'global-earnings__btn'
-                    }`}
+                    className={tableId ==="statisticsTable"?"link-active":'global-earnings__btn'}
                     onClick={()=>{
                         setTable("statisticsTable");
                     }}

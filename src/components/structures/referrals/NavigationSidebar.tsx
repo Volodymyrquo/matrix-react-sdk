@@ -81,7 +81,6 @@ const NavigationSidebar: FC = () => {
                     onClick={() => {
                         setSubPage("statistics");
                         setTable("statisticsTable");
-
                     }}
                 >
                     <img src={iconStatistics} alt="statistics" />
@@ -96,6 +95,8 @@ const NavigationSidebar: FC = () => {
                         { "referrals__item-active": "contactBook" === subpageId })}
                     onClick={() => {
                         setSubPage("contactBook");
+                        setTable("allContacts");
+
                     }}
                 >
                     <img src={iconContact} alt="contact book" />
