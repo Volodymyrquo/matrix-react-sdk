@@ -80,6 +80,8 @@ const NavigationSidebar: FC = () => {
                         { "referrals__item-active": "statistics" === subpageId })}
                     onClick={() => {
                         setSubPage("statistics");
+                        setTable("statisticsTable");
+
                     }}
                 >
                     <img src={iconStatistics} alt="statistics" />

@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../../../contexts/Routes/context";
 import GlobalEarningsBtn from "../../../views/referrals/globalEarnings/GlobalEarningsBtn";
-import TotalsBySections from "../../../views/referrals/globalEarnings/statistics/TotalsBySections";
 
 const Statistics = () => {
+    const { table } = useContext(Context);
     return (
         <div className="sumra-referrals-main" >
             <div className="referrals-page">
-            <GlobalEarningsBtn />
+                <GlobalEarningsBtn />
 
-                <TotalsBySections />
-                {/*  <Overview /> */}
+                {table}
             </div>
 
         </div>

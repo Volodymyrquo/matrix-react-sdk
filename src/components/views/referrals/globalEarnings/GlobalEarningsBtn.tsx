@@ -1,9 +1,9 @@
 import React, { FC, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from "../../../../contexts/Routes/context";
-import iconRewards from "../../../../../res/images/sumra/icon-rewards.svg";
-import iconStatistics from "../../../../../res/images/sumra/icon-statistics.svg";
-import iconReferrals from "../../../../../res/images/sumra/icon-referrals.svg";
+import iconRewardsGrey from "../../../../../res/images/sumra/icon-rewards-grey.svg";
+import iconStatisticsGrey from "../../../../../res/images/sumra/icon-statistics-grey.svg";
+import iconReferralsGrey from "../../../../../res/images/sumra/icon-referrals-grey.svg";
 
 const GlobalEarningsBtn: FC = () => {
     let pathname = window.location.pathname;
@@ -23,7 +23,7 @@ const GlobalEarningsBtn: FC = () => {
                         setTable("referralsProgram");
                     }}
                 >
-                    <img src={iconReferrals} alt="referrals" className="icon-referrals global-earnings__icon" />
+                    <img src={iconReferralsGrey} alt="referrals" className="icon-referrals global-earnings__icon" />
           Referrals program
                 </Link>
                 <Link
@@ -39,7 +39,7 @@ const GlobalEarningsBtn: FC = () => {
 
 
                 >
-                    <img src={iconRewards} alt="referrals" className="icon-referrals global-earnings__icon" />
+                    <img src={iconRewardsGrey} alt="referrals" className="icon-referrals global-earnings__icon" />
           Rewards program
                 </Link>
                 <Link
@@ -54,8 +54,8 @@ const GlobalEarningsBtn: FC = () => {
                     }}
 
                 >
-                    <img src={iconStatistics} alt="referrals" className="icon-referrals global-earnings__icon" />
-          Statistics
+                    <img src={iconStatisticsGrey} alt="referrals" className="icon-referrals global-earnings__icon" />
+          Statistic
                 </Link>
             </section>
         </div>
