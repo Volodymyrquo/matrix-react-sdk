@@ -6477,9 +6477,9 @@ pify@^4.0.1:
   resolved "https://registry.yarnpkg.com/pify/-/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
   integrity sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
 
-"pioneer-membership@https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-pioneer-membership.git":
+"pioneer-membership@https://github.com/Volodymyrquo/pioneer-membership.git":
   version "1.0.0"
-  resolved "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-pioneer-membership.git#f13ce940bd01ac9177fafb709e84d45303bcffa6"
+  resolved "https://github.com/Volodymyrquo/pioneer-membership.git#3b819f96ae009ef551f3e0d14819b9c97de1896b"
   dependencies:
     "@fontsource/noto-serif" "^4.5.0"
     classnames "^2.3.1"

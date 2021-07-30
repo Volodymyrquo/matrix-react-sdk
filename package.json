@@ -86,7 +86,7 @@
         "opus-recorder": "^8.0.3",
         "pako": "^2.0.3",
         "parse5": "^6.0.1",
-        "pioneer-membership": "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-pioneer-membership.git",
+        "pioneer-membership": "https://github.com/Volodymyrquo/pioneer-membership.git",
         "png-chunks-extract": "^1.0.0",
         "prop-types": "^15.7.2",
         "qrcode": "^1.4.4",
