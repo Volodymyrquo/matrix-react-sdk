@@ -6479,7 +6479,7 @@ pify@^4.0.1:
 
 "pioneer-membership@https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-pioneer-membership.git":
   version "1.0.0"
-  resolved "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-pioneer-membership.git#c1c72c047ea9dd4eec918f948cfd8295ae2cf9bc"
+  resolved "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-pioneer-membership.git#f13ce940bd01ac9177fafb709e84d45303bcffa6"
   dependencies:
     "@fontsource/noto-serif" "^4.5.0"
     classnames "^2.3.1"
