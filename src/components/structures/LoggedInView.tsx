@@ -64,7 +64,7 @@ import MyGroups from "./MyGroups";
 import UserView from "./UserView";
 import GroupView from "./GroupView";
 import SpaceStore from "../../stores/SpaceStore";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Redirect, Route } from "react-router-dom";
 import ContactBook from "./contactBook/ContactBook";
 import Referrals from "./referrals/Referrals";
 import { Provider } from "../../contexts/Routes/context";
