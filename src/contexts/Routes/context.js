@@ -15,7 +15,7 @@ import Referrals from "../../components/structures/referrals/Referrals";
 import ReferralsPage from "../../components/structures/referrals/ReferralsPage";
 import GlobalEarnings from "../../components/structures/referrals/globalEarnings/GlobalEarnings";
 import CashbacksInformation from "../../components/views/referrals/cashbacks/CashbacksInformation";
-import LeaderboardTable from "../../components/views/referrals/leaderboard/LeaderboardTable";
+import LeaderboardTable from "leaderboard";
 import Statistics from "../../components/structures/referrals/statistics/Statistics";
 import PioneerMembership from "../../components/structures/referrals/pioneerMembership/PioneerMembership";
 import ModalLeaderboard from "../../components/views/referrals/leaderboard/ModalLeaderboard";

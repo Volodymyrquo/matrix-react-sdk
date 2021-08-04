@@ -5559,6 +5559,17 @@ known-css-properties@^0.20.0:
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.20.0.tgz#0570831661b47dd835293218381166090ff60e96"
   integrity sha512-URvsjaA9ypfreqJ2/ylDr5MUERhJZ+DhguoWRr2xgS5C7aGCalXo+ewL+GixgKBfhT2vuL02nbIgNGqVWgTOYw==
 
+"leaderboard@git+ssh://git@bitbucket.org/sumraprague/component-leaderboard.git":
+  version "1.0.0"
+  resolved "git+ssh://git@bitbucket.org/sumraprague/component-leaderboard.git#220aa1f9ebe1009aa9b64da9b320a44ef94e46a7"
+  dependencies:
+    chart.js "^3.5.0"
+    classnames "^2.3.1"
+    react "^17.0.2"
+    react-chartjs-2 "^3.0.4"
+    react-dom "^17.0.2"
+    react-router-dom "^5.2.0"
+
 leven@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/leven/-/leven-3.1.0.tgz#77891de834064cccba82ae7842bb6b14a13ed7f2"
