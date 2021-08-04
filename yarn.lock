@@ -2690,6 +2690,10 @@ commander@^4.0.1:
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
   integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
 
+"common-library@https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-common-library.git":
+  version "1.0.0"
+  resolved "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-common-library.git#64cb77bf5b6eecc4cb40776829a39d4a08b5bf71"
+
 commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
@@ -5559,12 +5563,13 @@ known-css-properties@^0.20.0:
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.20.0.tgz#0570831661b47dd835293218381166090ff60e96"
   integrity sha512-URvsjaA9ypfreqJ2/ylDr5MUERhJZ+DhguoWRr2xgS5C7aGCalXo+ewL+GixgKBfhT2vuL02nbIgNGqVWgTOYw==
 
-"leaderboard@git+ssh://git@bitbucket.org/sumraprague/component-leaderboard.git":
+"leaderboard@https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-leaderboard.git":
   version "1.0.0"
-  resolved "git+ssh://git@bitbucket.org/sumraprague/component-leaderboard.git#220aa1f9ebe1009aa9b64da9b320a44ef94e46a7"
+  resolved "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-leaderboard.git#fbf47ac19a981b4eff86e7c1cd4a6bf0e34666e8"
   dependencies:
     chart.js "^3.5.0"
     classnames "^2.3.1"
+    common-library "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-common-library.git"
     react "^17.0.2"
     react-chartjs-2 "^3.0.4"
     react-dom "^17.0.2"
