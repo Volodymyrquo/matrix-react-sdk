@@ -108,6 +108,7 @@
         "react-router-dom": "^5.2.0",
         "react-sparklines": "^1.7.0",
         "react-transition-group": "^4.4.1",
+        "referrals": "https://github.com/Volodymyrquo/referrals.git",
         "resize-observer-polyfill": "^1.5.1",
         "rfc4648": "^1.4.0",
         "sanitize-html": "^2.3.2",
