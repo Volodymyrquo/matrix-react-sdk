@@ -12,12 +12,12 @@ import SendingMessage from "../../components/views/contactBook/SendReferralModal
 import ContactCash from "../../components/views/contactBook/ContactCash";
 import { initialState } from "./contextReducer";
 import Referrals from "../../components/structures/referrals/Referrals";
-import ReferralsPage from "../../components/structures/referrals/ReferralsPage";
-import GlobalEarnings from "../../components/structures/referrals/globalEarnings/GlobalEarnings";
+import ReferralsPage from "referrals";
+import GlobalEarnings from "global-earnings";
 import CashbacksInformation from "../../components/views/referrals/cashbacks/CashbacksInformation";
 import LeaderboardTable from "leaderboard";
-import Statistics from "../../components/structures/referrals/statistics/Statistics";
-import PioneerMembership from "../../components/structures/referrals/pioneerMembership/PioneerMembership";
+import Statistics from "global-earnings";
+import PioneerMembership from "pioneer-membership";
 import ModalLeaderboard from "../../components/views/referrals/leaderboard/ModalLeaderboard";
 import ModalCashbacks from "../../components/views/referrals/cashbacks/ModalCashbacks";
 import ReferralsProgram from "../../components/views/referrals/globalEarnings/ReferralsProgram";
@@ -79,10 +79,10 @@ export const Provider = ({ children }) => {
     };
     const subpages = {
         referralsPage: <ReferralsPage />,
-        globalEarnings: <GlobalEarnings />,
+        globalEarnings: <GlobalEarnings path={"/referrals"} />,
         cashbacks: <CashbacksInformation />,
         leaderboard: <LeaderboardTable />,
-        statistics: <Statistics />,
+        statistics: <Statistics path={"/referrals"} />,
         pioneerMembership: <PioneerMembership />,
         shareCashbacksLeaderboard: <ModalLeaderboard />,
         contactBook: <ContactBookPage />,

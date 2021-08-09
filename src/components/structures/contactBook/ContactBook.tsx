@@ -9,10 +9,12 @@ const ContactBook: FC = (props) => {
     const { page } = useContext(Context);
     return (
 
-        <div className="sumra-contact-book-main ">
+        <div className="sumra-contact-book-main" >
             <ContactBookProvider>
                 <SidebarContactBook />
-                {page}
+                <div className="contact-book__main-block" >
+                    {page}
+                </div>
 
             </ContactBookProvider>
 

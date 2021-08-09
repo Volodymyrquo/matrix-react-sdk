@@ -5562,11 +5562,10 @@ known-css-properties@^0.20.0:
 
 "leaderboard@https://github.com/Volodymyrquo/leaderboard.git":
   version "1.0.0"
-  resolved "https://github.com/Volodymyrquo/leaderboard.git#d7bce6eb7a0f65516128ce24b16d87d5ce975642"
+  resolved "https://github.com/Volodymyrquo/leaderboard.git#b7b20d387937790e57b38acf9fdb82ae738b8cf2"
   dependencies:
     chart.js "^3.5.0"
     classnames "^2.3.1"
-    common-library "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-common-library.git"
     react-chartjs-2 "^3.0.4"
 
 leven@^3.1.0:

@@ -14,7 +14,9 @@ const Referrals: FC = () => {
             <ReferralsProvider>
                 <SidebarReferrals />
                 <ContactBookProvider>
-                    {subpage}
+                    <div className="referrals-page">
+                        {subpage}
+                    </div>
                 </ContactBookProvider>
 
             </ReferralsProvider>

@@ -63,7 +63,7 @@ const LeaderboardTable: FC = () => {
     };
 
     return (
-        <section className="referrals-page leaderboard-page">
+        <section className="leaderboard-page">
             <div className="leaderboard-page__block-table">
                 <div className="leaderboard-page__block-btn-scroll">
                     <div className="leaderboard-page__block-btn">

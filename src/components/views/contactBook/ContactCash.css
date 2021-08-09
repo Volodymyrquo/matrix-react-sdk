@@ -1,9 +1,7 @@
 .contact-book {
     overflow: hidden;
 }
-.contact-book__main-content {
-    padding-bottom: 0;
-}
+
 .contact-cash__box {
     display: flex;
     justify-content: space-around;

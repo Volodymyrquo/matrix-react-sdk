@@ -113,9 +113,7 @@ h6 {
 }
 
 /* Styles for Contacts */
-.contact-book__main-content {
-    padding: 30px 30px 30px 270px;
-}
+
 @media (max-width: 1024px) {
     .contact-book__main-content {
         padding: 10px;
@@ -202,6 +200,13 @@ h6 {
 .contact-book {
     min-width: 320px;
 }
+.contact-book__main-block {
+    position: absolute;
+    min-height: 100%;
+    right: 0px;
+    top: 0px;
+    width: calc(100% - 240px);
+}
 .contact-book__main-content {
     position: absolute;
     font-family: "DM Sans";
@@ -211,10 +216,9 @@ h6 {
     line-height: 22px;
     color: #2e3140;
     min-height: 100%;
-    width: calc(100% - 240px);
+    width: 100%;
     right: 0px;
     top: 0px;
-    z-index: 2;
     background-color: #fafafc;
     padding: 30px;
 }

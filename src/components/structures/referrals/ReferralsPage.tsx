@@ -7,7 +7,7 @@ import BlockQRCode from '../../views/referrals/BlockQRCode';
 
 const ReferralsPage: FC = () => {
     return (
-        <div className="referrals-page">
+        <div>
             <section className="referrals-page__header">
                 <div className="referrals-page__inner">
                     <BlockCalculator />
