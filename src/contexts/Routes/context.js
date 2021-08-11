@@ -87,6 +87,7 @@ export const Provider = ({ children }) => {
         shareCashbacksLeaderboard: <ModalLeaderboard />,
         contactBook: <ContactBookPage />,
         shareCashbacks: <ModalCashbacks />,
+        rewardsProgram: <RewardsProgram />,
     };
 
     const table = tables[state.tableId];

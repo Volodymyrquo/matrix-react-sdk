@@ -52,7 +52,7 @@ const NavigationSidebar: FC = () => {
                     className={cn("referrals__item",
                         { "referrals__item-active": "cashbacks" === subpageId })}
                     onClick={() => {
-                        setSubPage("cashbacks");
+                        setSubPage("rewardsProgram");
                     }}
                 >
                     <img src={iconRewards} alt="rewards" />
@@ -96,7 +96,6 @@ const NavigationSidebar: FC = () => {
                     onClick={() => {
                         setSubPage("contactBook");
                         setTable("allContacts");
-
                     }}
                 >
                     <img src={iconContact} alt="contact book" />

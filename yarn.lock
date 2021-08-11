@@ -2690,9 +2690,9 @@ commander@^4.0.1:
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
   integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
 
-"common-library@https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-common-library.git":
+"common-library@https://github.com/Volodymyrquo/common-library.git":
   version "1.0.0"
-  resolved "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-common-library.git#64cb77bf5b6eecc4cb40776829a39d4a08b5bf71"
+  resolved "https://github.com/Volodymyrquo/common-library.git#4f247124b2a9c3f7b33e720b9a8a04848a3b09ad"
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -4071,14 +4071,13 @@ glob@^7.0.3, glob@~7.1.1:
 
 "global-earnings@https://github.com/Volodymyrquo/global-earnings.git":
   version "1.0.0"
-  resolved "https://github.com/Volodymyrquo/global-earnings.git#130b5ff60ddd423369f5b6f8b81973f6a1c0929c"
+  resolved "https://github.com/Volodymyrquo/global-earnings.git#55f23ca7093f1711d104b34801fc0ca21b1fd168"
   dependencies:
     "@fontsource/noto-serif" "^4.5.0"
     chart.js "^3.5.0"
     classnames "^2.3.1"
-    common-library "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-common-library.git"
+    common-library "https://github.com/Volodymyrquo/common-library.git"
     fontsource-aileron "^4.0.0"
-    react-addons-css-transition-group "^15.6.2"
     react-chartjs-2 "^3.0.4"
     react-icons "^4.2.0"
     react-sparklines "^1.7.0"
