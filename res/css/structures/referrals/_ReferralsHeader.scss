@@ -11,15 +11,7 @@
         overflow: hidden;
         right: 30px;
     }
-    .img-person {
-        position: absolute;
-        top: -12px;
-        left: 33px;
 
-        @media (max-width: 526px) {
-            left: 10px;
-        }
-    }
     .name-person {
         margin: 0;
         font-family: DM Sans;

@@ -94,6 +94,7 @@ const UserWelcomeTop = () => {
 const HomePage: React.FC<IProps> = ({ justRegistered = false }) => {
     const config = SdkConfig.get();
     const pageUrl = getHomePageUrl(config);
+    
 
     if (pageUrl) {
         // FIXME: Using an import will result in wrench-element-tests failures
@@ -114,7 +115,11 @@ const HomePage: React.FC<IProps> = ({ justRegistered = false }) => {
         introSection = <React.Fragment>
             <img src={logoUrl} alt={config.brand} />
             <h1>{ _t("Welcome to %(appName)s", { appName: config.brand }) }</h1>
-            <h4>{ _t("Liberate your communication") }</h4>
+            <h4 className="sm_HomePage_slogan">{ _t("Own it all.Speek freely.") }</h4>
+            <h4 className="sm_HomePage_text">
+                {_t("Secure encrypted messaging, voice, video calls, share and collaborate.")}
+            </h4>
+
         </React.Fragment>;
     }
     return <AutoHideScrollbar className="mx_HomePage mx_HomePage_default">

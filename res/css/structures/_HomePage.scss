@@ -24,6 +24,32 @@ limitations under the License.
     margin-right: auto;
 }
 
+.sm_HomePage_slogan {
+    font-family: Aileron;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 28px !important;
+    line-height: 115%;
+    /* or 55px */
+
+    letter-spacing: 1px;
+}
+.sm_HomePage_text {
+    height: 62px;
+    left: calc(50% - 348px / 2);
+    top: 130px;
+
+    font-family: Aileron;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 170%;
+    /* or 31px */
+
+    letter-spacing: 0.5px;
+    font-feature-settings: "liga" off;
+}
+
 .mx_HomePage_default {
     text-align: center;
     display: flex;
