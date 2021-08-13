@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const ContactBookPage: FC = () => {
     const { actions } = useContext(ContactBookContext);
-    const { table, params, setPage } = useContext(Context);
+    const { table, params, setPage} = useContext(Context);
     const [textValue, setTextValue] = useState('');
     const [defaultSelect, setDefaultSelect] = useState("A-Z");
     const [groupsItem, setGroupsItem] = useState("All");
@@ -37,6 +37,9 @@ const ContactBookPage: FC = () => {
             getAllUsers(people);
         }
     };
+
+    const personName = localStorage.getItem("mx_profile_displayname");
+
     return (
         <section className="contact-book__main-content">
             <section className="contact-book__header-contacts">
@@ -48,7 +51,7 @@ const ContactBookPage: FC = () => {
                 <div className="contact-book__inner-person">
                     <img src={notification} alt="" className="contact-book__notification-img" />
                     <img src={ann} alt="" className="contact-book__img-person" />
-                    <p className="contact-book__name-person">Harriet Andersson</p>
+                    <p className="contact-book__name-person">{personName}</p>
                 </div>
             </section>
             <section className="contact-book__form-inner">

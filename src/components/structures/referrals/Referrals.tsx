@@ -2,6 +2,7 @@ import React, { useContext, FC } from "react";
 import SidebarReferrals from "./SidebarReferrals";
 import { ReferralsProvider } from "../../../contexts/Referrals/contextReferrals";
 import { ContactBookProvider } from "../../../contexts/ContactBook/contextContactBook";
+import ReferralsHeader from "./ReferralsHeader.jsx";
 
 import { Context } from "../../../contexts/Routes/context";
 
@@ -14,7 +15,9 @@ const Referrals: FC = () => {
             <ReferralsProvider>
                 <SidebarReferrals />
                 <ContactBookProvider>
+
                     <div className="referrals-page">
+                        <ReferralsHeader />
                         {subpage}
                     </div>
                 </ContactBookProvider>

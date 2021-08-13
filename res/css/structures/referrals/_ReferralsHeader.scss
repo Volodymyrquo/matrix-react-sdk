@@ -1,0 +1,62 @@
+.referrals-header {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+
+    .inner-person {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 78px;
+        overflow: hidden;
+        right: 30px;
+    }
+    .img-person {
+        position: absolute;
+        top: -12px;
+        left: 33px;
+
+        @media (max-width: 526px) {
+            left: 10px;
+        }
+    }
+    .name-person {
+        margin: 0;
+        font-family: DM Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 22px;
+        color: #2e3140;
+
+        @media (max-width: 526px) {
+            display: none;
+        }
+    }
+    .title-inner {
+        display: flex;
+        gap: 2px;
+        margin-left: 30px;
+        @media (max-width: 1024px) {
+            padding-left: 50px;
+        }
+    }
+
+    .title-contacts {
+        display: flex;
+        align-items: center;
+        margin: 0;
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
+
+        // @media (max-width: 1024px) {
+        //   padding-left: 30px;
+        // }
+
+        @media (max-width: 382px) {
+            font-size: 18px;
+        }
+    }
+}
