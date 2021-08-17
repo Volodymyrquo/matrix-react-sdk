@@ -7011,7 +7011,7 @@ react-confetti@^6.0.1:
 
 "react-contact-book@https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-contacts-book.git":
   version "1.0.0"
-  resolved "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-contacts-book.git#3edd6e54cb83804c8a2b2e8f4862c163d9c8be7d"
+  resolved "https://Volodymyrquo:CEEzHUzErT3P2vhAKLqw@bitbucket.org/sumraprague/component-contacts-book.git#4bb7ccd9c91597a335b269c80de2a8bb29e9b2e4"
   dependencies:
     "@fontsource/dm-sans" "^4.5.0"
     "@fontsource/noto-serif" "^4.5.0"
