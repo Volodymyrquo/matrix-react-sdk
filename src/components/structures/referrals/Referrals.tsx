@@ -3,17 +3,17 @@ import SidebarReferrals from "./SidebarReferrals";
 import { ReferralsProvider } from "../../../contexts/Referrals/contextReferrals";
 import { ContactBookProvider } from "../../../contexts/ContactBook/contextContactBook";
 import ReferralsHeader from "./ReferralsHeader.jsx";
-import Dashboard from "component-sumrachat-dashboard"
+import Dashboard from "component-sumrachat-dashboard";
 
 import { Context } from "../../../contexts/Routes/context";
 
 const Referrals: FC = () => {
     const { subpage } = useContext(Context);
 
-    return ( <Dashboard />
-      /*  <div className="sumra-referrals-main" >
-
-            <ReferralsProvider>
+    return (
+        <div className="sumra-referrals-main" >
+            <Dashboard />
+            {/*    <ReferralsProvider>
                 <SidebarReferrals />
                 <ContactBookProvider>
 
@@ -23,9 +23,9 @@ const Referrals: FC = () => {
                     </div>
                 </ContactBookProvider>
 
-            </ReferralsProvider>
+            </ReferralsProvider> */}
 
-        </div>  */
+        </div>
     );
 };
 

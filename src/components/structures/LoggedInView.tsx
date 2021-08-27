@@ -67,6 +67,8 @@ import SpaceStore from "../../stores/SpaceStore";
 import { HashRouter as Router, Route } from "react-router-dom";
 import ContactBook from "../structures/contactBook/ContactBook";
 import Referrals from "./referrals/Referrals";
+import SumraHeader from "./sumra/SumraHeader.jsx";
+import SumraLeftPanel from "./sumra/SumraLeftPanel.jsx";
 import { Provider } from "../../contexts/Routes/context";
 
 // We need to fetch each pinned message individually (if we don't already have it)
@@ -627,8 +629,10 @@ class LoggedInView extends React.Component<IProps, IState> {
         });
 
         return (
-            <>
-                <Router>
+            <Router>
+                <>
+                    <SumraHeader />
+                    <SumraLeftPanel />
 
                     <MatrixClientContext.Provider value={this._matrixClient}>
                         <div
@@ -640,6 +644,7 @@ class LoggedInView extends React.Component<IProps, IState> {
                             <ToastContainer />
                             <div ref={this._resizeContainer} className={bodyClasses}>
                                 { SpaceStore.spacesEnabled ? <SpacePanel /> : null }
+
                                 <LeftPanel
                                     isMinimized={this.props.collapseLhs || false}
                                     resizeNotifier={this.props.resizeNotifier}
@@ -659,8 +664,8 @@ class LoggedInView extends React.Component<IProps, IState> {
                         <Route path="/referrals" component={Referrals} />
                     </Provider>
 
-                </Router>
-            </>
+                </>
+            </Router>
         );
     }
 }

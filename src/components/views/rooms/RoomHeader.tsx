@@ -192,11 +192,12 @@ export default class RoomHeader extends React.Component<IProps> {
 
         const rightRow =
             <div className="mx_RoomHeader_buttons">
-                { videoCallButton }
+    
                 { voiceCallButton }
-                { forgetButton }
+                { videoCallButton }
+               {/*  { forgetButton }
                 { appsButton }
-                { searchButton }
+                { searchButton } */}
             </div>;
 
         const e2eIcon = this.props.e2eStatus ? <E2EIcon status={this.props.e2eStatus} /> : undefined;
@@ -209,7 +210,7 @@ export default class RoomHeader extends React.Component<IProps> {
                     { name }
                     { topicElement }
                     { rightRow }
-                    <RoomHeaderButtons room={this.props.room} />
+                    {/*  <RoomHeaderButtons room={this.props.room} /> */}
                 </div>
             </div>
         );

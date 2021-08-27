@@ -34,7 +34,9 @@ limitations under the License.
 
 .mx_RoomHeader_wrapper {
     margin: auto;
-    height: 50px;
+    margin-top: 98px;
+    margin-right: 30px;
+    height: 97px;
     display: flex;
     align-items: center;
     min-width: 0;
@@ -216,7 +218,7 @@ limitations under the License.
     border-radius: 100%;
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 4px; // center with parent of 32px
         left: 4px; // center with parent of 32px
@@ -237,23 +239,23 @@ limitations under the License.
 }
 
 .mx_RoomHeader_forgetButton::before {
-    mask-image: url('$(res)/img/element-icons/leave.svg');
+    mask-image: url("$(res)/img/element-icons/leave.svg");
     width: 26px;
 }
 
 .mx_RoomHeader_appsButton::before {
-    mask-image: url('$(res)/img/element-icons/room/apps.svg');
+    mask-image: url("$(res)/img/element-icons/room/apps.svg");
 }
 .mx_RoomHeader_appsButton_highlight::before {
     background-color: $accent-color;
 }
 
 .mx_RoomHeader_searchButton::before {
-    mask-image: url('$(res)/img/element-icons/room/search-inset.svg');
+    mask-image: url("$(res)/img/element-icons/room/search-inset.svg");
 }
 
 .mx_RoomHeader_voiceCallButton::before {
-    mask-image: url('$(res)/img/element-icons/call/voice-call.svg');
+    mask-image: url("$(res)/img/element-icons/call/voice-call.svg");
 
     // The call button SVG is padded slightly differently, so match it up to the size
     // of the other icons
@@ -262,7 +264,7 @@ limitations under the License.
 }
 
 .mx_RoomHeader_videoCallButton::before {
-    mask-image: url('$(res)/img/element-icons/call/video-call.svg');
+    mask-image: url("$(res)/img/element-icons/call/video-call.svg");
 }
 
 .mx_RoomHeader_showPanel {
