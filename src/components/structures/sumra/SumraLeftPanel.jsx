@@ -10,6 +10,18 @@ import adressBookGrey from "../../../../res/images/sumra/Adress-book-grey.svg";
 import adressBookOrange from "../../../../res/images/sumra/Adress-book-orange.svg";
 import weightGrey from "../../../../res/images/sumra/Weigh-grey.svg";
 import weightOrange from "../../../../res/images/sumra/Weigh-orange.svg";
+import divitsGrey from "../../../../res/images/sumra/Divits-grey.svg";
+import divitsOrange from "../../../../res/images/sumra/Divits-orange.svg";
+import moneyGrey from "../../../../res/images/sumra/Money-grey.svg";
+import moneyOrange from "../../../../res/images/sumra/Money-orange.svg";
+import settingsSwitchGrey from "../../../../res/images/sumra/Settings-switch-grey.svg";
+import settingsSwitchOrange from "../../../../res/images/sumra/Settings-switch-orange.svg";
+import halfStarGrey from "../../../../res/images/sumra/Half-star-grey.svg";
+import halfStarOrange from "../../../../res/images/sumra/Half-star-orange.svg";
+import groupPeopleGrey from "../../../../res/images/sumra/Group-people-grey.svg";
+import groupPeopleOrange from "../../../../res/images/sumra/Group-people-orange.svg";
+import groupChatGrey from "../../../../res/images/sumra/Group-chat-grey.svg";
+import groupChatOrange from "../../../../res/images/sumra/Group-chat-orange.svg";
 
 const NavigationSidebar = () => {
     const [page, setPage] = useState("/chats");
@@ -34,7 +46,11 @@ const NavigationSidebar = () => {
                         }}
                     >
                         <img
-                            src={page === `/chats` ? saleOrange : saleGrey}
+                            src={
+                                page === `/chats`
+                                    ? groupChatOrange
+                                    : groupChatGrey
+                            }
                             alt="sale"
                         />
 
@@ -49,7 +65,11 @@ const NavigationSidebar = () => {
                         }}
                     >
                         <img
-                            src={page === `/settings` ? saleOrange : saleGrey}
+                            src={
+                                page === `/settings`
+                                    ? settingsSwitchOrange
+                                    : settingsSwitchGrey
+                            }
                             alt="sale"
                         />
                         <span className="text">settings</span>
@@ -66,7 +86,11 @@ const NavigationSidebar = () => {
                         }}
                     >
                         <img
-                            src={page === `/referrals` ? saleOrange : saleGrey}
+                            src={
+                                page === `/referrals`
+                                    ? groupPeopleOrange
+                                    : groupPeopleGrey
+                            }
                             alt="sale"
                         />
                         <span className="text">referrals</span>
@@ -80,7 +104,11 @@ const NavigationSidebar = () => {
                         }}
                     >
                         <img
-                            src={page === `/rewards` ? saleOrange : saleGrey}
+                            src={
+                                page === `/rewards`
+                                    ? halfStarOrange
+                                    : halfStarGrey
+                            }
                             alt="sale"
                         />
                         <span className="text">rewards</span>
@@ -98,8 +126,8 @@ const NavigationSidebar = () => {
                         <img
                             src={
                                 page === `/divits-bonus-plaza`
-                                    ? saleOrange
-                                    : saleGrey
+                                    ? divitsOrange
+                                    : divitsGrey
                             }
                             alt="sale"
                         />
@@ -118,8 +146,8 @@ const NavigationSidebar = () => {
                         <img
                             src={
                                 page === `/global-earnings`
-                                    ? saleOrange
-                                    : saleGrey
+                                    ? moneyOrange
+                                    : moneyGrey
                             }
                             alt="sale"
                         />
