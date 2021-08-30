@@ -2,14 +2,22 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import referrals from "../../../../res/images/sumra/referrals.png";
 import sumraLogo from "../../../../res/images/sumra/sumra-logo.svg";
+import saleGrey from "../../../../res/images/sumra/Sale-grey.svg";
+import saleOrange from "../../../../res/images/sumra/Sale-orange.svg";
+import chartPieGrey from "../../../../res/images/sumra/Chart-pie-grey.svg";
+import chartPieOrange from "../../../../res/images/sumra/Chart-pie-orange.svg";
+import adressBookGrey from "../../../../res/images/sumra/Adress-book-grey.svg";
+import adressBookOrange from "../../../../res/images/sumra/Adress-book-orange.svg";
+import weightGrey from "../../../../res/images/sumra/Weigh-grey.svg";
+import weightOrange from "../../../../res/images/sumra/Weigh-orange.svg";
 
 const NavigationSidebar = () => {
+    const [page, setPage] = useState("/chats");
     const windowLocation = window.location.pathname;
-    const [activeButton, setActiveButton] = useState("/referrals_program");
     const handleOnClick = (urlClicked) => {
-        setActiveButton(urlClicked);
+        setPage(urlClicked);
     };
-
+    debugger;
     return (
         <nav className="sumra-nav-bar">
             <div className="sumra-nav-bar-logo-block">
@@ -20,58 +28,30 @@ const NavigationSidebar = () => {
             <ul>
                 <Link to="/chats">
                     <li
-                        className={
-                            windowLocation === `/chats` ? "active" : null
-                        }
+                        className={page === `/chats` ? "active" : null}
                         onClick={() => {
                             handleOnClick(`/chats`);
                         }}
                     >
-                        <span className="icon-Group-chat img">
-                            <span
-                                className={
-                                    windowLocation === `/chats`
-                                        ? "path1 orange-dark"
-                                        : "path1 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/chats`
-                                        ? "path2 orange-light"
-                                        : "path2 grey"
-                                }
-                            />
-                        </span>
+                        <img
+                            src={page === `/chats` ? saleOrange : saleGrey}
+                            alt="sale"
+                        />
 
                         <span className="text">chats</span>
                     </li>
                 </Link>
                 <Link to="/settings">
                     <li
-                        className={
-                            windowLocation === `/settings` ? "active" : null
-                        }
+                        className={page === `/settings` ? "active" : null}
                         onClick={() => {
                             handleOnClick(`/settings`);
                         }}
                     >
-                        <span className="icon-Settings-switch img">
-                            <span
-                                className={
-                                    windowLocation === `/settings`
-                                        ? "path1 orange-dark"
-                                        : "path1 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/settings`
-                                        ? "path2 orange-light"
-                                        : "path2 grey"
-                                }
-                            />
-                        </span>
+                        <img
+                            src={page === `/settings` ? saleOrange : saleGrey}
+                            alt="sale"
+                        />
                         <span className="text">settings</span>
                     </li>
                 </Link>
@@ -80,273 +60,143 @@ const NavigationSidebar = () => {
             <ul>
                 <Link to="/referrals">
                     <li
-                        className={
-                            windowLocation === `/referrals` ? "active" : null
-                        }
+                        className={page === `/referrals` ? "active" : null}
                         onClick={() => {
                             handleOnClick(`/referrals`);
                         }}
                     >
-                        <span className="icon-Group img">
-                            <span
-                                className={
-                                    windowLocation === `/referrals`
-                                        ? "path1 orange-dark"
-                                        : "path1 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/referrals`
-                                        ? "path2 orange-light"
-                                        : "path2 grey"
-                                }
-                            />
-                        </span>
+                        <img
+                            src={page === `/referrals` ? saleOrange : saleGrey}
+                            alt="sale"
+                        />
                         <span className="text">referrals</span>
                     </li>
                 </Link>
                 <Link to="/rewards">
                     <li
-                        className={
-                            windowLocation === `/rewards` ? "active" : null
-                        }
+                        className={page === `/rewards` ? "active" : null}
                         onClick={() => {
                             handleOnClick(`/rewards`);
                         }}
                     >
-                        <span className="icon-Half-start img">
-                            <span
-                                className={
-                                    windowLocation === `/rewards`
-                                        ? "path1 orange-dark"
-                                        : "path1 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/rewards`
-                                        ? "path2 orange-light"
-                                        : "path2 grey"
-                                }
-                            />
-                        </span>
+                        <img
+                            src={page === `/rewards` ? saleOrange : saleGrey}
+                            alt="sale"
+                        />
                         <span className="text">rewards</span>
                     </li>
                 </Link>
                 <Link to="/divits-bonus-plaza">
                     <li
                         className={
-                            windowLocation === `/divits-bonus-plaza`
-                                ? "active"
-                                : null
+                            page === `/divits-bonus-plaza` ? "active" : null
                         }
                         onClick={() => {
                             handleOnClick(`/divits-bonus-plaza`);
                         }}
                     >
-                        <span className="icon-Divits img">
-                            <span
-                                className={
-                                    windowLocation === `/divits-bonus-plaza`
-                                        ? "path1 orange-light"
-                                        : "path1 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/divits-bonus-plaza`
-                                        ? "path2 orange-light"
-                                        : "path2 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/divits-bonus-plaza`
-                                        ? "path3 orange-light"
-                                        : "path3 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/divits-bonus-plaza`
-                                        ? "path4 orange-light"
-                                        : "path4 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/divits-bonus-plaza`
-                                        ? "path5 orange-light"
-                                        : "path5 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/divits-bonus-plaza`
-                                        ? "path6 orange-light"
-                                        : "path6 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/divits-bonus-plaza`
-                                        ? "path7 orange-dark"
-                                        : "path7 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/divits-bonus-plaza`
-                                        ? "path8 orange-light"
-                                        : "path8 grey"
-                                }
-                            />
-                        </span>
+                        <img
+                            src={
+                                page === `/divits-bonus-plaza`
+                                    ? saleOrange
+                                    : saleGrey
+                            }
+                            alt="sale"
+                        />
                         <span className="text">divits bonus plaza</span>
                     </li>
                 </Link>
                 <Link to="/global-earnings">
                     <li
                         className={
-                            windowLocation === `/global-earnings`
-                                ? "active"
-                                : null
+                            page === `/global-earnings` ? "active" : null
                         }
                         onClick={() => {
                             handleOnClick(`/global-earnings`);
                         }}
                     >
-                        <span className="icon-Money img">
-                            <span
-                                className={
-                                    windowLocation === `/global-earnings`
-                                        ? "path1 orange-dark"
-                                        : "path1 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/global-earnings`
-                                        ? "path2 orange-light"
-                                        : "path2 grey"
-                                }
-                            />
-                        </span>
+                        <img
+                            src={
+                                page === `/global-earnings`
+                                    ? saleOrange
+                                    : saleGrey
+                            }
+                            alt="sale"
+                        />
                         <span className="text"> global earnings</span>
                     </li>
                 </Link>
                 <Link to="/leaderboard">
                     <li
-                        className={
-                            windowLocation === `/leaderboard` ? "active" : null
-                        }
+                        className={page === `/leaderboard` ? "active" : null}
                         onClick={() => {
                             handleOnClick(`/leaderboard`);
                         }}
                     >
-                        <span className="icon-Weight img">
-                            <span
-                                className={
-                                    windowLocation === `/leaderboard`
-                                        ? "path1 orange-dark"
-                                        : "path1 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/leaderboard`
-                                        ? "path2 orange-light"
-                                        : "path2 grey"
-                                }
-                            />
-                        </span>
+                        <img
+                            src={
+                                page === `/leaderboard`
+                                    ? weightOrange
+                                    : weightGrey
+                            }
+                            alt="sale"
+                        />
                         <span className="text">leaderboard</span>
                     </li>
                 </Link>
                 <Link to="statistics">
                     <li
-                        className={
-                            windowLocation === `/statistics` ? "active" : null
-                        }
+                        className={page === `/statistics` ? "active" : null}
                         onClick={() => {
                             handleOnClick(`/statistics`);
                         }}
                     >
-                        <span className="icon-Chart-pie img">
-                            <span
-                                className={
-                                    windowLocation === `/statistics`
-                                        ? "path1 orange-dark"
-                                        : "path1 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/statistics`
-                                        ? "path2 orange-light"
-                                        : "path2 grey"
-                                }
-                            />
-                        </span>
+                        <img
+                            src={
+                                page === `/statistics`
+                                    ? chartPieOrange
+                                    : chartPieGrey
+                            }
+                            alt="sale"
+                        />
                         <span className="text">statistics</span>
                     </li>
                 </Link>
                 <Link to="contact-book">
                     <li
-                        className={
-                            windowLocation === `/contact-book` ? "active" : null
-                        }
+                        className={page === `/contact-book` ? "active" : null}
                         onClick={() => {
                             handleOnClick(`/contact-book`);
                         }}
                     >
-                        <span className="icon-Adress-book img">
-                            <span
-                                className={
-                                    windowLocation === `/contact-book`
-                                        ? "path1 orange-dark"
-                                        : "path1 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/contact-book`
-                                        ? "path2 orange-light"
-                                        : "path2 grey"
-                                }
-                            />
-                        </span>
+                        <img
+                            src={
+                                page === `/contact-book`
+                                    ? adressBookOrange
+                                    : adressBookGrey
+                            }
+                            alt="sale"
+                        />
                         <span className="text">contact book</span>
                     </li>
                 </Link>
                 <Link to="pioneer-membership">
                     <li
                         className={
-                            windowLocation === `/pioneer-membership`
-                                ? "active"
-                                : null
+                            page === `/pioneer-membership` ? "active" : null
                         }
                         onClick={() => {
                             handleOnClick(`/pioneer-membership`);
                         }}
                     >
-                        <span className="icon-Sale img">
-                            <span
-                                className={
-                                    windowLocation === `/pioneer-membership`
-                                        ? "path1 orange-dark"
-                                        : "path1 grey"
-                                }
-                            />
-                            <span
-                                className={
-                                    windowLocation === `/pioneer-membership`
-                                        ? "path2 orange-light"
-                                        : "path2 grey"
-                                }
-                            />
-                        </span>
+                        <img
+                            src={
+                                page === `/pioneer-membership`
+                                    ? saleOrange
+                                    : saleGrey
+                            }
+                            alt="sale"
+                        />
                         <span className="text">pioneer membership</span>
                     </li>
                 </Link>

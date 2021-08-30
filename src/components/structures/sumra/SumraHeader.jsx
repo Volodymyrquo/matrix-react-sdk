@@ -3,8 +3,14 @@ import Avatars from "../../../../res/images/sumra/Avatars.png";
 import settings from "../../../../res/images/sumra/Settings.png";
 import dialNumbers from "../../../../res/images/sumra/Dial-numbers.png";
 import bell from "../../../../res/images/sumra/bell.png";
+import { OwnProfileStore } from "../../../stores/OwnProfileStore";
 
 const SumraHeader = () => {
+    const personName = localStorage.getItem("mx_profile_displayname");
+    const personUserId = localStorage.getItem("mx_user_id");
+    const avatarSize = 32;
+    const avatarUrl = OwnProfileStore.instance.getHttpAvatarUrl(avatarSize);
+
     return (
         <div className="sumra-header">
             <span className="sumra-header-text">Chats</span>
@@ -30,10 +36,14 @@ const SumraHeader = () => {
                     alt="settings"
                 />
                 <img
-                    src={Avatars}
+                    src={avatarUrl}
                     className="sumra-header-info-avatar"
                     alt="avatar"
                 />
+                <div className="sumra-header-info-name">
+                    <span>{personName}</span>
+                    <span>{personUserId}</span>
+                </div>
             </div>
         </div>
     );

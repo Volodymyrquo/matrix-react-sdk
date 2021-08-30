@@ -631,17 +631,17 @@ class LoggedInView extends React.Component<IProps, IState> {
         return (
             <Router>
                 <>
-                    <SumraHeader />
+                  <SumraHeader /> 
                     <SumraLeftPanel />
 
                     <MatrixClientContext.Provider value={this._matrixClient}>
-                        <div
+                         <div
                             onPaste={this._onPaste}
                             onKeyDown={this._onReactKeyDown}
                             className='mx_MatrixChat_wrapper'
                             aria-hidden={this.props.hideToSRUsers}
-                        >
-                            <ToastContainer />
+                        > 
+                            <ToastContainer /> 
                             <div ref={this._resizeContainer} className={bodyClasses}>
                                 { SpaceStore.spacesEnabled ? <SpacePanel /> : null }
 
