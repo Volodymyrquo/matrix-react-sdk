@@ -25,7 +25,7 @@ import groupChatOrange from "../../../../res/images/sumra/Group-chat-orange.svg"
 
 const NavigationSidebar = () => {
     const [page, setPage] = useState("/chats");
-    const windowLocation = window.location.pathname;
+    const windowLocation = window.location.hash;
     const handleOnClick = (urlClicked) => {
         setPage(urlClicked);
     };
@@ -40,18 +40,20 @@ const NavigationSidebar = () => {
             <ul>
                 <Link to="/chats">
                     <li
-                        className={page === `/chats` ? "active" : null}
+                        className={
+                            windowLocation === `#/chats` ? "active" : null
+                        }
                         onClick={() => {
                             handleOnClick(`/chats`);
                         }}
                     >
                         <img
                             src={
-                                page === `/chats`
+                                windowLocation === `#/chats`
                                     ? groupChatOrange
                                     : groupChatGrey
                             }
-                            alt="sale"
+                            alt="group chat"
                         />
 
                         <span className="text">chats</span>
@@ -59,18 +61,20 @@ const NavigationSidebar = () => {
                 </Link>
                 <Link to="/settings">
                     <li
-                        className={page === `/settings` ? "active" : null}
+                        className={
+                            windowLocation === `#/settings` ? "active" : null
+                        }
                         onClick={() => {
                             handleOnClick(`/settings`);
                         }}
                     >
                         <img
                             src={
-                                page === `/settings`
+                                windowLocation === `#/settings`
                                     ? settingsSwitchOrange
                                     : settingsSwitchGrey
                             }
-                            alt="sale"
+                            alt="settings switch"
                         />
                         <span className="text">settings</span>
                     </li>
@@ -80,36 +84,40 @@ const NavigationSidebar = () => {
             <ul>
                 <Link to="/referrals">
                     <li
-                        className={page === `/referrals` ? "active" : null}
+                        className={
+                            windowLocation === `#/referrals` ? "active" : null
+                        }
                         onClick={() => {
                             handleOnClick(`/referrals`);
                         }}
                     >
                         <img
                             src={
-                                page === `/referrals`
+                                windowLocation === `#/referrals`
                                     ? groupPeopleOrange
                                     : groupPeopleGrey
                             }
-                            alt="sale"
+                            alt="group people"
                         />
                         <span className="text">referrals</span>
                     </li>
                 </Link>
                 <Link to="/rewards">
                     <li
-                        className={page === `/rewards` ? "active" : null}
+                        className={
+                            windowLocation === `#/rewards` ? "active" : null
+                        }
                         onClick={() => {
                             handleOnClick(`/rewards`);
                         }}
                     >
                         <img
                             src={
-                                page === `/rewards`
+                                windowLocation === `#/rewards`
                                     ? halfStarOrange
                                     : halfStarGrey
                             }
-                            alt="sale"
+                            alt="half star"
                         />
                         <span className="text">rewards</span>
                     </li>
@@ -117,7 +125,9 @@ const NavigationSidebar = () => {
                 <Link to="/divits-bonus-plaza">
                     <li
                         className={
-                            page === `/divits-bonus-plaza` ? "active" : null
+                            windowLocation === `#/divits-bonus-plaza`
+                                ? "active"
+                                : null
                         }
                         onClick={() => {
                             handleOnClick(`/divits-bonus-plaza`);
@@ -125,11 +135,11 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                page === `/divits-bonus-plaza`
+                                windowLocation === `#/divits-bonus-plaza`
                                     ? divitsOrange
                                     : divitsGrey
                             }
-                            alt="sale"
+                            alt="divits"
                         />
                         <span className="text">divits bonus plaza</span>
                     </li>
@@ -137,7 +147,9 @@ const NavigationSidebar = () => {
                 <Link to="/global-earnings">
                     <li
                         className={
-                            page === `/global-earnings` ? "active" : null
+                            windowLocation === `#/global-earnings`
+                                ? "active"
+                                : null
                         }
                         onClick={() => {
                             handleOnClick(`/global-earnings`);
@@ -145,65 +157,73 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                page === `/global-earnings`
+                                windowLocation === `#/global-earnings`
                                     ? moneyOrange
                                     : moneyGrey
                             }
-                            alt="sale"
+                            alt="money"
                         />
                         <span className="text"> global earnings</span>
                     </li>
                 </Link>
                 <Link to="/leaderboard">
                     <li
-                        className={page === `/leaderboard` ? "active" : null}
+                        className={
+                            windowLocation === `#/leaderboard` ? "active" : null
+                        }
                         onClick={() => {
                             handleOnClick(`/leaderboard`);
                         }}
                     >
                         <img
                             src={
-                                page === `/leaderboard`
+                                windowLocation === `#/leaderboard`
                                     ? weightOrange
                                     : weightGrey
                             }
-                            alt="sale"
+                            alt="weight"
                         />
                         <span className="text">leaderboard</span>
                     </li>
                 </Link>
                 <Link to="statistics">
                     <li
-                        className={page === `/statistics` ? "active" : null}
+                        className={
+                            windowLocation === `#/statistics` ? "active" : null
+                        }
                         onClick={() => {
                             handleOnClick(`/statistics`);
                         }}
                     >
                         <img
                             src={
-                                page === `/statistics`
+                                windowLocation === `#/statistics`
                                     ? chartPieOrange
                                     : chartPieGrey
                             }
-                            alt="sale"
+                            alt="chart pie"
                         />
                         <span className="text">statistics</span>
                     </li>
                 </Link>
                 <Link to="contact-book">
                     <li
-                        className={page === `/contact-book` ? "active" : null}
+                        className={
+                            windowLocation === `#/contact-book`
+                                ? "active"
+                                : null
+                        }
                         onClick={() => {
                             handleOnClick(`/contact-book`);
                         }}
                     >
                         <img
                             src={
-                                page === `/contact-book`
+                                windowLocation === `#/contact-book`
                                     ? adressBookOrange
                                     : adressBookGrey
                             }
-                            alt="sale"
+                            alt="adress book"
                         />
                         <span className="text">contact book</span>
                     </li>
@@ -211,7 +231,9 @@ const NavigationSidebar = () => {
                 <Link to="pioneer-membership">
                     <li
                         className={
-                            page === `/pioneer-membership` ? "active" : null
+                            windowLocation === `#/pioneer-membership`
+                                ? "active"
+                                : null
                         }
                         onClick={() => {
                             handleOnClick(`/pioneer-membership`);
@@ -219,7 +241,7 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                page === `/pioneer-membership`
+                                windowLocation === `#/pioneer-membership`
                                     ? saleOrange
                                     : saleGrey
                             }

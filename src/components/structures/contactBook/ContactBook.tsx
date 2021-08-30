@@ -25,12 +25,12 @@ const ContactBook: FC = (props) => {
 
         <div className="sumra-contact-book-main" >
             <ContactBookProvider>
-                {/* <SidebarContactBook />
+              <SidebarContactBook />
                 <div className="contact-book__main-block" >
                     {page}
-                </div> */}
-                <ContactBookPage personName={personName} avatarUrl={avatarUrl} referralsUrl={referralsUrl} setPath={setPath} path={path} />
-            </ContactBookProvider>
+                </div> 
+{/*                 <ContactBookPage personName={personName} avatarUrl={avatarUrl} referralsUrl={referralsUrl} setPath={setPath} path={path} />
+ */}            </ContactBookProvider>
             {/* <ContactBookPage personName={personName} avatarUrl={avatarUrl} referralsUrl={referralsUrl} setPath={setPath} /> */}
         </div>
 

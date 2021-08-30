@@ -87,12 +87,13 @@ h6 {
 }
 
 .sumra-referrals-main {
-    z-index: 1;
     position: absolute;
-    top: 0px;
-    left: 0px;
-    min-width: 100%;
+    top: 98px;
+    left: 260px;
+    z-index: 1;
+    width: calc(100% - 260px);
     min-height: 100%;
+    overflow-y: scroll;
     overflow: scroll;
     background-color: #ffffff;
 }

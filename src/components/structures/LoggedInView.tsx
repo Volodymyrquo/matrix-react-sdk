@@ -66,10 +66,15 @@ import GroupView from "./GroupView";
 import SpaceStore from "../../stores/SpaceStore";
 import { HashRouter as Router, Route } from "react-router-dom";
 import ContactBook from "../structures/contactBook/ContactBook";
-import Referrals from "./referrals/Referrals";
+import SumraReferrals from "../views/sumra/SumraReferrals";
 import SumraHeader from "./sumra/SumraHeader.jsx";
 import SumraLeftPanel from "./sumra/SumraLeftPanel.jsx";
 import { Provider } from "../../contexts/Routes/context";
+import SumraLeaderboard from "../views/sumra/SumraLeaderboard";
+import SumraGlobalEarnings from '../views/sumra/SumraGlobalEarnings';
+import SumraStatistics from '../views/sumra/SumraStatistics';
+import SumraPioneerMembership from '../views/sumra/SumraPioneerMembership';
+import SumraContactBook from '../views/sumra/SumraContactBook';
 
 // We need to fetch each pinned message individually (if we don't already have it)
 // so each pinned message may trigger a request. Limit the number per room for sanity.
@@ -631,17 +636,17 @@ class LoggedInView extends React.Component<IProps, IState> {
         return (
             <Router>
                 <>
-                  <SumraHeader /> 
+                    <SumraHeader />
                     <SumraLeftPanel />
 
                     <MatrixClientContext.Provider value={this._matrixClient}>
-                         <div
+                        <div
                             onPaste={this._onPaste}
                             onKeyDown={this._onReactKeyDown}
                             className='mx_MatrixChat_wrapper'
                             aria-hidden={this.props.hideToSRUsers}
-                        > 
-                            <ToastContainer /> 
+                        >
+                            <ToastContainer />
                             <div ref={this._resizeContainer} className={bodyClasses}>
                                 { SpaceStore.spacesEnabled ? <SpacePanel /> : null }
 
@@ -658,10 +663,16 @@ class LoggedInView extends React.Component<IProps, IState> {
                         <HostSignupContainer />
                         {audioFeedArraysForCalls}
                     </MatrixClientContext.Provider>
-
                     <Provider>
-                        <Route path="/contact_book" component={ContactBook} />
-                        <Route path="/referrals" component={Referrals} />
+
+                        <Route path="/contact-book" component={ContactBook} />
+                        <Route path="/referrals" component={SumraReferrals} />
+                        <Route path="/leaderboard" component={SumraLeaderboard} />
+                        <Route path="/global-earnings" component={SumraGlobalEarnings} />
+                        <Route path="/statistics" component={SumraStatistics} />
+                        <Route path="/pioneer-membership" component={SumraPioneerMembership} />
+                        <Route path="/contact-book" component={SumraContactBook} />
+
                     </Provider>
 
                 </>
