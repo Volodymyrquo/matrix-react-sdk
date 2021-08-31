@@ -186,7 +186,7 @@ const NavigationSidebar = () => {
                         <span className="text">leaderboard</span>
                     </li>
                 </Link>
-                <Link to="statistics">
+                <Link to="/statistics">
                     <li
                         className={
                             windowLocation === `#/statistics` ? "active" : null
@@ -206,15 +206,15 @@ const NavigationSidebar = () => {
                         <span className="text">statistics</span>
                     </li>
                 </Link>
-                <Link to="contact-book">
+                <Link to="/contact_book">
                     <li
                         className={
-                            windowLocation === `#/contact-book`
+                            windowLocation === `#/contact_book`
                                 ? "active"
                                 : null
                         }
                         onClick={() => {
-                            handleOnClick(`/contact-book`);
+                            handleOnClick(`/contact_book`);
                         }}
                     >
                         <img
@@ -228,7 +228,7 @@ const NavigationSidebar = () => {
                         <span className="text">contact book</span>
                     </li>
                 </Link>
-                <Link to="pioneer-membership">
+                <Link to="/pioneer-membership">
                     <li
                         className={
                             windowLocation === `#/pioneer-membership`

@@ -75,6 +75,8 @@ import SumraGlobalEarnings from '../views/sumra/SumraGlobalEarnings';
 import SumraStatistics from '../views/sumra/SumraStatistics';
 import SumraPioneerMembership from '../views/sumra/SumraPioneerMembership';
 import SumraContactBook from '../views/sumra/SumraContactBook';
+import SumraDivitsBonusPlaza from '../views/sumra/SumraDivitsBonusPlaza';
+import SumraRewards from '../views/sumra/SumraRewards';
 
 // We need to fetch each pinned message individually (if we don't already have it)
 // so each pinned message may trigger a request. Limit the number per room for sanity.
@@ -665,13 +667,15 @@ class LoggedInView extends React.Component<IProps, IState> {
                     </MatrixClientContext.Provider>
                     <Provider>
 
-                        <Route path="/contact-book" component={ContactBook} />
+                        <Route path="/contact_book" component={ContactBook} />
                         <Route path="/referrals" component={SumraReferrals} />
                         <Route path="/leaderboard" component={SumraLeaderboard} />
                         <Route path="/global-earnings" component={SumraGlobalEarnings} />
                         <Route path="/statistics" component={SumraStatistics} />
                         <Route path="/pioneer-membership" component={SumraPioneerMembership} />
-                        <Route path="/contact-book" component={SumraContactBook} />
+                        <Route path="/contact_book" component={SumraContactBook} />
+                        <Route path="/divits-bonus-plaza" component={SumraDivitsBonusPlaza} />
+                        <Route path="/rewards" component={SumraRewards} />
 
                     </Provider>
 

@@ -207,8 +207,7 @@ $roomListCollapsedWidth: 68px;
 
     // These styles override the defaults for the minimized (66px) layout
     &.mx_LeftPanel_minimized {
-        min-width: unset;
-        width: unset !important;
+        width: 354px;
 
         .mx_LeftPanel_roomListContainer {
             width: $roomListCollapsedWidth;
