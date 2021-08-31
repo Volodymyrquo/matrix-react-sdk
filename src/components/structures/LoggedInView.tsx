@@ -213,9 +213,9 @@ class LoggedInView extends React.Component<IProps, IState> {
             "useCompactLayout", null, this.onCompactLayoutChanged,
         );
 
-        this.resizer = this._createResizer();
+      /*   this.resizer = this._createResizer();
         this.resizer.attach();
-        this._loadResizerPreferences();
+        this._loadResizerPreferences(); */
     }
 
     componentWillUnmount() {
@@ -656,7 +656,7 @@ class LoggedInView extends React.Component<IProps, IState> {
                                     isMinimized={this.props.collapseLhs || false}
                                     resizeNotifier={this.props.resizeNotifier}
                                 />
-                                <ResizeHandle />
+                              {/*   <ResizeHandle /> */}
                                 { pageElement }
                             </div>
                         </div>

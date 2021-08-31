@@ -29,7 +29,6 @@ const NavigationSidebar = () => {
     const handleOnClick = (urlClicked) => {
         setPage(urlClicked);
     };
-    debugger;
     return (
         <nav className="sumra-nav-bar">
             <div className="sumra-nav-bar-logo-block">
