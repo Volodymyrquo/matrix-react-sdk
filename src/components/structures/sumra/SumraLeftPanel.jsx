@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import referrals from "../../../../res/images/sumra/referrals.png";
 import sumraLogo from "../../../../res/images/sumra/sumra-logo.svg";
@@ -25,10 +25,15 @@ import groupChatOrange from "../../../../res/images/sumra/Group-chat-orange.svg"
 
 const NavigationSidebar = () => {
     const [page, setPage] = useState("/chats");
-    const windowLocation = window.location.hash;
+    let windowLocation = window.location.pathname;
     const handleOnClick = (urlClicked) => {
         setPage(urlClicked);
     };
+    useEffect(() => {
+        windowLocation = window.location.pathname;
+    }, [window.location.pathname]);
+
+    const windowHostName = window.location.hostname;
     return (
         <nav className="sumra-nav-bar">
             <div className="sumra-nav-bar-logo-block">
@@ -40,7 +45,7 @@ const NavigationSidebar = () => {
                 <Link to="/chats">
                     <li
                         className={
-                            windowLocation === `#/chats` ? "active" : null
+                            windowLocation === `/chats` ? "active" : null
                         }
                         onClick={() => {
                             handleOnClick(`/chats`);
@@ -48,7 +53,7 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                windowLocation === `#/chats`
+                                windowLocation === `/chats` || `#/home`
                                     ? groupChatOrange
                                     : groupChatGrey
                             }
@@ -58,13 +63,15 @@ const NavigationSidebar = () => {
                         <span className="text">chats</span>
                     </li>
                 </Link>
-                <Link to="/settings">
+                <Link to="#/settings">
                     <li
                         className={
                             windowLocation === `#/settings` ? "active" : null
                         }
-                        onClick={() => {
+                        onClick={async (event) => {
+                            event.preventDefault();
                             handleOnClick(`/settings`);
+                            location.href = location.origin + "/#/settings";
                         }}
                     >
                         <img
@@ -84,7 +91,7 @@ const NavigationSidebar = () => {
                 <Link to="/referrals">
                     <li
                         className={
-                            windowLocation === `#/referrals` ? "active" : null
+                            windowLocation === `/referrals` ? "active" : null
                         }
                         onClick={() => {
                             handleOnClick(`/referrals`);
@@ -92,7 +99,7 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                windowLocation === `#/referrals`
+                                windowLocation === `/referrals`
                                     ? groupPeopleOrange
                                     : groupPeopleGrey
                             }
@@ -104,7 +111,7 @@ const NavigationSidebar = () => {
                 <Link to="/rewards">
                     <li
                         className={
-                            windowLocation === `#/rewards` ? "active" : null
+                            windowLocation === `/rewards` ? "active" : null
                         }
                         onClick={() => {
                             handleOnClick(`/rewards`);
@@ -112,7 +119,7 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                windowLocation === `#/rewards`
+                                windowLocation === `/rewards`
                                     ? halfStarOrange
                                     : halfStarGrey
                             }
@@ -124,7 +131,7 @@ const NavigationSidebar = () => {
                 <Link to="/divits-bonus-plaza">
                     <li
                         className={
-                            windowLocation === `#/divits-bonus-plaza`
+                            windowLocation === `/divits-bonus-plaza`
                                 ? "active"
                                 : null
                         }
@@ -134,7 +141,7 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                windowLocation === `#/divits-bonus-plaza`
+                                windowLocation === `/divits-bonus-plaza`
                                     ? divitsOrange
                                     : divitsGrey
                             }
@@ -146,7 +153,7 @@ const NavigationSidebar = () => {
                 <Link to="/global-earnings">
                     <li
                         className={
-                            windowLocation === `#/global-earnings`
+                            windowLocation === `/global-earnings`
                                 ? "active"
                                 : null
                         }
@@ -156,7 +163,7 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                windowLocation === `#/global-earnings`
+                                windowLocation === `/global-earnings`
                                     ? moneyOrange
                                     : moneyGrey
                             }
@@ -168,7 +175,7 @@ const NavigationSidebar = () => {
                 <Link to="/leaderboard">
                     <li
                         className={
-                            windowLocation === `#/leaderboard` ? "active" : null
+                            windowLocation === `/leaderboard` ? "active" : null
                         }
                         onClick={() => {
                             handleOnClick(`/leaderboard`);
@@ -176,7 +183,7 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                windowLocation === `#/leaderboard`
+                                windowLocation === `/leaderboard`
                                     ? weightOrange
                                     : weightGrey
                             }
@@ -188,7 +195,7 @@ const NavigationSidebar = () => {
                 <Link to="/statistics">
                     <li
                         className={
-                            windowLocation === `#/statistics` ? "active" : null
+                            windowLocation === `/statistics` ? "active" : null
                         }
                         onClick={() => {
                             handleOnClick(`/statistics`);
@@ -196,7 +203,7 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                windowLocation === `#/statistics`
+                                windowLocation === `/statistics`
                                     ? chartPieOrange
                                     : chartPieGrey
                             }
@@ -208,9 +215,7 @@ const NavigationSidebar = () => {
                 <Link to="/contact_book">
                     <li
                         className={
-                            windowLocation === `#/contact_book`
-                                ? "active"
-                                : null
+                            windowLocation === `/contact_book` ? "active" : null
                         }
                         onClick={() => {
                             handleOnClick(`/contact_book`);
@@ -218,7 +223,7 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                windowLocation === `#/contact-book`
+                                windowLocation === `/contact-book`
                                     ? adressBookOrange
                                     : adressBookGrey
                             }
@@ -230,7 +235,7 @@ const NavigationSidebar = () => {
                 <Link to="/pioneer-membership">
                     <li
                         className={
-                            windowLocation === `#/pioneer-membership`
+                            windowLocation === `/pioneer-membership`
                                 ? "active"
                                 : null
                         }
@@ -240,7 +245,7 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                windowLocation === `#/pioneer-membership`
+                                windowLocation === `/pioneer-membership`
                                     ? saleOrange
                                     : saleGrey
                             }

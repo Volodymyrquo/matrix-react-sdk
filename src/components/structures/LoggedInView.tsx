@@ -64,7 +64,7 @@ import MyGroups from "./MyGroups";
 import UserView from "./UserView";
 import GroupView from "./GroupView";
 import SpaceStore from "../../stores/SpaceStore";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import ContactBook from "../structures/contactBook/ContactBook";
 import SumraReferrals from "../views/sumra/SumraReferrals";
 import SumraHeader from "./sumra/SumraHeader.jsx";

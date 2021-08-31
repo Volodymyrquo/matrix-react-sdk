@@ -12,6 +12,7 @@
     top: 0px;
     z-index: 2;
     background-color: #fafafc;
+    overflow: scroll !important;
 
     &__header {
         display: grid;
