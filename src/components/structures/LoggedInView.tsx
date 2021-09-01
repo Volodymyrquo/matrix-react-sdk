@@ -670,13 +670,12 @@ class LoggedInView extends React.Component<IProps, IState> {
 
                         <Provider>
 
-                            <Route path="/contact_book" component={ContactBook} />
+                            <Route path="/contact_book" component={SumraContactBook} />
                             <Route path="/referrals" component={SumraReferrals} />
                             <Route path="/leaderboard" component={SumraLeaderboard} />
                             <Route path="/global-earnings" component={SumraGlobalEarnings} />
                             <Route path="/statistics" component={SumraStatistics} />
                             <Route path="/pioneer-membership" component={SumraPioneerMembership} />
-                            <Route path="/contact_book" component={SumraContactBook} />
                             <Route path="/divits-bonus-plaza" component={SumraDivitsBonusPlaza} />
                             <Route path="/rewards" component={SumraRewards} />
 
