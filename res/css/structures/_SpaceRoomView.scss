@@ -37,7 +37,7 @@ $SpaceRoomViewInnerWidth: 428px;
 
     &::before {
         position: absolute;
-        content: '';
+        content: "";
         width: 32px;
         height: 32px;
         top: 24px;
@@ -175,7 +175,7 @@ $SpaceRoomViewInnerWidth: 428px;
                 mask-repeat: no-repeat;
                 mask-position: center;
                 mask-size: contain;
-                mask-image: url('$(res)/img/element-icons/room/room-summary.svg');
+                mask-image: url("$(res)/img/element-icons/room/room-summary.svg");
                 background-color: $secondary-fg-color;
             }
         }
@@ -298,7 +298,7 @@ $SpaceRoomViewInnerWidth: 428px;
                     mask-position: center;
                     mask-size: 16px;
                     mask-repeat: no-repeat;
-                    mask-image: url('$(res)/img/element-icons/room/invite.svg');
+                    mask-image: url("$(res)/img/element-icons/room/invite.svg");
                 }
             }
 
@@ -319,7 +319,7 @@ $SpaceRoomViewInnerWidth: 428px;
                     mask-position: center;
                     mask-size: contain;
                     mask-repeat: no-repeat;
-                    mask-image: url('$(res)/img/element-icons/settings.svg');
+                    mask-image: url("$(res)/img/element-icons/settings.svg");
                 }
             }
         }
@@ -358,11 +358,11 @@ $SpaceRoomViewInnerWidth: 428px;
         }
 
         .mx_SpaceRoomView_privateScope_justMeButton::before {
-            mask-image: url('$(res)/img/element-icons/room/members.svg');
+            mask-image: url("$(res)/img/element-icons/room/members.svg");
         }
 
         .mx_SpaceRoomView_privateScope_meAndMyTeammatesButton::before {
-            mask-image: url('$(res)/img/element-icons/community-members.svg');
+            mask-image: url("$(res)/img/element-icons/community-members.svg");
         }
     }
 
@@ -391,11 +391,11 @@ $SpaceRoomViewInnerWidth: 428px;
         }
 
         &::before {
-            mask-image: url('$(res)/img/element-icons/room/room-summary.svg');
+            mask-image: url("$(res)/img/element-icons/room/room-summary.svg");
             mask-position: center;
             mask-repeat: no-repeat;
             mask-size: contain;
-            content: '';
+            content: "";
             width: 20px;
             height: 20px;
             position: absolute;
@@ -452,7 +452,7 @@ $SpaceRoomViewInnerWidth: 428px;
             }
 
             .mx_SpaceRoomView_inviteTeammates_inviteDialogButton::before {
-                mask-image: url('$(res)/img/element-icons/room/invite.svg');
+                mask-image: url("$(res)/img/element-icons/room/invite.svg");
             }
         }
     }
@@ -530,7 +530,7 @@ $SpaceRoomViewInnerWidth: 428px;
             margin-right: auto;
 
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 left: 0;
                 top: 2px;
@@ -539,7 +539,7 @@ $SpaceRoomViewInnerWidth: 428px;
                 background-color: $secondary-fg-color;
                 mask-repeat: no-repeat;
                 mask-size: contain;
-                mask-image: url('$(res)/img/element-icons/room/room-summary.svg');
+                mask-image: url("$(res)/img/element-icons/room/room-summary.svg");
                 mask-position: center;
             }
         }
@@ -553,7 +553,7 @@ $SpaceRoomViewInnerWidth: 428px;
             line-height: inherit;
 
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 left: 0;
                 height: 16px;
@@ -561,7 +561,7 @@ $SpaceRoomViewInnerWidth: 428px;
                 background-color: $accent-color;
                 mask-repeat: no-repeat;
                 mask-size: contain;
-                mask-image: url('$(res)/img/element-icons/chat-bubbles.svg');
+                mask-image: url("$(res)/img/element-icons/chat-bubbles.svg");
                 mask-position: center;
             }
         }

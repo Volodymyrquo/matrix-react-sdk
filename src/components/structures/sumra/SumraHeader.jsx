@@ -10,6 +10,10 @@ const SumraHeader = () => {
     const personUserId = localStorage.getItem("mx_user_id");
     const avatarSize = 32;
     const avatarUrl = OwnProfileStore.instance.getHttpAvatarUrl(avatarSize);
+    const handleOnChange = (event) => {
+        const value = event.target.value;
+        alert(value);
+    };
 
     return (
         <div className="sumra-header">
@@ -18,7 +22,11 @@ const SumraHeader = () => {
                 className="sumra-header-search"
                 type="text"
                 placeholder="Search..."
+                onChange={(event) => {
+                    handleOnChange(event);
+                }}
             />
+
             <div className="sumra-header-info">
                 <img
                     src={dialNumbers}

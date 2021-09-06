@@ -36,12 +36,13 @@
 @import "./structures/_UserMenu.scss";
 @import "./structures/_ViewSource.scss";
 @import "./structures/referrals/_Referrals.scss";
-@import "./structures/referrals/_burger.scss";
+/* @import "./structures/referrals/_burger.scss";
 @import "./structures/referrals/_sidebarReferrals.scss";
 @import "./structures/referrals/_navigationSidebar.scss";
 @import "./structures/referrals/_referralsPage.scss";
 @import "./structures/referrals/_blockcalculator.scss";
 @import "./structures/referrals/_ReferralsHeader.scss";
+ */
 @import "./structures/auth/_CompleteSecurity.scss";
 @import "./structures/auth/_Login.scss";
 @import "./structures/sumra/_SumraHeader.scss";
@@ -280,7 +281,7 @@
 @import "./views/voip/_DialPadContextMenu.scss";
 @import "./views/voip/_DialPadModal.scss";
 @import "./views/voip/_VideoFeed.scss";
-@import "./views/referrals/_codeBlock.scss";
+/* @import "./views/referrals/_codeBlock.scss";
 @import "./views/referrals/_blockQRCode.scss";
 @import "./views/referrals/_blockInviteUsers.scss";
 @import "./views/referrals/_leaderboardBlock.scss";
@@ -291,3 +292,4 @@
 @import "./views/referrals/_cashbackHistory.scss";
 @import "./views/referrals/_globalEarningsBtn.scss";
 @import "./views/referrals/_statistics.scss";
+ */

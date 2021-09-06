@@ -33,7 +33,6 @@ const NavigationSidebar = () => {
         windowLocation = window.location.pathname;
     }, [window.location.pathname]);
 
-    const windowHostName = window.location.hostname;
     return (
         <nav className="sumra-nav-bar">
             <div className="sumra-nav-bar-logo-block">
@@ -53,7 +52,7 @@ const NavigationSidebar = () => {
                     >
                         <img
                             src={
-                                windowLocation === `/chats` || `#/home`
+                                windowLocation === `/chats`
                                     ? groupChatOrange
                                     : groupChatGrey
                             }
@@ -263,9 +262,11 @@ const NavigationSidebar = () => {
                         Unlimited.
                     </span>
                 </div>
-                <button className="sumra-nav-bar-button">
-                    <span>Learn more -&gt;</span>
-                </button>
+                <Link to="/referrals">
+                    <button className="sumra-nav-bar-button">
+                        <span>Learn more -&gt;</span>
+                    </button>
+                </Link>
             </div>
         </nav>
     );

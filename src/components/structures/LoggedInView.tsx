@@ -64,8 +64,7 @@ import MyGroups from "./MyGroups";
 import UserView from "./UserView";
 import GroupView from "./GroupView";
 import SpaceStore from "../../stores/SpaceStore";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import ContactBook from "../structures/contactBook/ContactBook";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import SumraReferrals from "../views/sumra/SumraReferrals";
 import SumraHeader from "./sumra/SumraHeader.jsx";
 import SumraLeftPanel from "./sumra/SumraLeftPanel.jsx";
@@ -225,7 +224,7 @@ class LoggedInView extends React.Component<IProps, IState> {
         this._matrixClient.removeListener("sync", this.onSync);
         this._matrixClient.removeListener("RoomState.events", this.onRoomStateEvents);
         SettingsStore.unwatchSetting(this.compactLayoutWatcherRef);
-        this.resizer.detach();
+        /* this.resizer.detach(); */
     }
 
     private onCallsChanged = () => {
@@ -640,6 +639,7 @@ class LoggedInView extends React.Component<IProps, IState> {
                 <>
                     <SumraHeader />
                     <SumraLeftPanel />
+
                     <Switch>
                         <Route path="/chats">
                             <MatrixClientContext.Provider value={this._matrixClient}>
@@ -668,18 +668,14 @@ class LoggedInView extends React.Component<IProps, IState> {
                             </MatrixClientContext.Provider>
                         </Route>
 
-                        <Provider>
-
-                            <Route path="/contact_book" component={SumraContactBook} />
-                            <Route path="/referrals" component={SumraReferrals} />
-                            <Route path="/leaderboard" component={SumraLeaderboard} />
-                            <Route path="/global-earnings" component={SumraGlobalEarnings} />
-                            <Route path="/statistics" component={SumraStatistics} />
-                            <Route path="/pioneer-membership" component={SumraPioneerMembership} />
-                            <Route path="/divits-bonus-plaza" component={SumraDivitsBonusPlaza} />
-                            <Route path="/rewards" component={SumraRewards} />
-
-                        </Provider>
+                        <Route path="/contact_book" component={SumraContactBook} />
+                        <Route path="/referrals" component={SumraReferrals} />
+                        <Route path="/leaderboard" component={SumraLeaderboard} />
+                        <Route path="/global-earnings" component={SumraGlobalEarnings} />
+                        <Route path="/statistics" component={SumraStatistics} />
+                        <Route path="/pioneer-membership" component={SumraPioneerMembership} />
+                        <Route path="/divits-bonus-plaza" component={SumraDivitsBonusPlaza} />
+                        <Route path="/rewards" component={SumraRewards} />
 
                     </Switch>
 

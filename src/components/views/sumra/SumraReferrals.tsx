@@ -3,7 +3,7 @@ import Referrals from "component-referrals"
 
 const SumraReferrals = () => {
     return (
-        <div>
+        <div className="sumra-referrals-main">
             <Referrals />
         </div>
     )
