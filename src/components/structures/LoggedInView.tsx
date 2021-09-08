@@ -636,50 +636,52 @@ class LoggedInView extends React.Component<IProps, IState> {
 
         return (
             <Router>
-                <>
-                    <SumraHeader />
-                    <SumraLeftPanel />
+                <Provider>
+                    <>
+                        <SumraHeader />
+                        <SumraLeftPanel />
 
-                    <Switch>
-                        <Route path="/chats">
-                            <MatrixClientContext.Provider value={this._matrixClient}>
-                                <div
-                                    onPaste={this._onPaste}
-                                    onKeyDown={this._onReactKeyDown}
-                                    className='mx_MatrixChat_wrapper'
-                                    aria-hidden={this.props.hideToSRUsers}
-                                >
-                                    <ToastContainer />
-                                    <div ref={this._resizeContainer} className={bodyClasses}>
-                                        { SpaceStore.spacesEnabled ? <SpacePanel /> : null }
+                        <Switch>
+                            <Route path="/chats">
+                                <MatrixClientContext.Provider value={this._matrixClient}>
+                                    <div
+                                        onPaste={this._onPaste}
+                                        onKeyDown={this._onReactKeyDown}
+                                        className='mx_MatrixChat_wrapper'
+                                        aria-hidden={this.props.hideToSRUsers}
+                                    >
+                                        <ToastContainer />
+                                        <div ref={this._resizeContainer} className={bodyClasses}>
+                                            { SpaceStore.spacesEnabled ? <SpacePanel /> : null }
 
-                                        <LeftPanel
-                                            isMinimized={this.props.collapseLhs || false}
-                                            resizeNotifier={this.props.resizeNotifier}
-                                        />
-                                        {/*   <ResizeHandle /> */}
-                                        { pageElement }
+                                            <LeftPanel
+                                                isMinimized={this.props.collapseLhs || false}
+                                                resizeNotifier={this.props.resizeNotifier}
+                                            />
+                                            {/*   <ResizeHandle /> */}
+                                            { pageElement }
+                                        </div>
                                     </div>
-                                </div>
-                                <CallContainer />
-                                <NonUrgentToastContainer />
-                                <HostSignupContainer />
-                                {audioFeedArraysForCalls}
-                            </MatrixClientContext.Provider>
-                        </Route>
+                                    <CallContainer />
+                                    <NonUrgentToastContainer />
+                                    <HostSignupContainer />
+                                    {audioFeedArraysForCalls}
+                                </MatrixClientContext.Provider>
+                            </Route>
 
-                        <Route path="/contact_book" component={SumraContactBook} />
-                        <Route path="/referrals" component={SumraReferrals} />
-                        <Route path="/leaderboard" component={SumraLeaderboard} />
-                        <Route path="/global-earnings" component={SumraGlobalEarnings} />
-                        <Route path="/statistics" component={SumraStatistics} />
-                        <Route path="/pioneer-membership" component={SumraPioneerMembership} />
-                        <Route path="/divits-bonus-plaza" component={SumraDivitsBonusPlaza} />
-                        <Route path="/rewards" component={SumraRewards} />
+                            <Route path="/contact_book" component={SumraContactBook} />
+                            <Route path="/referrals" component={SumraReferrals} />
+                            <Route path="/leaderboard" component={SumraLeaderboard} />
+                            <Route path="/global-earnings" component={SumraGlobalEarnings} />
+                            <Route path="/statistics" component={SumraStatistics} />
+                            <Route path="/pioneer-membership" component={SumraPioneerMembership} />
+                            <Route path="/divits-bonus-plaza" component={SumraDivitsBonusPlaza} />
+                            <Route path="/rewards" component={SumraRewards} />
 
-                    </Switch>
+                        </Switch>
 
-                </>
+                    </>
+                </Provider>
             </Router>
         );
     }

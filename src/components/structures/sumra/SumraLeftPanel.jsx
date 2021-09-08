@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../../../contexts/Routes/context";
 import referrals from "../../../../res/images/sumra/referrals.png";
 import sumraLogo from "../../../../res/images/sumra/sumra-logo.svg";
 import saleGrey from "../../../../res/images/sumra/Sale-grey.svg";
@@ -24,6 +25,7 @@ import groupChatGrey from "../../../../res/images/sumra/Group-chat-grey.svg";
 import groupChatOrange from "../../../../res/images/sumra/Group-chat-orange.svg";
 
 const NavigationSidebar = () => {
+    const { setPageTitle } = useContext(Context);
     const [page, setPage] = useState("/chats");
     let windowLocation = window.location.pathname;
     const handleOnClick = (urlClicked) => {
@@ -32,7 +34,6 @@ const NavigationSidebar = () => {
     useEffect(() => {
         windowLocation = window.location.pathname;
     }, [window.location.pathname]);
-
     return (
         <nav className="sumra-nav-bar">
             <div className="sumra-nav-bar-logo-block">
@@ -47,7 +48,7 @@ const NavigationSidebar = () => {
                             windowLocation === `/chats` ? "active" : null
                         }
                         onClick={() => {
-                            handleOnClick(`/chats`);
+                            setPageTitle(`Chats`);
                         }}
                     >
                         <img
@@ -69,7 +70,7 @@ const NavigationSidebar = () => {
                         }
                         onClick={async (event) => {
                             event.preventDefault();
-                            handleOnClick(`/settings`);
+                            setPageTitle(`Settings`);
                             location.href = location.origin + "/#/settings";
                         }}
                     >
@@ -93,7 +94,7 @@ const NavigationSidebar = () => {
                             windowLocation === `/referrals` ? "active" : null
                         }
                         onClick={() => {
-                            handleOnClick(`/referrals`);
+                            setPageTitle(`Referrals`);
                         }}
                     >
                         <img
@@ -113,7 +114,7 @@ const NavigationSidebar = () => {
                             windowLocation === `/rewards` ? "active" : null
                         }
                         onClick={() => {
-                            handleOnClick(`/rewards`);
+                            setPageTitle(`Rewards`);
                         }}
                     >
                         <img
@@ -135,7 +136,7 @@ const NavigationSidebar = () => {
                                 : null
                         }
                         onClick={() => {
-                            handleOnClick(`/divits-bonus-plaza`);
+                            setPageTitle(`Divits Bonus Plaza`);
                         }}
                     >
                         <img
@@ -157,7 +158,7 @@ const NavigationSidebar = () => {
                                 : null
                         }
                         onClick={() => {
-                            handleOnClick(`/global-earnings`);
+                            setPageTitle(`Global Earnings`);
                         }}
                     >
                         <img
@@ -177,7 +178,7 @@ const NavigationSidebar = () => {
                             windowLocation === `/leaderboard` ? "active" : null
                         }
                         onClick={() => {
-                            handleOnClick(`/leaderboard`);
+                            setPageTitle(`Leaderboard`);
                         }}
                     >
                         <img
@@ -197,7 +198,7 @@ const NavigationSidebar = () => {
                             windowLocation === `/statistics` ? "active" : null
                         }
                         onClick={() => {
-                            handleOnClick(`/statistics`);
+                            setPageTitle(`Statistics`);
                         }}
                     >
                         <img
@@ -217,7 +218,7 @@ const NavigationSidebar = () => {
                             windowLocation === `/contact_book` ? "active" : null
                         }
                         onClick={() => {
-                            handleOnClick(`/contact_book`);
+                            setPageTitle(`Contact Book`);
                         }}
                     >
                         <img
@@ -239,7 +240,7 @@ const NavigationSidebar = () => {
                                 : null
                         }
                         onClick={() => {
-                            handleOnClick(`/pioneer-membership`);
+                            setPageTitle(`Pioneer Membership`);
                         }}
                     >
                         <img

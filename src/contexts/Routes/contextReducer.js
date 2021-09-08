@@ -3,6 +3,7 @@ export const initialState = {
     tableId: "allContacts",
     subpageId: "referralsPage",
     params: { name: "All contacts" },
+    pageTitle: "Chats",
 };
 
 const contextReducer = (state = initialState, action) => {
@@ -15,6 +16,8 @@ const contextReducer = (state = initialState, action) => {
             return { ...state, tableId: action.payload };
         case "SET_PARAMS":
             return { ...state, params: action.payload };
+        case "SET_PAGE_TITLE":
+            return { ...state, pageTitle: action.payload };
         default:
             return state;
     }

@@ -51,6 +51,11 @@ export const Provider = ({ children }) => {
             type: "SET_PARAMS",
             payload: params,
         });
+    const setPageTitle = (pageTitle) =>
+        dispatch({
+            type: "SET_PAGE_TITLE",
+            payload: pageTitle,
+        });
     const setBurger = (burger) =>
         dispatch({
             type: "SET_BURGER",
@@ -93,7 +98,7 @@ export const Provider = ({ children }) => {
     const table = tables[state.tableId];
     const subpage = subpages[state.subpageId];
     const page = pages[state.pageId];
-    const { params, subpageId, tableId } = state;
+    const { params, subpageId, tableId, pageTitle } = state;
     return (
         <Context.Provider
             value={{
@@ -102,12 +107,14 @@ export const Provider = ({ children }) => {
                 setTable,
                 setBurger,
                 setSubPage,
+                setPageTitle,
                 page,
                 params,
                 table,
                 subpage,
                 subpageId,
                 tableId,
+                pageTitle,
             }}
         >
             {children}

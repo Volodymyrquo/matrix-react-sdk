@@ -77,7 +77,7 @@ const icons = [
   },
 ];
 
-const SendModal: FC<IProps> = ({ onClick }) => {debugger
+const SendModal: FC<IProps> = ({ onClick }) => {
     const { state, actions } = useContext(ContactBookContext);
     const { setPage, setTable } = useContext(Context);
     const sendLetter = state.sendLetter;

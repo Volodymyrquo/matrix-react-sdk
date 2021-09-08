@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Avatars from "../../../../res/images/sumra/Avatars.png";
 import settings from "../../../../res/images/sumra/Settings.png";
 import dialNumbers from "../../../../res/images/sumra/Dial-numbers.png";
 import bell from "../../../../res/images/sumra/bell.png";
 import { OwnProfileStore } from "../../../stores/OwnProfileStore";
+import { Context } from "../../../contexts/Routes/context";
 
 const SumraHeader = () => {
     const personName = localStorage.getItem("mx_profile_displayname");
@@ -14,10 +15,10 @@ const SumraHeader = () => {
         const value = event.target.value;
         alert(value);
     };
-
+    const { pageTitle } = useContext(Context);
     return (
         <div className="sumra-header">
-            <span className="sumra-header-text">Chats</span>
+            <span className="sumra-header-text">{pageTitle}</span>
             <input
                 className="sumra-header-search"
                 type="text"
