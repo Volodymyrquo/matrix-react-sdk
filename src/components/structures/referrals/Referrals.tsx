@@ -1,6 +1,6 @@
 import React, { useContext, FC } from "react";
 import SidebarReferrals from "./SidebarReferrals";
-import { ReferralsProvider } from "../../../contexts/Referrals/contextReferrals";
+import { PioneerMembershipProvider } from "../../../contexts/PioneerMembership/contextPioneerMembership";
 import { ContactBookProvider } from "../../../contexts/ContactBook/contextContactBook";
 import ReferralsHeader from "./ReferralsHeader.jsx";
 import ReferralsPage from "component-referrals";
@@ -12,7 +12,7 @@ const Referrals: FC = () => {
 
     return (
         <div className="sumra-referrals-main" >
-            <ReferralsProvider>
+            <PioneerMembershipProvider>
                 <SidebarReferrals />
                 <ContactBookProvider>
 
@@ -21,7 +21,7 @@ const Referrals: FC = () => {
                         {subpage}
                     </div>
                 </ContactBookProvider>
-            </ReferralsProvider>
+            </PioneerMembershipProvider>
 
         </div>
     );

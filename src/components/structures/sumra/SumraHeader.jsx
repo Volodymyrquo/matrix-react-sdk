@@ -1,32 +1,33 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Avatars from "../../../../res/images/sumra/Avatars.png";
-import settings from "../../../../res/images/sumra/Settings.png";
-import dialNumbers from "../../../../res/images/sumra/Dial-numbers.png";
-import bell from "../../../../res/images/sumra/bell.png";
 import { OwnProfileStore } from "../../../stores/OwnProfileStore";
 import { Context } from "../../../contexts/Routes/context";
 
-const SumraHeader = () => {
+const SumraHeader = ({ handleOnChange }) => {
     const personName = localStorage.getItem("mx_profile_displayname");
     const personUserId = localStorage.getItem("mx_user_id");
     const avatarSize = 32;
     const avatarUrl = OwnProfileStore.instance.getHttpAvatarUrl(avatarSize);
-    const handleOnChange = (event) => {
-        const value = event.target.value;
-        alert(value);
-    };
+
     const { pageTitle } = useContext(Context);
+    const bell = "https://i.ibb.co/kMXWP46/bell.png";
+    const settings = "https://i.ibb.co/NjYqgS5/Settings-1.png";
+    const dialNumbers = "https://i.ibb.co/f9mvg2Y/Dial-numbers.png";
+    const search = "https://i.ibb.co/XZGhQFY/Search-grey.png";
+
     return (
         <div className="sumra-header">
             <span className="sumra-header-text">{pageTitle}</span>
-            <input
-                className="sumra-header-search"
-                type="text"
-                placeholder="Search..."
-                onChange={(event) => {
-                    handleOnChange(event);
-                }}
-            />
+            <div className="sumra-header-search">
+                <input
+                    type="text"
+                    placeholder="Search..."
+                    onChange={(event) => {
+                        handleOnChange(event);
+                    }}
+                />
+                <img src={search} alt="search image" />
+            </div>
 
             <div className="sumra-header-info">
                 <img

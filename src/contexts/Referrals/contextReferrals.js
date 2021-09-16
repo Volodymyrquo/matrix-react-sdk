@@ -1,67 +1,56 @@
 import React, { useReducer, createContext } from "react";
-import reducerReferrals from "./reducerReferrals";
-import { initialState } from "./reducerReferrals";
+import { initialState } from "./referralsReducer";
+import referralReducer from "./referralsReducer";
 import {
-    ACTIVE_UPDRADE_BUTTON,
-    ACTIVE_PAY_BUTTON,
-    ACTIVE_BASIC,
-    ACTIVE_BRONZE,
-    ACTIVE_SILVER,
-    ACTIVE_GOLD,
-    ACTIVE_BUTTON_BRONZE,
-    ACTIVE_BUTTON_SILVER,
-    ACTIVE_BUTTON_GOLD,
+    REFERRAL_CODE,
+    REFERRAL_CODE_POST,
+    GENERATE_CODE,
+    GET_REFERRALS,
+    POST_REFERRALS,
+    DELETE_REFERRALS,
+    LAST_REFERRAL_CODE,
 } from "./actionTypes";
 
 export const ReferralsContext = createContext(initialState);
 
 export const ReferralsProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(reducerReferrals, initialState);
+    const [state, dispatch] = useReducer(referralReducer, initialState);
     const actions = {
-        activeUpdradeButton: (activeUpdrade) =>
+        getCode: (referralCodes) =>
             dispatch({
-                type: ACTIVE_UPDRADE_BUTTON,
-                activeUpdrade,
+                type: REFERRAL_CODE,
+                referralCodes,
             }),
-        activePayButton: (activePay) =>
+        getLastCode: (lastReferralCode) =>
             dispatch({
-                type: ACTIVE_PAY_BUTTON,
-                activePay,
+                type: LAST_REFERRAL_CODE,
+                lastReferralCode,
             }),
-        activeBasicButton: (activeBasic) =>
+        postCode: (referralCode) =>
             dispatch({
-                type: ACTIVE_BASIC,
-                activeBasic,
+                type: REFERRAL_CODE_POST,
+                referralCode,
             }),
-        activeBronzeButton: (activeBronze) =>
+        sentCode: (generateСode) =>
             dispatch({
-                type: ACTIVE_BRONZE,
-                activeBronze,
+                type: GENERATE_CODE,
+                generateСode,
             }),
-        activeSilverButton: (activeSilver) =>
+        fatchReferrals: () =>
             dispatch({
-                type: ACTIVE_SILVER,
-                activeSilver,
+                type: GET_REFERRALS,
             }),
-        activeGoldButton: (activeGold) =>
+        postReferrals: (code) =>
             dispatch({
-                type: ACTIVE_GOLD,
-                activeGold,
+                type: POST_REFERRALS,
+                option: {
+                    application_id: code,
+                },
             }),
-        nameBronzeButton: (nameBronzeBtn) =>
+        removeReferrals: (id) =>
             dispatch({
-                type: ACTIVE_BUTTON_BRONZE,
-                nameBronzeBtn,
-            }),
-        nameSilverButton: (nameSilverBtn) =>
-            dispatch({
-                type: ACTIVE_BUTTON_SILVER,
-                nameSilverBtn,
-            }),
-        nameGoldButton: (nameGoldBtn) =>
-            dispatch({
-                type: ACTIVE_BUTTON_GOLD,
-                nameGoldBtn,
+                type: DELETE_REFERRALS,
+                id,
             }),
     };
 

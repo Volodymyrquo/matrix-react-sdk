@@ -123,10 +123,10 @@ const TAG_AESTHETICS: ITagAestheticsMap = {
         },
     },
     [DefaultTagID.Untagged]: {
-        sectionLabel: _td("Rooms"),
+        sectionLabel: _td("Group chats"),
         isInvite: false,
         defaultHidden: false,
-        addRoomLabel: _td("Add room"),
+        addRoomLabel: _td("Add group chat"),
         addRoomContextMenu: (onFinished: () => void) => {
             if (SpaceStore.instance.activeSpace) {
                 const canAddRooms = SpaceStore.instance.activeSpace.currentState.maySendStateEvent(EventType.SpaceChild,
@@ -134,7 +134,7 @@ const TAG_AESTHETICS: ITagAestheticsMap = {
 
                 return <IconizedContextMenuOptionList first>
                     <IconizedContextMenuOption
-                        label={_t("Create new room")}
+                        label={_t("Create new group chat")}
                         iconClassName="mx_RoomList_iconPlus"
                         onClick={(e) => {
                             e.preventDefault();
@@ -144,7 +144,7 @@ const TAG_AESTHETICS: ITagAestheticsMap = {
                         }}
                         disabled={!canAddRooms}
                         tooltip={canAddRooms ? undefined
-                            : _t("You do not have permissions to create new rooms in this space")}
+                            : _t("You do not have permissions to create new group chat in this space")}
                     />
                     <IconizedContextMenuOption
                         label={_t("Add existing room")}
@@ -160,7 +160,7 @@ const TAG_AESTHETICS: ITagAestheticsMap = {
                             : _t("You do not have permissions to add rooms to this space")}
                     />
                     <IconizedContextMenuOption
-                        label={_t("Explore rooms")}
+                        label={_t("Explore group chats")}
                         iconClassName="mx_RoomList_iconBrowse"
                         onClick={(e) => {
                             e.preventDefault();
@@ -174,7 +174,7 @@ const TAG_AESTHETICS: ITagAestheticsMap = {
 
             return <IconizedContextMenuOptionList first>
                 <IconizedContextMenuOption
-                    label={_t("Create new room")}
+                    label={_t("Create new group chat")}
                     iconClassName="mx_RoomList_iconPlus"
                     onClick={(e) => {
                         e.preventDefault();
@@ -185,8 +185,8 @@ const TAG_AESTHETICS: ITagAestheticsMap = {
                 />
                 <IconizedContextMenuOption
                     label={CommunityPrototypeStore.instance.getSelectedCommunityId()
-                        ? _t("Explore community rooms")
-                        : _t("Explore public rooms")}
+                        ? _t("Explore community group chats")
+                        : _t("Explore public group chats")}
                     iconClassName="mx_RoomList_iconExplore"
                     onClick={(e) => {
                         e.preventDefault();
@@ -217,7 +217,7 @@ const TAG_AESTHETICS: ITagAestheticsMap = {
     },
 
     [DefaultTagID.Suggested]: {
-        sectionLabel: _td("Suggested Rooms"),
+        sectionLabel: _td("Suggested Group chats"),
         isInvite: false,
         defaultHidden: false,
     },
@@ -520,7 +520,7 @@ export default class RoomList extends React.PureComponent<IProps, IState> {
                         kind="link"
                         onClick={this.onExplore}
                     >
-                        { this.props.activeSpace ? _t("Explore rooms") : _t("Explore all public rooms") }
+                        { this.props.activeSpace ? _t("Explore group chats") : _t("Explore all public group chats") }
                     </AccessibleButton>
                 </div>;
             } else if (
@@ -538,7 +538,7 @@ export default class RoomList extends React.PureComponent<IProps, IState> {
                         className="mx_RoomList_explorePrompt_spaceExplore"
                         onClick={this.onExplore}
                     >
-                        {_t("Explore rooms")}
+                        {_t("Explore group chats")}
                     </AccessibleButton> }
                 </div>;
             } else if (Object.values(this.state.sublists).some(list => list.length > 0)) {
@@ -579,7 +579,7 @@ export default class RoomList extends React.PureComponent<IProps, IState> {
                         onKeyDown={onKeyDownHandler}
                         className="mx_RoomList"
                         role="tree"
-                        aria-label={_t("Rooms")}
+                        aria-label={_t("Group chats")}
                     >
                         {sublists}
                         {explorePrompt}

@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState, useContext } from 'react';
-import { ReferralsContext } from "../../../../contexts/Referrals/contextReferrals";
+import { ReferralsContext } from "../../../../contexts/PioneerMembership/contextPioneerMembership";
 import { Context } from "../../../../contexts/Routes/context";
 import money from '../../../../../res/images/users/money.svg';
 import bronze from '../../../../../res/images/users/bronze.svg';

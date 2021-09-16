@@ -739,7 +739,7 @@ export default class InviteDialog extends React.PureComponent<IInviteDialogProps
         const cli = MatrixClientPeg.get();
         const room = cli.getRoom(this.props.roomId);
         if (!room) {
-            console.error("Failed to find the room to invite users to");
+            console.error("Failed to find the group chat to invite users to");
             this.setState({
                 busy: false,
                 errorText: _t("Something went wrong trying to invite the users."),
@@ -1414,7 +1414,7 @@ export default class InviteDialog extends React.PureComponent<IInviteDialogProps
                     spaceName: room.name || _t("Unnamed Space"),
                 })
                 : _t("Invite to %(roomName)s", {
-                    roomName: room.name || _t("Unnamed Room"),
+                    roomName: room.name || _t("Unnamed Group chat"),
                 });
 
             let helpTextUntranslated;
@@ -1429,10 +1429,10 @@ export default class InviteDialog extends React.PureComponent<IInviteDialogProps
             } else {
                 if (identityServersEnabled) {
                     helpTextUntranslated = _td("Invite someone using their name, email address, username " +
-                        "(like <userId/>) or <a>share this room</a>.");
+                        "(like <userId/>) or <a>share this group chat</a>.");
                 } else {
                     helpTextUntranslated = _td("Invite someone using their name, username " +
-                        "(like <userId/>) or <a>share this room</a>.");
+                        "(like <userId/>) or <a>share this group chat</a>.");
                 }
             }
 
@@ -1455,7 +1455,7 @@ export default class InviteDialog extends React.PureComponent<IInviteDialogProps
                     visibilityEvent.getContent().history_visibility;
                 if (visibility === "world_readable" || visibility === "shared") {
                     keySharingWarning =
-                        <p className='mx_InviteDialog_helpText'>
+                        <p className='Text'>
                             <img
                                 src={require("../../../../res/img/element-icons/info.svg")}
                                 width={14} height={14} />

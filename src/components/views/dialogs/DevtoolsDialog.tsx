@@ -399,7 +399,7 @@ interface IRoomStateExplorerState {
 }
 
 class RoomStateExplorer extends React.PureComponent<IExplorerProps, IRoomStateExplorerState> {
-    static getLabel() { return _t('Explore Room State'); }
+    static getLabel() { return _t('Explore Group chat State'); }
 
     static contextType = MatrixClientContext;
 

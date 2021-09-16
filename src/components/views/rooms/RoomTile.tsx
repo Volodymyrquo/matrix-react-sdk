@@ -542,7 +542,7 @@ export default class RoomTile extends React.PureComponent<IProps, IState> {
                 <IconizedContextMenuOptionList red>
                     <IconizedContextMenuOption
                         onClick={this.onLeaveRoomClick}
-                        label={_t("Leave Room")}
+                        label={_t("Leave Group chat")}
                         iconClassName="mx_RoomTile_iconSignOut"
                     />
                 </IconizedContextMenuOptionList>
@@ -554,7 +554,7 @@ export default class RoomTile extends React.PureComponent<IProps, IState> {
                 <ContextMenuTooltipButton
                     className="mx_RoomTile_menuButton"
                     onClick={this.onGeneralMenuOpenClick}
-                    title={_t("Room options")}
+                    title={_t("Group chat options")}
                     isExpanded={!!this.state.generalMenuPosition}
                 />
                 {contextMenu}

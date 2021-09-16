@@ -14,35 +14,9 @@
     color: #8a94a6;
     font-family: Inter;
     &-logo-block {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        height: 76px;
-        width: inherit;
-        img {
-            height: 76px;
-        }
-        span {
-            position: absolute;
-            width: 111px;
-            height: 22px;
-            left: 70px;
-            top: calc(50% - 32px / 2);
-
-            font-family: "SF Compact Display";
-            font-style: normal;
-            font-weight: bold;
-            font-size: 22px;
-            line-height: 100%;
-            /* identical to box height, or 22px */
-
-            display: flex;
-            align-items: center;
-
-            /* Text/Text 2 */
-
-            color: #4e5d78;
-        }
+        margin-right: 70px;
+        margin-top: 24px;
+        width: 166px;
     }
 
     h2 {

@@ -506,7 +506,7 @@ export default class MemberList extends React.Component<IProps, IState> {
         let inviteButton;
 
         if (room && room.getMyMembership() === 'join') {
-            let inviteButtonText = _t("Invite to this room");
+            let inviteButtonText = _t("");
             const chat = CommunityPrototypeStore.instance.getSelectedCommunityGeneralChat();
             if (chat && chat.roomId === this.props.roomId) {
                 inviteButtonText = _t("Invite to this community");

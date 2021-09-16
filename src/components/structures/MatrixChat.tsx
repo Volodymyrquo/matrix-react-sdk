@@ -107,6 +107,8 @@ import UIStore, { UI_EVENTS } from "../../stores/UIStore";
 import SoftLogout from './auth/SoftLogout';
 import { makeRoomPermalink } from "../../utils/permalinks/Permalinks";
 import { copyPlaintext } from "../../utils/strings";
+import { Provider } from "../../contexts/Routes/context.js";
+
 
 /** constants for MatrixChat.state.view */
 export enum Views {
@@ -2075,15 +2077,18 @@ export default class MatrixChat extends React.PureComponent<IProps, IState> {
                  * as using something like redux to avoid having a billion bits of state kicking around.
                  */
                 view = (
-                    <LoggedInView
-                        {...this.props}
-                        {...this.state}
-                        ref={this.loggedInView}
-                        matrixClient={MatrixClientPeg.get()}
-                        onRoomCreated={this.onRoomCreated}
-                        onRegistered={this.onRegistered}
-                        currentRoomId={this.state.currentRoomId}
-                    />
+                    <Provider>
+                        <LoggedInView
+                            {...this.props}
+                            {...this.state}
+                            ref={this.loggedInView}
+                            matrixClient={MatrixClientPeg.get()}
+                            onRoomCreated={this.onRoomCreated}
+                            onRegistered={this.onRegistered}
+                            currentRoomId={this.state.currentRoomId}
+                        />
+
+                    </Provider>
                 );
             } else {
                 // we think we are logged in, but are still waiting for the /sync to complete

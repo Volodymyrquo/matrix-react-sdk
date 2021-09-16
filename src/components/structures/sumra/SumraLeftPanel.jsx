@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../../contexts/Routes/context";
 import referrals from "../../../../res/images/sumra/referrals.png";
-import sumraLogo from "../../../../res/images/sumra/sumra-logo.svg";
+import sumraLogo from "../../../../res/images/sumra/Logo-Horizontal.svg";
 import saleGrey from "../../../../res/images/sumra/Sale-grey.svg";
 import saleOrange from "../../../../res/images/sumra/Sale-orange.svg";
 import chartPieGrey from "../../../../res/images/sumra/Chart-pie-grey.svg";
@@ -21,8 +21,6 @@ import halfStarGrey from "../../../../res/images/sumra/Half-star-grey.svg";
 import halfStarOrange from "../../../../res/images/sumra/Half-star-orange.svg";
 import groupPeopleGrey from "../../../../res/images/sumra/Group-people-grey.svg";
 import groupPeopleOrange from "../../../../res/images/sumra/Group-people-orange.svg";
-import groupChatGrey from "../../../../res/images/sumra/Group-chat-grey.svg";
-import groupChatOrange from "../../../../res/images/sumra/Group-chat-orange.svg";
 
 const NavigationSidebar = () => {
     const { setPageTitle } = useContext(Context);
@@ -34,12 +32,16 @@ const NavigationSidebar = () => {
     useEffect(() => {
         windowLocation = window.location.pathname;
     }, [window.location.pathname]);
+    const groupChatOrange = "https://i.ibb.co/NsGzGsd/Group-chat-orange.png";
+    const groupChatGrey = "https://i.ibb.co/R22ryTV/Group-chat-grey.png";
     return (
         <nav className="sumra-nav-bar">
-            <div className="sumra-nav-bar-logo-block">
-                <img src={sumraLogo} alt="logo" />
-                <span> Sumrachat</span>
-            </div>
+            <img
+                className="sumra-nav-bar-logo-block"
+                src={sumraLogo}
+                alt="logo"
+            />
+
             <h2>personal</h2>
             <ul>
                 <Link to="/chats">

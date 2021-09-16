@@ -221,7 +221,7 @@ export const AddExistingToSpace: React.FC<IAddExistingToSpaceProps> = ({
     return <div className="mx_AddExistingToSpace">
         <SearchBox
             className="mx_textinput_icon mx_textinput_search"
-            placeholder={ _t("Filter your rooms and spaces") }
+            placeholder={ _t("Search your group chats and spaces") }
             onSearch={setQuery}
             autoComplete={true}
             autoFocus={true}
@@ -229,7 +229,7 @@ export const AddExistingToSpace: React.FC<IAddExistingToSpaceProps> = ({
         <AutoHideScrollbar className="mx_AddExistingToSpace_content">
             { rooms.length > 0 ? (
                 <div className="mx_AddExistingToSpace_section">
-                    <h3>{ _t("Rooms") }</h3>
+                    <h3>{ _t("Group chats") }</h3>
                     <TruncatedList
                         truncateAt={truncateAt}
                         createOverflowElement={overflowTile}

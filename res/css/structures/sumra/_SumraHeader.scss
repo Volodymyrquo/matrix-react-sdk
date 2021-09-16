@@ -20,17 +20,25 @@
         align-items: center;
         padding: 13px 20px 13px 18px;
 
-        position: static;
+        position: relative;
         width: 675px;
         height: 50px;
-        left: 143px;
+        left: 0px;
         top: 0px;
 
         /* BG 3 */
 
-        background: /* #fafbfc */ red;
+        background: #fafbfc;
         border-radius: 12px;
         margin-left: 80px;
+        @media (max-width: 1536px) {
+            width: 475px;
+        }
+
+        img {
+            position: absolute;
+            right: 10px;
+        }
     }
 
     &-text {

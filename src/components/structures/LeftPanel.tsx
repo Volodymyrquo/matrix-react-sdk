@@ -437,7 +437,7 @@ export default class LeftPanel extends React.Component<IProps, IState> {
                         mx_LeftPanel_exploreButton_space: !!this.state.activeSpace,
                     })}
                     onClick={this.onExplore}
-                    title={_t("Explore rooms")}
+                    title={_t("Explore group chats")}
                 />
             </div>
         );
@@ -479,8 +479,8 @@ export default class LeftPanel extends React.Component<IProps, IState> {
             <div className={containerClasses} ref={this.ref}>
                 {/*  {leftLeftPanel} */}
                 <aside className="mx_LeftPanel_roomListContainer">
-                    {/*     {this.renderHeader()}
-                    {this.renderSearchDialExplore()} */}
+                    {/*     {this.renderHeader()}*/}
+                    {this.renderSearchDialExplore()} 
                     {/*     <div className="sumra-contact-book-link"><Link to="/contact_book">Contact book</Link></div>
                     <div className="sumra-contact-book-link"><Link to="/referrals">Referrals</Link></div>  */}
 

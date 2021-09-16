@@ -323,7 +323,7 @@ const SpaceLandingAddButton = ({ space, onNewRoomAdded }) => {
         >
             <IconizedContextMenuOptionList first>
                 <IconizedContextMenuOption
-                    label={_t("Create new room")}
+                    label={_t("Create new group chat")}
                     iconClassName="mx_RoomList_iconPlus"
                     onClick={async (e) => {
                         e.preventDefault();

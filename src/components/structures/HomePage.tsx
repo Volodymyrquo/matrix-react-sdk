@@ -115,7 +115,7 @@ const HomePage: React.FC<IProps> = ({ justRegistered = false }) => {
         introSection = <React.Fragment>
             <img src={logoUrl} alt={config.brand} />
             <h1>{ _t("Welcome to Sumrachat", { appName: config.brand }) }</h1>
-            <h4 className="sm_HomePage_slogan">{ _t("Own it all.Speek freely.") }</h4>
+            <h4 className="sm_HomePage_slogan">{ _t("Own it all. Speak freely.") }</h4>
             <h4 className="sm_HomePage_text">
                 {_t("Secure encrypted messaging, voice, video calls, share and collaborate.")}
             </h4>
@@ -130,7 +130,7 @@ const HomePage: React.FC<IProps> = ({ justRegistered = false }) => {
                     { _t("Send a Direct Message") }
                 </AccessibleButton>
                 <AccessibleButton onClick={onClickExplore} className="mx_HomePage_button_explore" >
-                    { _t("Explore Public Rooms") }
+                    { _t("Explore Public Group Chats") }
                 </AccessibleButton>
                 <AccessibleButton onClick={onClickNewRoom} className="mx_HomePage_button_createGroup" >
                     { _t("Create a Group Chat") }

@@ -164,9 +164,9 @@ export default class RoomSearch extends React.PureComponent<IProps, IState> {
             'mx_RoomSearch_inputExpanded': this.state.query || this.state.focused,
         });
 
-        let placeholder = _t("Filter");
+        let placeholder = _t("Search...");
         if (this.state.inSpaces) {
-            placeholder = _t("Filter all spaces");
+            placeholder = _t("Search all spaces");
         }
 
         let icon = (
@@ -198,7 +198,7 @@ export default class RoomSearch extends React.PureComponent<IProps, IState> {
         if (this.props.isMinimized) {
             icon = (
                 <AccessibleButton
-                    title={_t("Filter rooms and people")}
+                    title={_t("Search group chats and people")}
                     className="mx_RoomSearch_icon mx_RoomSearch_minimizedHandle"
                     onClick={this.openSearch}
                 />

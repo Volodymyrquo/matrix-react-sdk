@@ -1,9 +1,10 @@
 import React from 'react'
+import Rewards from "component-rewards"
 
 const SumraRewards = () => {
     return (
         <div className="sumra-referrals-main">
-            Hello from Rewards
+            <Rewards />
         </div>
     )
 }

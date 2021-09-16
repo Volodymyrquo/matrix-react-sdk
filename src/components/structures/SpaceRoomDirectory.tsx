@@ -597,7 +597,7 @@ const SpaceRoomDirectory: React.FC<IProps> = ({ space, onFinished, initialText }
     const title = <React.Fragment>
         <RoomAvatar room={space} height={32} width={32} />
         <div>
-            <h1>{ _t("Explore rooms") }</h1>
+            <h1>{ _t("Explore group chats") }</h1>
             <div><RoomName room={space} /></div>
         </div>
     </React.Fragment>;
@@ -605,7 +605,7 @@ const SpaceRoomDirectory: React.FC<IProps> = ({ space, onFinished, initialText }
     return (
         <BaseDialog className="mx_SpaceRoomDirectory" hasCancel={true} onFinished={onFinished} title={title}>
             <div className="mx_Dialog_content">
-                { _t("If you can't find the room you're looking for, ask for an invite or <a>create a new room</a>.",
+                { _t("If you can't find the group chat you're looking for, ask for an invite or <a>create a new group chat</a>.",
                     null,
                     { a: sub => {
                         return <AccessibleButton kind="link" onClick={onCreateRoomClick}>{sub}</AccessibleButton>;

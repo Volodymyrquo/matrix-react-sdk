@@ -92,6 +92,7 @@ h6 {
     left: 260px;
     width: calc(100% - 260px);
     min-height: 100%;
-    overflow: scroll !important;
+    overflow: scroll;
     background-color: #ffffff;
+    padding: 30px;
 }

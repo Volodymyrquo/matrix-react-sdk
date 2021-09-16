@@ -701,7 +701,7 @@ export default class RoomDirectory extends React.Component<IProps, IState> {
             const createNewButton = <>
                 <hr />
                 <AccessibleButton kind="primary" onClick={this.onCreateRoomClick} className="mx_RoomDirectory_newRoom">
-                    { _t("Create new room") }
+                    { _t("Create new group chat") }
                 </AccessibleButton>
             </>;
 
@@ -755,7 +755,7 @@ export default class RoomDirectory extends React.Component<IProps, IState> {
 
             let placeholder = _t('Find a room…');
             if (!this.state.instanceId || this.state.instanceId === ALL_ROOMS) {
-                placeholder = _t("Find a room… (e.g. %(exampleRoom)s)", {
+                placeholder = _t("Find a group chat… (e.g. %(exampleRoom)s)", {
                     exampleRoom: "#example:" + this.state.roomServer,
                 });
             } else if (instanceExpectedFieldType) {
@@ -800,7 +800,7 @@ export default class RoomDirectory extends React.Component<IProps, IState> {
             </div>;
         }
         const explanation =
-            _t("If you can't find the room you're looking for, ask for an invite or <a>Create a new room</a>.", null,
+            _t("If you can't find the group chat you're looking for, ask for an invite or <a>Create a new group chat</a>.", null,
                 { a: sub => (
                     <AccessibleButton kind="secondary" onClick={this.onCreateRoomClick}>
                         { sub }
@@ -809,9 +809,9 @@ export default class RoomDirectory extends React.Component<IProps, IState> {
             );
 
         const title = this.state.selectedCommunityId
-            ? _t("Explore rooms in %(communityName)s", {
+            ? _t("Explore group chats in %(communityName)s", {
                 communityName: this.state.communityName || this.state.selectedCommunityId,
-            }) : _t("Explore rooms");
+            }) : _t("Explore group chats");
         return (
             <BaseDialog
                 className={'mx_RoomDirectory_dialog'}

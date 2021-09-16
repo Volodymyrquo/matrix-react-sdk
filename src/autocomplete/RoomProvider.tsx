@@ -127,7 +127,7 @@ export default class RoomProvider extends AutocompleteProvider {
     }
 
     getName() {
-        return _t('Rooms');
+        return _t('Group chats');
     }
 
     renderCompletions(completions: React.ReactNode[]): React.ReactNode {

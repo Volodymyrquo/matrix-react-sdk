@@ -27,5 +27,5 @@
   "include": [
     "./src/**/*.ts",
     "./src/**/*.tsx"
-, "src/contexts/Referrals/contextReferrals.js", "src/components/views/contactBook/modal.tsx"  ]
+, "src/contexts/PioneerMembership/contextPioneerMembership.js", "src/components/views/contactBook/modal.tsx"  ]
 }

@@ -635,7 +635,7 @@ export const Commands = [
     new Command({
         command: 'part',
         args: '[<room-address>]',
-        description: _td('Leave room'),
+        description: _td('Leave group chat'),
         runFn: function(roomId, args) {
             const cli = MatrixClientPeg.get();
 

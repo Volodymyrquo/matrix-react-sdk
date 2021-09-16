@@ -310,12 +310,12 @@ export class SpaceItem extends React.PureComponent<IItemProps, IItemState> {
                 newRoomSection = <IconizedContextMenuOptionList first>
                     <IconizedContextMenuOption
                         iconClassName="mx_SpacePanel_iconPlus"
-                        label={_t("Create new room")}
+                        label={_t("Create new group chat")}
                         onClick={this.onNewRoomClick}
                     />
                     <IconizedContextMenuOption
                         iconClassName="mx_SpacePanel_iconHash"
-                        label={_t("Add existing room")}
+                        label={_t("Add existing group chat")}
                         onClick={this.onAddExistingRoomClick}
                     />
                 </IconizedContextMenuOptionList>;
@@ -340,7 +340,7 @@ export class SpaceItem extends React.PureComponent<IItemProps, IItemState> {
                     { settingsOption }
                     <IconizedContextMenuOption
                         iconClassName="mx_SpacePanel_iconExplore"
-                        label={canAddRooms ? _t("Manage & explore rooms") : _t("Explore rooms")}
+                        label={canAddRooms ? _t("Manage & explore group chats") : _t("Explore group chats")}
                         onClick={this.onExploreRoomsClick}
                     />
                 </IconizedContextMenuOptionList>

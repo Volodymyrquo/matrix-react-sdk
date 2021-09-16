@@ -225,12 +225,12 @@ export default class CreateRoomDialog extends React.Component<IProps, IState> {
         }
 
         let publicPrivateLabel = <p>{_t(
-            "Private rooms can be found and joined by invitation only. Public rooms can be " +
+            "Private group chats can be found and joined by invitation only. Public group chats can be " +
             "found and joined by anyone.",
         )}</p>;
         if (CommunityPrototypeStore.instance.getSelectedCommunityId()) {
             publicPrivateLabel = <p>{_t(
-                "Private rooms can be found and joined by invitation only. Public rooms can be " +
+                "Private group chats can be found and joined by invitation only. Public group chats can be " +
                 "found and joined by anyone in this community.",
             )}</p>;
         }
@@ -242,7 +242,7 @@ export default class CreateRoomDialog extends React.Component<IProps, IState> {
                 if (this.state.canChangeEncryption) {
                     microcopy = _t("You can’t disable this later. Bridges & most bots won’t work yet.");
                 } else {
-                    microcopy = _t("Your server requires encryption to be enabled in private rooms.");
+                    microcopy = _t("Your server requires encryption to be enabled in private group chats.");
                 }
             } else {
                 microcopy = _t("Your server admin has disabled end-to-end encryption by default " +
@@ -273,10 +273,10 @@ export default class CreateRoomDialog extends React.Component<IProps, IState> {
             );
         }
 
-        let title = this.state.isPublic ? _t('Create a public room') : _t('Create a private room');
+        let title = this.state.isPublic ? _t('Create a public group chat') : _t('Create a private group chat');
         if (CommunityPrototypeStore.instance.getSelectedCommunityId()) {
             const name = CommunityPrototypeStore.instance.getSelectedCommunityName();
-            title = _t("Create a room in %(communityName)s", { communityName: name });
+            title = _t("Create a group chat in %(communityName)s", { communityName: name });
         }
         return (
             <BaseDialog className="mx_CreateRoomDialog" onFinished={this.props.onFinished}
@@ -299,7 +299,7 @@ export default class CreateRoomDialog extends React.Component<IProps, IState> {
                             className="mx_CreateRoomDialog_topic"
                         />
                         <LabelledToggleSwitch
-                            label={_t("Make this room public")}
+                            label={_t("Make this group chat public")}
                             onChange={this.onPublicChange}
                             value={this.state.isPublic}
                         />
@@ -322,7 +322,7 @@ export default class CreateRoomDialog extends React.Component<IProps, IState> {
                         </details>
                     </div>
                 </form>
-                <DialogButtons primaryButton={_t('Create Room')}
+                <DialogButtons primaryButton={_t('Create Group chat')}
                     onPrimaryButtonClick={this.onOk}
                     onCancel={this.onCancel} />
             </BaseDialog>

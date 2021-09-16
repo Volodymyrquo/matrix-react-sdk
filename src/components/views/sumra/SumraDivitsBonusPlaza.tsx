@@ -1,9 +1,10 @@
 import React from 'react'
+import DivitsBonusPlaza from "component-divits-bonus-plaza"
 
 const SumraDivitsBonusPlaza = () => {
     return (
         <div className="sumra-referrals-main">
-            Hello from Divits Bonus Plaza
+<DivitsBonusPlaza />
         </div>
     )
 }

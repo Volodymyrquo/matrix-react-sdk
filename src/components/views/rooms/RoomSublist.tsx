@@ -580,7 +580,7 @@ export default class RoomSublist extends React.Component<IProps, IState> {
                                 onChange={this.onUnreadFirstChanged}
                                 checked={isUnreadFirst}
                             >
-                                {_t("Show rooms with unread messages first")}
+                                {_t("Show group chats with unread messages first")}
                             </StyledMenuItemCheckbox>
                             <StyledMenuItemCheckbox
                                 onClose={this.onCloseMenu}

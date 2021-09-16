@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { FC, useState, useContext } from 'react';
-import { ReferralsContext } from "../../../../contexts/Referrals/contextReferrals";
+import { ReferralsContext } from "../../../../contexts/PioneerMembership/contextPioneerMembership";
 import {Context} from "../../../../contexts/Routes/context"
 import total from '../../../../../res/images/cashbacks/total.svg';
 import sum from '../../../../../res/images/cashbacks/sum.svg';

@@ -65,10 +65,10 @@ import UserView from "./UserView";
 import GroupView from "./GroupView";
 import SpaceStore from "../../stores/SpaceStore";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-import SumraReferrals from "../views/sumra/SumraReferrals";
-import SumraHeader from "./sumra/SumraHeader.jsx";
+import SumraReferrals from "../views/sumra/SumraReferralsWrapper.jsx";
+import SumraHeader from "./sumra/SumraHeaderWrapper.jsx";
 import SumraLeftPanel from "./sumra/SumraLeftPanel.jsx";
-import { Provider } from "../../contexts/Routes/context";
+import { Context } from "../../contexts/Routes/context";
 import SumraLeaderboard from "../views/sumra/SumraLeaderboard";
 import SumraGlobalEarnings from '../views/sumra/SumraGlobalEarnings';
 import SumraStatistics from '../views/sumra/SumraStatistics';
@@ -582,6 +582,7 @@ class LoggedInView extends React.Component<IProps, IState> {
             this._roomView.current.handleScrollKey(ev);
         }
     };
+    static contextType = Context;
 
     render() {
         let pageElement;
@@ -604,7 +605,7 @@ class LoggedInView extends React.Component<IProps, IState> {
                 break;
 
             case PageTypes.RoomDirectory:
-                // handled by MatrixChat for now
+            // handled by MatrixChat for now
                 break;
 
             case PageTypes.HomePage:
@@ -633,15 +634,17 @@ class LoggedInView extends React.Component<IProps, IState> {
                 <AudioFeedArrayForCall call={call} key={call.callId} />
             );
         });
-
+        const pageTitle = this.context.pageTitle;
         return (
             <Router>
-                <Provider>
-                    <>
+                {pageTitle === 'Contact Book'?
+                    <Route path="/contact_book" component={SumraContactBook} />
+                    : <>
                         <SumraHeader />
                         <SumraLeftPanel />
 
                         <Switch>
+                            <Redirect exact from="/" to="/chats" />
                             <Route path="/chats">
                                 <MatrixClientContext.Provider value={this._matrixClient}>
                                     <div
@@ -669,19 +672,17 @@ class LoggedInView extends React.Component<IProps, IState> {
                                 </MatrixClientContext.Provider>
                             </Route>
 
-                            <Route path="/contact_book" component={SumraContactBook} />
                             <Route path="/referrals" component={SumraReferrals} />
                             <Route path="/leaderboard" component={SumraLeaderboard} />
                             <Route path="/global-earnings" component={SumraGlobalEarnings} />
                             <Route path="/statistics" component={SumraStatistics} />
+                            <Route path="/any/divits" component={SumraDivitsBonusPlaza} />
                             <Route path="/pioneer-membership" component={SumraPioneerMembership} />
                             <Route path="/divits-bonus-plaza" component={SumraDivitsBonusPlaza} />
                             <Route path="/rewards" component={SumraRewards} />
-
                         </Switch>
 
-                    </>
-                </Provider>
+                    </>}
             </Router>
         );
     }
