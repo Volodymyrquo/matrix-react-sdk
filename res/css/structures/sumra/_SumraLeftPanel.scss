@@ -13,6 +13,9 @@
     align-items: center;
     color: #8a94a6;
     font-family: Inter;
+    @media (max-width: 768px) {
+        display: none;
+    }
     &-logo-block {
         margin-right: 70px;
         margin-top: 24px;

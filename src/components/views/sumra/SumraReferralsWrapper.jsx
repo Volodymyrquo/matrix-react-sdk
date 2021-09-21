@@ -4,8 +4,6 @@ import { ReferralsProvider } from "../../../contexts/Referrals/contextReferrals.
 import SumraReferrals from "./SumraReferrals";
 
 const SumraReferralsWrapper = () => {
-    debugger;
-
     return (
         <ReferralsProvider>
             <div className="sumra-referrals-main">

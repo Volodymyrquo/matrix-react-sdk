@@ -26,6 +26,7 @@ $roomListCollapsedWidth: 68px;
     // Create a row-based flexbox for the GroupFilterPanel and the room list
     display: flex;
     contain: content;
+    margin-top: 98px;
 
     .mx_LeftPanel_GroupFilterPanelContainer {
         flex-grow: 0;
@@ -50,8 +51,11 @@ $roomListCollapsedWidth: 68px;
         // Create another flexbox (this time a column) for the room list components
         display: flex;
         flex-direction: column;
-        margin-top: 98px;
         margin-left: 260px;
+        @media (max-width: 768px) {
+            margin-left: 0;
+            width: 260px;
+        }
 
         .mx_LeftPanel_userHeader {
             /* 12px top, 12px sides, 20px bottom (using 13px bottom to account

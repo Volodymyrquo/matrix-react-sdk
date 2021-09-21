@@ -4,10 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { Context } from "../../../contexts/Routes/context";
 import { OwnProfileStore } from "../../../stores/OwnProfileStore";
 
-import SumraHeader from '../../structures/sumra/SumraHeader.jsx';
 
-import logoMeet from "../../../../res/images/sumra/logo.svg";
-import photo from "../../../../res/images/sumra/Avatars.png";
+const logoSumraChat = "https://i.ibb.co/wy4rGz8/Logo-Horizontal.png";
 
 const SumraContactBook = () => {
     const history = useHistory();
@@ -26,19 +24,14 @@ const SumraContactBook = () => {
         routes: {
           setPath,
         },
-        style: 'sumra-meet',
-        logo: logoMeet,
+        style: 'sumra-chat',
+        logo: logoSumraChat,
         header: {
-          sumraWallet: {
-            start: false,
-            avatar: photo,
-          },
-          sumraMeet: {
-            start: true,
+       
             avatar: photo,
             name: personName,
             personId: personUserId,
-          },
+          
         },
     };
     return (

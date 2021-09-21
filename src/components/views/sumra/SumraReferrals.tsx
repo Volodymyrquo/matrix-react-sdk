@@ -5,19 +5,20 @@ import { useHistory } from 'react-router-dom';
 
 import Referrals from "component-referrals";
 import { ReferralsContext } from "../../../contexts/Referrals/contextReferrals.js";
+import {people} from "../../../../res/helpers/people"
 
 const SumraReferrals = () => {
     const { actions, state } = useContext(ReferralsContext);
     const history = useHistory();
 
-    const goToPionerMember = () => history.push({
-        pathname: '/pioneer-membership',
+    const goToPionerMember = (pathname) => history.push({
+        pathname,
         state: {
             prevPath: location.pathname,
         },
     });
 
-  /*   const config = {
+    const config = {
 		routes: {
 		    goToPionerMember,
 		},
@@ -27,15 +28,15 @@ const SumraReferrals = () => {
 		    actionPostCode: actions.postCode,
 		},
 		data: {
-		    referralCodes: state.referralsCodes,
+		    referralCodes: state.referralCodes,
 		    referralCode: state.referralCode,
+			people,
 		},
-    	}; */
-
-    debugger; // eslint-disable-line no-debugger
+    	};
+    
 
     return (
-        <Referrals  />
+        <Referrals config={config} />
 
     );
 };
