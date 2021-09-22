@@ -70,6 +70,9 @@
         /* Text / Text 1 */
 
         color: #323b4b;
+        @media (max-width: 768px) {
+            margin-left: 10px;
+        }
     }
     &-info {
         position: absolute;
@@ -130,11 +133,6 @@
 
                 color: #959da5;
             }
-        }
-    }
-    &-burger {
-        #menu_toggle {
-            opacity: 0;
         }
     }
 }

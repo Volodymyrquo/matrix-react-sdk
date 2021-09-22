@@ -41,6 +41,12 @@ const NavigationSidebar = () => {
                 src={sumraLogo}
                 alt="logo"
             />
+            <div className="sumra-nav-bar-burger">
+                <input id="menu__toggle" type="checkbox" />
+                <label className="menu__btn" htmlFor="menu__toggle">
+                    <span></span>
+                </label>
+            </div>
 
             <h2>personal</h2>
             <ul>
