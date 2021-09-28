@@ -95,4 +95,9 @@ h6 {
     overflow: scroll;
     background-color: #ffffff;
     padding: 30px;
+
+    @media (max-width: 768px) {
+        left: 0;
+        width: 100%;
+    }
 }

@@ -562,7 +562,7 @@ export default class RoomList extends React.PureComponent<IProps, IState> {
                             kind="link"
                             onClick={this.onExplore}
                         >
-                            {_t("Explore all public rooms")}
+                            {_t("Explore all public group chats")}
                         </AccessibleButton>
                     </div>;
                 }

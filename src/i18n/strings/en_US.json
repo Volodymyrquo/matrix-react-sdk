@@ -685,5 +685,6 @@
     "Show group chats with unread messages first": "Show group chats with unread messages first",
     "Leave Group chat": "Leave Group chat",
     "Search...": "Search...",
-    "Find a group chat… (e.g. %(exampleRoom)s)": "Find a group chat… (e.g. %(exampleRoom)s)"
+    "Find a group chat… (e.g. %(exampleRoom)s)": "Find a group chat… (e.g. %(exampleRoom)s)",
+    "Explore all public group chats": "Explore all public group chats"
 }

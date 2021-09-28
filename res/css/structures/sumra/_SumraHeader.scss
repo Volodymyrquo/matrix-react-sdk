@@ -43,6 +43,9 @@
             width: 375px;
             margin-left: 30px;
         }
+        @media (max-width: 411px) {
+            display: none;
+        }
 
         img {
             position: absolute;

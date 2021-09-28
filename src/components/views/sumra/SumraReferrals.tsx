@@ -33,7 +33,6 @@ const SumraReferrals = () => {
 			people,
 		},
     	};
-    
 
     return (
         <Referrals config={config} />
