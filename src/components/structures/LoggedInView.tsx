@@ -638,7 +638,7 @@ class LoggedInView extends React.Component<IProps, IState> {
         return (
             <Router>
                 {pageTitle === 'Contact Book'?
-                    <Route path="/contact_book" component={SumraContactBook} />
+                    <Route path="/contact-book/all-contacts" component={SumraContactBook} />
                     : <>
                         <SumraHeader />
                         <SumraLeftPanel />

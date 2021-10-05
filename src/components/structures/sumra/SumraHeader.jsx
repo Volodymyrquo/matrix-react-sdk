@@ -2,6 +2,10 @@ import React, { useContext, useEffect } from "react";
 import Avatars from "../../../../res/images/sumra/Avatars.png";
 import { OwnProfileStore } from "../../../stores/OwnProfileStore";
 import { Context } from "../../../contexts/Routes/context";
+import { MatrixClientPeg } from "../../../MatrixClientPeg";
+import dis from "../../../dispatcher/dispatcher";
+import Modal from "../../../Modal";
+import LogoutDialog from "../../views/dialogs/LogoutDialog";
 
 const SumraHeader = ({ handleOnChange }) => {
     const personName = localStorage.getItem("mx_profile_displayname");
@@ -15,6 +19,28 @@ const SumraHeader = ({ handleOnChange }) => {
     const dialNumbers = "https://i.ibb.co/f9mvg2Y/Dial-numbers.png";
     const search = "https://i.ibb.co/XZGhQFY/Search-grey.png";
 
+    const onSignOutClick = async (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+
+        const cli = MatrixClientPeg.get();
+        if (
+            !cli ||
+            !cli.isCryptoEnabled() ||
+            !(await cli.exportRoomKeys())?.length
+        ) {
+            // log out without user prompt if they have no local megolm sessions
+            dis.dispatch({ action: "logout" });
+        } else {
+            Modal.createTrackedDialog(
+                "Logout from LeftPanel",
+                "",
+                LogoutDialog
+            );
+        }
+
+        /*  this.setState({ contextMenuPosition: null });  */ // also close the menu
+    };
     return (
         <div className="sumra-header">
             <span className="sumra-header-text">{pageTitle}</span>
@@ -44,6 +70,7 @@ const SumraHeader = ({ handleOnChange }) => {
                     src={settings}
                     className="sumra-header-info-settings"
                     alt="settings"
+                    onClick={(ev) => onSignOutClick(ev)}
                 />
                 <img
                     src={avatarUrl}

@@ -21,21 +21,18 @@ import halfStarGrey from "../../../../res/images/sumra/Half-star-grey.svg";
 import halfStarOrange from "../../../../res/images/sumra/Half-star-orange.svg";
 import groupPeopleGrey from "../../../../res/images/sumra/Group-people-grey.svg";
 import groupPeopleOrange from "../../../../res/images/sumra/Group-people-orange.svg";
+import useOnOutsideClick from "../../../hooks/useOnOusideClick";
 
 const NavigationSidebar = () => {
     const { setPageTitle } = useContext(Context);
     const [page, setPage] = useState("/chats");
-    const [burger, setBurger] = useState(true);
+    const [burger, setBurger] = useState(false);
+    const { innerBorderRef } = useOnOutsideClick(() => setBurger(false));
     let windowLocation = window.location.pathname;
-    const toggleBurger = (e) => {
-        const target = e.target.htmlFor;
-        if (target === "menu__toggle") {
-            setBurger(!burger);
-        } else {
-            setBurger(true);
-        }
+    const toggleBurger = () => {
+        setBurger(!burger);
     };
-    const hideLeftPanel = () => {
+    const showLeftPanel = () => {
         setBurger(true);
     };
     const handleOnClick = (urlClicked) => {
@@ -47,22 +44,35 @@ const NavigationSidebar = () => {
     const groupChatOrange = "https://i.ibb.co/NsGzGsd/Group-chat-orange.png";
     const groupChatGrey = "https://i.ibb.co/R22ryTV/Group-chat-grey.png";
     return (
-        <nav className={burger ? "sumra-nav-bar" : "sumra-nav-bar-visible"}>
+        <nav
+            className={burger ? "sumra-nav-bar-visible" : "sumra-nav-bar"}
+            ref={innerBorderRef}
+        >
+            <div className="sumra-nav-bar-burger" onClick={toggleBurger}>
+                <svg viewBox="0 0 100 80" width="25" height="25">
+                    <rect width="100" height="12" rx="6" fill="#8a94a6"></rect>
+                    <rect
+                        y="30"
+                        width="100"
+                        height="12"
+                        rx="6"
+                        fill="#8a94a6"
+                    ></rect>
+                    <rect
+                        y="60"
+                        width="100"
+                        height="12"
+                        rx="6"
+                        fill="#8a94a6"
+                    ></rect>
+                </svg>
+            </div>
             <img
                 className="sumra-nav-bar-logo-block"
                 src={sumraLogo}
                 alt="logo"
             />
-            <div className="sumra-nav-bar-burger">
-                <input id="menu__toggle" type="checkbox" />
-                <label
-                    className="menu__btn"
-                    htmlFor="menu__toggle"
-                    onClick={(e) => toggleBurger(e)}
-                >
-                    <span></span>
-                </label>
-            </div>
+
             <div className="sumra-nav-bar-content">
                 <h2>personal</h2>
                 <ul>
@@ -73,7 +83,7 @@ const NavigationSidebar = () => {
                             }
                             onClick={() => {
                                 setPageTitle(`Chats`);
-                                hideLeftPanel();
+                                toggleBurger();
                             }}
                         >
                             <img
@@ -98,7 +108,7 @@ const NavigationSidebar = () => {
                             onClick={async (event) => {
                                 event.preventDefault();
                                 setPageTitle(`Settings`);
-                                hideLeftPanel();
+                                toggleBurger();
 
                                 location.href = location.origin + "/#/settings";
                             }}
@@ -126,7 +136,7 @@ const NavigationSidebar = () => {
                             }
                             onClick={() => {
                                 setPageTitle(`Referrals`);
-                                hideLeftPanel();
+                                toggleBurger();
                             }}
                         >
                             <img
@@ -147,7 +157,7 @@ const NavigationSidebar = () => {
                             }
                             onClick={() => {
                                 setPageTitle(`Rewards`);
-                                hideLeftPanel();
+                                toggleBurger();
                             }}
                         >
                             <img
@@ -170,7 +180,7 @@ const NavigationSidebar = () => {
                             }
                             onClick={() => {
                                 setPageTitle(`Divits Bonus Plaza`);
-                                hideLeftPanel();
+                                toggleBurger();
                             }}
                         >
                             <img
@@ -193,7 +203,7 @@ const NavigationSidebar = () => {
                             }
                             onClick={() => {
                                 setPageTitle(`Global Earnings`);
-                                hideLeftPanel();
+                                toggleBurger();
                             }}
                         >
                             <img
@@ -216,7 +226,7 @@ const NavigationSidebar = () => {
                             }
                             onClick={() => {
                                 setPageTitle(`Leaderboard`);
-                                hideLeftPanel();
+                                toggleBurger();
                             }}
                         >
                             <img
@@ -239,7 +249,7 @@ const NavigationSidebar = () => {
                             }
                             onClick={() => {
                                 setPageTitle(`Statistics`);
-                                hideLeftPanel();
+                                toggleBurger();
                             }}
                         >
                             <img
@@ -253,21 +263,22 @@ const NavigationSidebar = () => {
                             <span className="text">statistics</span>
                         </li>
                     </Link>
-                    <Link to="/contact_book">
+                    <Link to="/contact-book/all-contacts">
                         <li
                             className={
-                                windowLocation === `/contact_book`
+                                windowLocation === `/contact-book/all-contacts`
                                     ? "active"
                                     : null
                             }
                             onClick={() => {
                                 setPageTitle(`Contact Book`);
-                                hideLeftPanel();
+                                toggleBurger();
                             }}
                         >
                             <img
                                 src={
-                                    windowLocation === `/contact-book`
+                                    windowLocation ===
+                                    `/contact-book/all-contacts`
                                         ? adressBookOrange
                                         : adressBookGrey
                                 }
@@ -285,7 +296,7 @@ const NavigationSidebar = () => {
                             }
                             onClick={() => {
                                 setPageTitle(`Pioneer Membership`);
-                                hideLeftPanel();
+                                toggleBurger();
                             }}
                         >
                             <img
