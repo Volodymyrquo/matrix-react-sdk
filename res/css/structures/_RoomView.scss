@@ -290,6 +290,12 @@ hr.mx_RoomView_myReadMarker {
     background-color: #fafbfc;
     border-radius: 15px;
     height: 81px;
+    @media (max-width: 540px) {
+        margin-left: auto;
+        margin-right: auto;
+        width: calc(100% - 30px);
+        margin-bottom: 30px;
+    }
 }
 
 .mx_RoomView_ongoingConfCallNotification {

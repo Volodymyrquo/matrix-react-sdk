@@ -19,6 +19,12 @@
         left: 0;
         padding: 24px 20px;
     }
+    @media (max-width: 540px) {
+        width: 100%;
+        left: 0;
+        padding: 14px 10px;
+        height: 68px !important;
+    }
     &-search {
         display: flex;
         flex-direction: row;
