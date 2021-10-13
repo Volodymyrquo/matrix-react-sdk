@@ -27,6 +27,9 @@ $roomListCollapsedWidth: 68px;
     display: flex;
     contain: content;
     margin-top: 98px;
+    @media (max-width: 375px) {
+        display: none;
+    }
 
     .mx_LeftPanel_GroupFilterPanelContainer {
         flex-grow: 0;
@@ -215,6 +218,9 @@ $roomListCollapsedWidth: 68px;
         .mx_LeftPanel_actualRoomListContainer {
             position: relative; // for sticky headers
             height: 100%; // ensure scrolling still works
+            @media (max-width: 375px) {
+                display: none;
+            }
         }
     }
 
