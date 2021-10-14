@@ -34,6 +34,7 @@ import { MatrixEvent, Room, RoomState } from 'matrix-js-sdk/src';
 import { E2EStatus } from '../../../utils/ShieldUtils';
 import { IOOBData } from '../../../stores/ThreepidInviteStore';
 import { SearchScope } from './SearchBar';
+import other from '../../../../res/images/sumra/Other1-grey.svg';
 
 export interface ISearchInfo {
     searchTerm: string;
@@ -195,9 +196,10 @@ export default class RoomHeader extends React.Component<IProps> {
     
                 { voiceCallButton }
                 { videoCallButton }
-               {/*  { forgetButton }
+             {/*    { forgetButton }
                 { appsButton }
-                { searchButton } */}
+                { searchButton }  */}
+                <img src={other} alt='other' />
             </div>;
 
         const e2eIcon = this.props.e2eStatus ? <E2EIcon status={this.props.e2eStatus} /> : undefined;
