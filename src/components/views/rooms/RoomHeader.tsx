@@ -34,7 +34,7 @@ import { MatrixEvent, Room, RoomState } from 'matrix-js-sdk/src';
 import { E2EStatus } from '../../../utils/ShieldUtils';
 import { IOOBData } from '../../../stores/ThreepidInviteStore';
 import { SearchScope } from './SearchBar';
-import other from '../../../../res/images/sumra/Other1-grey.svg';
+import { Context } from '../../../contexts/Routes/context';
 
 export interface ISearchInfo {
     searchTerm: string;
@@ -62,18 +62,18 @@ export default class RoomHeader extends React.Component<IProps> {
         editing: false,
         inRoom: false,
     };
+static contextType = Context;
+public componentDidMount() {
+    const cli = MatrixClientPeg.get();
+    cli.on("RoomState.events", this.onRoomStateEvents);
+}
 
-    public componentDidMount() {
-        const cli = MatrixClientPeg.get();
-        cli.on("RoomState.events", this.onRoomStateEvents);
+public componentWillUnmount() {
+    const cli = MatrixClientPeg.get();
+    if (cli) {
+        cli.removeListener("RoomState.events", this.onRoomStateEvents);
     }
-
-    public componentWillUnmount() {
-        const cli = MatrixClientPeg.get();
-        if (cli) {
-            cli.removeListener("RoomState.events", this.onRoomStateEvents);
-        }
-    }
+}
 
     private onRoomStateEvents = (event: MatrixEvent, state: RoomState) => {
         if (!this.props.room || event.getRoomId() !== this.props.room.roomId) {
@@ -193,13 +193,17 @@ export default class RoomHeader extends React.Component<IProps> {
 
         const rightRow =
             <div className="mx_RoomHeader_buttons">
-    
+
                 { voiceCallButton }
                 { videoCallButton }
-             {/*    { forgetButton }
+                {/*    { forgetButton }
                 { appsButton }
                 { searchButton }  */}
-                <img src={other} alt='other' />
+                <svg className="sumra-roomHeader" onClick={this.context.toggleMxLeftPanel} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="5" r="2" />
+                    <circle cx="12" cy="12" r="2" />
+                    <circle cx="12" cy="19" r="2" />
+                </svg>
             </div>;
 
         const e2eIcon = this.props.e2eStatus ? <E2EIcon status={this.props.e2eStatus} /> : undefined;

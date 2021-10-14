@@ -17,10 +17,9 @@ export const Provider = ({ children }) => {
             type: "SET_PAGE_TITLE",
             payload: pageTitle,
         });
-    const setBurger = (burger) =>
+    const toggleMxLeftPanel = () =>
         dispatch({
-            type: "SET_BURGER",
-            payload: burger,
+            type: "TOGGLE_MX_LEFT_PANEL",
         });
 
     const subpages = {
@@ -32,17 +31,15 @@ export const Provider = ({ children }) => {
     };
 
     const subpage = subpages[state.subpageId];
-    const { params, subpageId, tableId, pageTitle } = state;
+    const { pageTitle, isMxLeftMenuVisible } = state;
     return (
         <Context.Provider
             value={{
-                setBurger,
                 setPageTitle,
-                params,
+                toggleMxLeftPanel,
                 subpage,
-                subpageId,
-                tableId,
                 pageTitle,
+                isMxLeftMenuVisible,
             }}
         >
             {children}

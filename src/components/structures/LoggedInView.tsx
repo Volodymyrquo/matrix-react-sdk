@@ -67,7 +67,7 @@ import SpaceStore from "../../stores/SpaceStore";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import SumraHeader from "./sumra/SumraHeaderWrapper.jsx";
 import SumraLeftPanel from "./sumra/SumraLeftPanel.jsx";
-import { Context } from "../../contexts/Routes/context";
+import { Provider, Context } from "../../contexts/Routes/context";
 
 const SumraLeaderboard = React.lazy(()=> import("../views/sumra/SumraLeaderboard"));
 const SumraGlobalEarnings = React.lazy(()=> import('../views/sumra/SumraGlobalEarnings'));
@@ -152,6 +152,7 @@ interface IState {
 @replaceableComponent("structures.LoggedInView")
 class LoggedInView extends React.Component<IProps, IState> {
     static displayName = 'LoggedInView';
+    static contextType = Context;
 
     static propTypes = {
         matrixClient: PropTypes.instanceOf(MatrixClient).isRequired,
@@ -583,7 +584,6 @@ class LoggedInView extends React.Component<IProps, IState> {
             this._roomView.current.handleScrollKey(ev);
         }
     };
-    static contextType = Context;
 
     render() {
         let pageElement;
@@ -638,57 +638,60 @@ class LoggedInView extends React.Component<IProps, IState> {
         const pageTitle = this.context.pageTitle;
         return (
             <Router>
-                {pageTitle === 'Contact Book'?
-                    <React.Suspense fallback={<div>Loading...</div>}>
-                        <Route path="/contact-book/all-contacts" component={SumraContactBook} />
+                <Provider>
+                    {pageTitle === 'Contact Book'?
+                        <React.Suspense fallback={<div>Loading...</div>}>
+                            <Route path="/contact-book/all-contacts" component={SumraContactBook} />
 
-                    </React.Suspense>
-                    : <>
-                        <SumraHeader />
-                        <SumraLeftPanel />
-                        <React.Suspense fallback={<div>Loading....</div>}>
-                            <Switch>
-                                <Redirect exact from="/" to="/chats" />
-                                <Route path="/chats">
-                                    <MatrixClientContext.Provider value={this._matrixClient}>
-                                        <div
-                                            onPaste={this._onPaste}
-                                            onKeyDown={this._onReactKeyDown}
-                                            className='mx_MatrixChat_wrapper'
-                                            aria-hidden={this.props.hideToSRUsers}
-                                        >
-                                            <ToastContainer />
-                                            <div ref={this._resizeContainer} className={bodyClasses}>
-                                                { SpaceStore.spacesEnabled ? <SpacePanel /> : null }
-
-                                                <LeftPanel
-                                                    isMinimized={this.props.collapseLhs || false}
-                                                    resizeNotifier={this.props.resizeNotifier}
-                                                />
-                                                {/*   <ResizeHandle /> */}
-                                                { pageElement }
-                                            </div>
-                                        </div>
-                                        <CallContainer />
-                                        <NonUrgentToastContainer />
-                                        <HostSignupContainer />
-                                        {audioFeedArraysForCalls}
-                                    </MatrixClientContext.Provider>
-                                </Route>
-
-                                <Route path="/referrals" component={SumraReferrals} />
-                                <Route path="/leaderboard" component={SumraLeaderboard} />
-                                <Route path="/global-earnings" component={SumraGlobalEarnings} />
-                                <Route path="/statistics" component={SumraStatistics} />
-                                <Route path="/any/divits" component={SumraDivitsBonusPlaza} />
-                                <Route path="/pioneer-membership" component={SumraPioneerMembership} />
-                                <Route path="/divits-bonus-plaza" component={SumraDivitsBonusPlaza} />
-                                <Route path="/rewards" component={SumraRewards} />
-
-                            </Switch>
                         </React.Suspense>
+                        : <>
+                            <SumraHeader />
+                            <SumraLeftPanel />
+                            <React.Suspense fallback={<div>Loading....</div>}>
+                                <Switch>
+                                    <Redirect exact from="/" to="/chats" />
+                                    <Route path="/chats">
+                                        <MatrixClientContext.Provider value={this._matrixClient}>
+                                            <div
+                                                onPaste={this._onPaste}
+                                                onKeyDown={this._onReactKeyDown}
+                                                className='mx_MatrixChat_wrapper'
+                                                aria-hidden={this.props.hideToSRUsers}
+                                            >
+                                                <ToastContainer />
+                                                <div ref={this._resizeContainer} className={bodyClasses}>
+                                                    { SpaceStore.spacesEnabled ? <SpacePanel /> : null }
 
-                    </>}
+                                                    <LeftPanel
+                                                        isMinimized={this.props.collapseLhs || false}
+                                                        resizeNotifier={this.props.resizeNotifier}
+                                                        
+                                                    />
+                                                    {/*   <ResizeHandle /> */}
+                                                    { pageElement }
+                                     e           </div>
+                                            </div>
+                                            <CallContainer />
+                                            <NonUrgentToastContainer />
+                                            <HostSignupContainer />
+                                            {audioFeedArraysForCalls}
+                                        </MatrixClientContext.Provider>
+                                    </Route>
+
+                                    <Route path="/referrals" component={SumraReferrals} />
+                                    <Route path="/leaderboard" component={SumraLeaderboard} />
+                                    <Route path="/global-earnings" component={SumraGlobalEarnings} />
+                                    <Route path="/statistics" component={SumraStatistics} />
+                                    <Route path="/any/divits" component={SumraDivitsBonusPlaza} />
+                                    <Route path="/pioneer-membership" component={SumraPioneerMembership} />
+                                    <Route path="/divits-bonus-plaza" component={SumraDivitsBonusPlaza} />
+                                    <Route path="/rewards" component={SumraRewards} />
+
+                                </Switch>
+                            </React.Suspense>
+
+                        </>}
+                </Provider>
             </Router>
         );
     }
