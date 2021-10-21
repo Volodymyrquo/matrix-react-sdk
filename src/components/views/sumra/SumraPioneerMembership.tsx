@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import PioneerMembership from "pioneer-membership";
 import { useHistory } from 'react-router-dom';
 
@@ -15,4 +15,4 @@ const SumraPioneerMembership = () => {
     );
 };
 
-export default SumraPioneerMembership;
+export default SumraPioneerMembership; */

@@ -287,7 +287,11 @@ const NavigationSidebar = () => {
                             <span className="text">contact book</span>
                         </li>
                     </Link>
-                    <Link to="/pioneer-membership">
+                    {/*     <Link to="/pioneer-membership"> */}
+                    <a
+                        href="https://pioneer-membership.netlify.app/"
+                        target="_blank"
+                    >
                         <li
                             className={
                                 windowLocation === `/pioneer-membership`
@@ -309,7 +313,8 @@ const NavigationSidebar = () => {
                             />
                             <span className="text">pioneer membership</span>
                         </li>
-                    </Link>
+                    </a>
+                    {/*        </Link> */}
                 </ul>
             </div>
             <div className="sumra-nav-bar-referrals">

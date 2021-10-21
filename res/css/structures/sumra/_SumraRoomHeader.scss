@@ -4,4 +4,8 @@
         cursor: pointer;
         fill: #ff9e00;
     }
+
+    @media (min-width: 540px) {
+        display: none;
+    }
 }

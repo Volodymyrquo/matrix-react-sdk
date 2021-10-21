@@ -5,7 +5,6 @@ import ReferralsPage from "referrals";
 import GlobalEarnings from "global-earnings";
 import LeaderboardTable from "leaderboard";
 import Statistics from "global-earnings";
-import PioneerMembership from "pioneer-membership";
 
 export const Context = createContext(initialState);
 
@@ -27,7 +26,6 @@ export const Provider = ({ children }) => {
         globalEarnings: <GlobalEarnings path={"/referrals"} />,
         leaderboard: <LeaderboardTable />,
         statistics: <Statistics path={"/referrals"} />,
-        pioneerMembership: <PioneerMembership />,
     };
 
     const subpage = subpages[state.subpageId];

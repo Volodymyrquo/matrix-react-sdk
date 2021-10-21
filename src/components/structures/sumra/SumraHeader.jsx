@@ -18,6 +18,7 @@ const SumraHeader = ({ handleOnChange }) => {
     const settings = "https://i.ibb.co/NjYqgS5/Settings-1.png";
     const dialNumbers = "https://i.ibb.co/f9mvg2Y/Dial-numbers.png";
     const search = "https://i.ibb.co/XZGhQFY/Search-grey.png";
+    const defaultImg = "https://i.ibb.co/Vq1jrF2/Discord.png";
 
     const onSignOutClick = async (ev) => {
         ev.preventDefault();
@@ -73,7 +74,7 @@ const SumraHeader = ({ handleOnChange }) => {
                     onClick={(ev) => onSignOutClick(ev)}
                 />
                 <img
-                    src={avatarUrl}
+                    src={avatarUrl || defaultImg}
                     className="sumra-header-info-avatar"
                     alt="avatar"
                 />
