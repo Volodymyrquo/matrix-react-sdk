@@ -111,7 +111,6 @@ export class ContextMenu extends React.PureComponent<IProps, IState> {
         // persist what had focus when we got initialized so we can return it after
         this.initialFocus = document.activeElement as HTMLElement;
     }
-
     componentWillUnmount() {
         // return focus to the thing which had it before us
         this.initialFocus.focus();
@@ -510,3 +509,7 @@ export { MenuItemCheckbox } from "../../accessibility/context_menu/MenuItemCheck
 export { MenuItemRadio } from "../../accessibility/context_menu/MenuItemRadio";
 export { StyledMenuItemCheckbox } from "../../accessibility/context_menu/StyledMenuItemCheckbox";
 export { StyledMenuItemRadio } from "../../accessibility/context_menu/StyledMenuItemRadio";
+function componentDidMount() {
+    throw new Error("Function not implemented.");
+}
+

@@ -297,6 +297,7 @@ textarea:focus {
     position: relative;
     padding: 24px;
     max-height: 80%;
+    max-width: 90%;
     box-shadow: 2px 15px 30px 0 $dialog-shadow-color;
     border-radius: 8px;
     overflow-y: auto;
@@ -637,5 +638,164 @@ textarea:focus {
     @media (-webkit-min-device-pixel-ratio: 0) {
         outline-color: -webkit-focus-ring-color;
         outline-style: auto;
+    }
+}
+@define-mixin navbar-main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 260px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #fafbfc;
+    box-shadow: inset -1px 0px 0px #f3f3f3;
+    overflow-x: hidden;
+    align-items: center;
+    color: #8a94a6;
+    font-family: Inter;
+    transition: all 0.3s cubic-bezier(0.3, 0.81, 0.87, 0.71);
+    justify-content: space-between;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+    &-logo-block {
+        margin-right: 70px;
+        margin-top: 24px;
+        width: 166px;
+        flex-shrink: 0;
+    }
+
+    h2 {
+        width: 230px;
+        left: 150px;
+        text-transform: uppercase;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        left: 0%;
+        color: #8a94a6;
+        font-family: Inter;
+    }
+    &-content {
+        flex-grow: 2;
+    }
+    ul {
+        li {
+            text-transform: capitalize;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 230px;
+            height: 42px;
+            padding: 9px 10px;
+            border-radius: 8px;
+            .text {
+                display: inline-block;
+                margin-left: 14px;
+                color: #8a94a6;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 29px;
+
+                display: flex;
+                align-items: center;
+
+                color: #8a94a6;
+            }
+            &.active {
+                background-color: #ffffff;
+                box-shadow: 0px 23px 44px rgba(176, 183, 195, 0.14);
+                span {
+                    color: #4e5a66;
+                }
+            }
+        }
+    }
+    &-referrals {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 260px;
+        height: 218px;
+        flex-shrink: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(235, 242, 255, 0) 43.58%,
+            #ebf2ff 100%,
+            #ebf2ff 100%
+        );
+        img {
+            position: absolute;
+            width: 92px;
+            left: 84px;
+            top: 18px;
+        }
+    }
+    &-earn {
+        position: absolute;
+        width: 210px;
+        height: 40px;
+        left: calc(50% - 210px / 2);
+        bottom: 78.5px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 150%;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        /* Text/Text 2 */
+
+        color: #4e5d78;
+
+        mix-blend-mode: normal;
+        & > span {
+            display: inline-block;
+            width: 100%;
+            span {
+                color: #377dff;
+            }
+        }
+    }
+    &-button {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px 10px 25px;
+        width: 138px;
+        height: 36px;
+        left: calc(50% - 138px / 2);
+        bottom: 32px;
+        background: linear-gradient(162.19deg, #fcbf22 0%, #dd7021 92.76%),
+            #ffab00;
+
+        box-shadow: 0px 10px 20px rgba(55, 125, 255, 0.15);
+        border-radius: 7px;
+        span {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 100%;
+
+            color: #ffffff;
+        }
+    }
+    &-burger {
+        position: fixed;
+        top: 8px;
+        left: 8px;
+
+        @media (min-width: 769px) {
+            display: none;
+        }
     }
 }

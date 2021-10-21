@@ -46,6 +46,7 @@ import SpaceStore, { UPDATE_SELECTED_SPACE } from "../../stores/SpaceStore";
 import { getKeyBindingsManager, RoomListAction } from "../../KeyBindingsManager";
 import UIStore from "../../stores/UIStore";
 import { Link } from "react-router-dom";
+import { Context } from "../../contexts/Routes/context";
 
 interface IProps {
     isMinimized: boolean;
@@ -75,6 +76,7 @@ export default class LeftPanel extends React.Component<IProps, IState> {
     private bgImageWatcherRef: string;
     private focusedElement = null;
     private isDoingStickyHeaders = false;
+    static contextType = Context;
 
     constructor(props: IProps) {
         super(props);
@@ -459,15 +461,16 @@ export default class LeftPanel extends React.Component<IProps, IState> {
             resizeNotifier={this.props.resizeNotifier}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
-            isMinimized={this.props.isMinimized}
+            isMinimized={this.context.isMxLeftMenuVisible}
             activeSpace={this.state.activeSpace}
             onResize={this.refreshStickyHeaders}
             onListCollapse={this.refreshStickyHeaders}
         />;
 
         const containerClasses = classNames({
-            "mx_LeftPanel": true,
-            "mx_LeftPanel_minimized": this.props.isMinimized,
+            "mx_LeftPanel": this.context.isMxLeftMenuVisible?false:true,
+           /*  "mx_LeftPanel_minimized": this.props.isMinimized, */
+            "mx_LeftPanel_visible": this.context.isMxLeftMenuVisible,
         });
 
         const roomListClasses = classNames(
@@ -476,17 +479,16 @@ export default class LeftPanel extends React.Component<IProps, IState> {
         );
 
         return (
-            <div className={containerClasses} ref={this.ref}>
-                {/*  {leftLeftPanel} */}
+            <div className={containerClasses} ref={this.ref} >
                 <aside className="mx_LeftPanel_roomListContainer">
                     {/*     {this.renderHeader()}*/}
-                    {this.renderSearchDialExplore()} 
+                    {this.renderSearchDialExplore()}
                     {/*     <div className="sumra-contact-book-link"><Link to="/contact_book">Contact book</Link></div>
                     <div className="sumra-contact-book-link"><Link to="/referrals">Referrals</Link></div>  */}
 
                     {/*   {this.renderBreadcrumbs()} */}
                     {/*  <RoomListNumResults onVisibilityChange={this.refreshStickyHeaders} /> */}
-                    <div className="mx_LeftPanel_roomListWrapper">
+                    <div className="mx_LeftPanel_roomListWrapper" >
                         <div
                             className={roomListClasses}
                             ref={this.listContainerRef}

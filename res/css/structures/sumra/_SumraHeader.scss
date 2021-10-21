@@ -19,6 +19,12 @@
         left: 0;
         padding: 24px 20px;
     }
+    @media (max-width: 540px) {
+        width: 100%;
+        left: 0;
+        padding: 14px 10px;
+        height: 68px !important;
+    }
     &-search {
         display: flex;
         flex-direction: row;
@@ -76,6 +82,9 @@
         @media (max-width: 768px) {
             margin-left: 10px;
         }
+        @media (max-width: 540px) {
+            margin-left: 40px;
+        }
     }
     &-info {
         position: absolute;
@@ -90,18 +99,19 @@
         &-avatar {
             height: 48px;
             margin-right: 12px;
+            border-radius: 50%;
         }
         &-settings {
             height: 28px;
             margin-right: 30px;
-            @media (max-width: 768px) {
+            @media (max-width: 1370px) {
                 display: none;
             }
         }
         &-name {
             display: flex;
             flex-direction: column;
-            @media (max-width: 768px) {
+            @media (max-width: 1200px) {
                 display: none;
             }
 
