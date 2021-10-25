@@ -1,7 +1,6 @@
 import React, { useReducer, createContext } from "react";
 import contextReducer from "./contextReducer";
 import { initialState } from "./contextReducer";
-import ReferralsPage from "referrals";
 import GlobalEarnings from "global-earnings";
 import LeaderboardTable from "leaderboard";
 import Statistics from "global-earnings";
@@ -22,7 +21,6 @@ export const Provider = ({ children }) => {
         });
 
     const subpages = {
-        referralsPage: <ReferralsPage />,
         globalEarnings: <GlobalEarnings path={"/referrals"} />,
         leaderboard: <LeaderboardTable />,
         statistics: <Statistics path={"/referrals"} />,

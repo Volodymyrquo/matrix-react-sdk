@@ -72,7 +72,6 @@ import { Provider, Context } from "../../contexts/Routes/context";
 const SumraLeaderboard = React.lazy(()=> import("../views/sumra/SumraLeaderboard"));
 const SumraGlobalEarnings = React.lazy(()=> import('../views/sumra/SumraGlobalEarnings'));
 const SumraStatistics = React.lazy(()=> import('../views/sumra/SumraStatistics'));
-const SumraPioneerMembership = React.lazy(()=> import('../views/sumra/SumraPioneerMembership'));
 const SumraContactBook = React.lazy(()=> import('../views/sumra/SumraContactBook'));
 const SumraDivitsBonusPlaza = React.lazy(()=> import('../views/sumra/SumraDivitsBonusPlaza'));
 const SumraRewards = React.lazy(()=> import('../views/sumra/SumraRewards'));

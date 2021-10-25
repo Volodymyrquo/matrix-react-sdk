@@ -7100,20 +7100,6 @@ redux@^4.0.0, redux@^4.0.4:
   dependencies:
     "@babel/runtime" "^7.9.2"
 
-"referrals@https://github.com/Volodymyrquo/referrals.git":
-  version "1.0.0"
-  resolved "https://github.com/Volodymyrquo/referrals.git#41213c504c21febf309895cde7949f175502131f"
-  dependencies:
-    "@fontsource/noto-serif" "^4.5.0"
-    chart.js "^3.5.0"
-    classnames "^2.3.1"
-    fontsource-aileron "^4.0.0"
-    qrcode.react "^1.0.1"
-    react-chartjs-2 "^3.0.4"
-    react-copy-to-clipboard "^5.0.3"
-    react-icons "^4.2.0"
-    react-sparklines "^1.7.0"
-
 regenerate-unicode-properties@^8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-8.2.0.tgz#e5de7111d655e7ba60c057dbe9ff37c87e65cdec"
