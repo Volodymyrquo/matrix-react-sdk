@@ -469,7 +469,7 @@ export default class LeftPanel extends React.Component<IProps, IState> {
 
         const containerClasses = classNames({
             "mx_LeftPanel": this.context.isMxLeftMenuVisible?false:true,
-           /*  "mx_LeftPanel_minimized": this.props.isMinimized, */
+            /*  "mx_LeftPanel_minimized": this.props.isMinimized, */
             "mx_LeftPanel_visible": this.context.isMxLeftMenuVisible,
         });
 
